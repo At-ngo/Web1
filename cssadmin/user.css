@@ -1,0 +1,138 @@
+/* Các phần tử box 1, 2, 3 nằm ngang */
+ .box2, .box3 {
+    padding: calc(0.3vw + 0.3vh);
+    width: 15vw;
+    height: 5vh;
+    margin-top: 25px;
+    margin-left: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho phần tử */
+    display: inline-block; /* Đảm bảo chúng nằm ngang với nhau */
+
+}
+
+.box {
+    font-size: calc(0.7vw + 0.7vh);
+    padding: calc(1vw + 1vh); /* Tăng khoảng cách bên trong */
+    width: 82.5vw;
+    height: 8vh;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho phần tử */
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo trục dọc */
+    gap: 10px; /* Tạo khoảng cách giữa các phần tử */
+}
+
+
+/* Đảm bảo boxcontent nằm dưới các box */
+.boxcontent {
+    font-size: 100px;
+    padding: calc(0.3vw + 0.3vh);
+    width: 82vw;
+    height: 60%;
+    margin-top: 25px;
+    margin-left: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho phần tử */
+    clear: both; /* Đảm bảo boxcontent nằm dưới */
+    border-radius: calc(1vw + 1vh);
+    overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung vượt quá */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+}
+
+.box4 {
+    padding: calc(0.3vw + 0.3vh);
+    width: 71vw;
+    height: 8vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block; /* Đảm bảo chúng nằm ngang với nhau */
+    border-radius: calc(1vw + 1vh);
+    
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px; /* Kích thước padding của nút */
+    margin: 0 -10px; /* Giảm khoảng cách giữa các nút */
+    font-size: 12px; /* Kích thước chữ */
+    border: 1px solid #ddd;
+    border-radius: 3px; /* Độ bo góc */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Khi rê chuột */
+.pagination a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Trang đang được chọn */
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Ẩn checkbox */
+#popup-toggle {
+    display: none;
+  }
+
+  /* Nền mờ */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; /* Luôn giữ overlay trong DOM */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Mặc định ẩn */
+    visibility: hidden; /* Ẩn khỏi giao diện */
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  /* Hiển thị overlay khi checkbox được chọn */
+  #popup-toggle:checked + .popup-overlay {
+    opacity: 1; /* Hiển thị */
+    visibility: visible; /* Làm popup hiện */
+  }
+
+  /* Nội dung popup */
+  .popup-content {
+    background-color: white;
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px); /* Vị trí ban đầu */
+    opacity: 0; /* Ẩn ban đầu */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  /* Khi mở popup */
+  #popup-toggle:checked + .popup-overlay .popup-content {
+    transform: translateY(0); /* Di chuyển vào vị trí trung tâm */
+    opacity: 1; /* Hiện popup */
+  }
+
+  /* Nút đóng */
+  .close-popup {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .close-popup:hover {
+    background-color: #0056b3;
+  }

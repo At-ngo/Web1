@@ -1,0 +1,13 @@
+@import url('./insert_product_brands.css');
+
+/* Bổ sung riêng cho trang chỉnh sửa */
+.form-group img {
+    display: block;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-group input[type="file"] {
+    cursor: pointer;
+}

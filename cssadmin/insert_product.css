@@ -1,0 +1,148 @@
+/* ==== FORM CONTAINER ==== */
+.edit-container {
+    background-color: #fff;
+    margin: 2vw auto;
+    padding: 2vw 3vw;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 900px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==== FORM ==== */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* ==== FORM GROUP ==== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover / Focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* ==== TEXTAREA ==== */
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ==== FILE INPUT ==== */
+input[type="file"] {
+    background-color: #f9f9f9;
+    border: 1px dashed #aaa;
+    padding: 8px;
+    cursor: pointer;
+}
+input[type="file"]:hover {
+    background-color: #f0f0f0;
+}
+
+/* ==== FORM BUTTONS ==== */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.form-buttons a {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.25s, transform 0.15s;
+}
+
+.save-btn {
+    background-color: #007bff;
+}
+.save-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+.delete-btn:hover {
+    background-color: #b02a37;
+    transform: translateY(-2px);
+}
+
+/* ==== EXIT BUTTON ==== */
+.exit-btn {
+    margin-left: auto;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.exit-btn i {
+    margin-right: 5px;
+}
+
+/* ==== TITLE BOX ==== */
+.box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+    .edit-container {
+        width: 95%;
+        padding: 5vw 4vw;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-buttons a {
+        width: 80%;
+        text-align: center;
+    }
+}

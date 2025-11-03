@@ -1,0 +1,296 @@
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Đặt kiểu chung */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Xóa gạch chân toàn bộ các liên kết */
+a {
+  text-decoration: none;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Header Styles */
+.header {
+  width: 100vw;
+  display: flex;               /* Căn chỉnh các phần tử theo chiều ngang */
+  align-items: center;         /* Đưa logo và chữ SÁCH vào giữa theo chiều dọc */
+  justify-content: space-between; /* Duy trì khoảng cách cân đối nếu cần */
+  background-color: black;     /* Màu nền đen */
+  height: 80px;               /* Chiều cao của header */
+  padding: 0 20px;             /* Tạo khoảng cách từ nội dung đến viền */
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;               /* Đảm bảo logo và chữ ngang hàng */
+  align-items: center;
+  text-decoration: none;       /* Loại bỏ gạch chân */
+  gap: 5px;                   /* Khoảng cách giữa các icon và chữ */
+}
+
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.search-bar { margin: 20px 0; display: flex; justify-content: center; gap: 10px; }
+.search-bar input { padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px; }
+.search-bar button { padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; }
+.search-bar button:hover { background-color: #555; }
+
+
+.demo {
+  color:white; /* Màu chữ trắng để nổi bật trên nền đen */
+  font-size: 40px;
+  text-decoration: none;   /* Loại bỏ gạch chân */
+  justify-content: space-between;
+  align-items: center;    
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+.sidebar {
+  font-size: calc(0.5vw + 0.5vh);
+  background-color: #fefefe;
+  padding: calc(0.5vw + 0.5vh);
+  width: 16.5vw;
+  height: calc(100vh - 0vw);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  position: relative; /* Đảm bảo đổ bóng không bị ghi đè */
+  z-index: 1; /* Tăng độ ưu tiên hiển thị */
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  color: rgb(0, 0, 0); /* Màu chữ ban đầu */
+  text-decoration: none;
+  font-size: 1.123vw;
+  font-family: 'Poppins', sans-serif;
+  padding: 1px;
+  line-height: 5vh;
+  display: block;
+  transition: color 0.3s ease; /* Hiệu ứng thay đổi màu chữ */
+}
+
+.sidebar ul li a:hover {
+  color: #007BFF !important; /* Màu chữ thay đổi khi hover */
+}
+
+
+/* Main container */
+.main_container {
+  overflow: visible;
+  flex-basis: auto;
+  display: flex;
+  overflow-x: auto ;
+  width: 100vw;
+}
+
+/* Content section */
+.content {
+  grid-area: content;
+  flex-basis: auto;
+  flex:auto;
+  padding: 3%;
+  width: 100%;
+  position: relative;
+}
+
+
+.data-table-add {
+  width: 80vw; /* Không vượt quá chiều rộng của viewport */
+  height: 3vh; /* Chiều cao tự động điều chỉnh */
+  max-height: 100vh;
+  margin-top: 0vh;
+  border-collapse: collapse;
+}
+
+.data-table-add th, .data-table-add td {
+  border: none;
+  padding: 1vw;
+  text-align: center;
+  line-height: 1.2;
+  font-size: calc(0.7vw + 0.6vh);
+}
+
+/* Cột đầu tiên nhỏ hơn */
+.data-table-add th:first-child, 
+.data-table-add td:first-child {
+  width: 2vw;
+}
+
+/* Cải thiện tính linh hoạt khi bảng quá rộng */
+.data-table-add td {
+  word-wrap: break-word; /* Chia từ khi cần thiết */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Hiển thị ba dấu chấm nếu dữ liệu quá dài */
+}
+
+.data-table-add th {
+  background-color: #f4f4f4;
+}
+
+.data-table-add tbody tr {
+  background-color: #f9f9f9;
+}
+
+
+
+
+/* Nút Thêm mới */
+.button-adj {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 5vh;
+  width: auto;
+  margin-left: 50vw;
+  font-size: 1.2vh; /* Đặt kích thước chữ hợp lý cho nút */
+
+}
+
+
+
+.checkbox {
+  width: 1.2vw; /* Đặt chiều rộng của checkbox */
+  height: 2.2vh; /* Đặt chiều cao của checkbox */
+}
+
+
+.menu-content, .menu-content-2 {
+  list-style: none;
+  display: none;
+}
+
+/* Đặt màu cho các mục trong menu */
+.menu-content li a, 
+.menu-content-2 li a {
+  text-decoration: none;
+  color: rgb(231, 228, 228); /* Màu nội dung con */
+  font-size: 14px; /* Tùy chỉnh kích thước chữ */
+  transition: color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+}
+
+/* Cơ bản cho menu */
+.menu-content li a,
+.menu-content-2 li a {
+  position: relative; /* Để sử dụng ::after */
+  color: black; /* Màu chữ mặc định */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  display: inline-block; /* Đảm bảo kích thước phù hợp */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu chữ */
+}
+
+/* Hiệu ứng hover cho cả menu-content và menu-content-2 */
+.menu-content li a::after,
+.menu-content-2 li a::after {
+  content: ""; /* Nội dung ảo */
+  position: absolute;
+  left: 0; /* Bắt đầu từ bên trái */
+  bottom: 0; /* Vị trí phía dưới chữ */
+  width: 0%; /* Bắt đầu với độ rộng 0% */
+  height: 2px; /* Độ dày đường gạch */
+  background-color: #007BFF; /* Màu của hiệu ứng */
+  transition: width 0.3s ease-in-out; /* Hiệu ứng mở rộng */
+}
+
+.menu-content li a:hover,
+.menu-content-2 li a:hover {
+  color: #007BFF; /* Đổi màu chữ khi hover */
+}
+
+.menu-content li a:hover::after,
+.menu-content-2 li a:hover::after {
+  width: 100%; /* Mở rộng toàn bộ chiều rộng khi hover */
+}
+
+/* Đảm bảo menu-content hiển thị khi checkbox được chọn */
+.task-menu input:checked ~ .menu-content {
+  display: block; /* Hiển thị menu khi checkbox được chọn */
+}
+
+.task-bar input:checked ~ .menu-content-2 {
+  display: block; /* Hiển thị menu khi checkbox được chọn */
+}
+
+.menu-content, .menu-content-2 {
+  list-style: none;
+  display: none; /* Đảm bảo menu không hiển thị mặc định */
+}
+
+.toggle-btn {
+  background-color: #ffffff;
+  color: black;
+  padding: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto; /* Đẩy nút sang phải */
+}
+
+.toggle-btn:hover {
+  color: #007BFF; /* Màu chữ khi hover */
+}
+
+/* Content */
+.content {
+  grid-area: content;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+}
+
+.task-menu input:checked ~ .menu-content,
+.task-bar input:checked ~ .menu-content-2 {
+  display: block;
+}
+
+
+.task-menu {
+  margin-bottom: 20px; /* Giãn khoảng cách giữa các thanh tác vụ */
+}
+
+.task-bar {
+  margin-top: 20px; /* Tạo khoảng cách phía trên nếu cần */
+}
+
+.divider {
+  width: 112%; /* Độ rộng đầy đủ */
+  border-bottom: 1px solid #ccc; /* Đường gạch ngang */
+  margin: 10px 0; /* Khoảng cách trên dưới */
+  margin-left: -5.5%;
+}
+
+

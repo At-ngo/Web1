@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa sản phẩm</title>
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/edit_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">ĐỒNG HỒ</p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" placeholder="Tìm kiếm sản phẩm...">
+            <button type="button">Tìm kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin_users.html"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="admin_orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a></li>
+                <li><a href="admin_product_brands.html" class="active"><i class="fas fa-tags"></i> Nhãn hiệu</a></li>
+                <li><a href="admin_product.html" class="active"><i class="fas fa-box"></i> Sản phẩm</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <div class="box">
+                <i class="fas fa-edit"></i> Chỉnh sửa sản phẩm
+                <button class="exit-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="admin_product.html" style="color: white; text-decoration: none;">Thoát</a>
+                </button>
+            </div>
+
+            <div class="edit-container">
+                <form class="edit-form" action="#" method="post" enctype="multipart/form-data">
+                    <!-- Mã sản phẩm -->
+                    <div class="form-group">
+                        <label for="productId">Mã sản phẩm:</label>
+                        <input type="text" id="productId" name="productId" value="SP001" readonly>
+                    </div>
+
+                    <!-- Tên sản phẩm -->
+                    <div class="form-group">
+                        <label for="productName">Tên sản phẩm:</label>
+                        <input type="text" id="productName" name="productName" value="Casio MTP-V002" required>
+                    </div>
+
+                    <!-- Nhãn hiệu -->
+                    <div class="form-group">
+                        <label for="brand">Nhãn hiệu:</label>
+                        <select id="brand" name="brand" required>
+                            <option>Casio</option>
+                            <option>Seiko</option>
+                            <option>Rolex</option>
+                        </select>
+                    </div>
+
+                    <!-- Giá bán -->
+                    <div class="form-group">
+                        <label for="price">Giá bán (VNĐ):</label>
+                        <input type="number" id="price" name="price" value="1200000" required>
+                    </div>
+
+                    <!-- Số lượng -->
+                    <div class="form-group">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" id="quantity" name="quantity" value="25" required>
+                    </div>
+
+                    <!-- Mô tả -->
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea id="description" name="description" rows="4">Đồng hồ nam dây da, chống nước nhẹ, thiết kế cổ điển.</textarea>
+                    </div>
+
+                    <!-- Ngày tạo -->
+                    <div class="form-group">
+                        <label for="createDate">Ngày tạo:</label>
+                        <input type="date" id="createDate" name="createDate" value="2024-09-05" required>
+                    </div>
+
+                    <!-- Trạng thái -->
+                    <div class="form-group">
+                        <label for="status">Trạng thái:</label>
+                        <select id="status" name="status">
+                            <option selected>Đang bán</option>
+                            <option>Ngừng bán</option>
+                        </select>
+                    </div>
+
+                    <!-- Ảnh hiện tại -->
+                    <div class="form-group">
+                        <label>Ảnh hiện tại:</label>
+                        <img src="../img/casio.png" width="120" style="border-radius:8px; border:1px solid #ccc;">
+                    </div>
+
+                    <!-- Thay ảnh mới -->
+                    <div class="form-group">
+                        <label for="productImage">Thay ảnh mới (nếu có):</label>
+                        <input type="file" id="productImage" name="productImage" accept="image/*">
+                    </div>
+
+                    <!-- Nút lưu & xóa -->
+                    <div class="form-buttons">
+                        <a href="admin_product.html" class="save-btn">
+                            <i class="fas fa-save"></i> Cập nhật sản phẩm
+                        </a>
+                        <a href="admin_product.html" class="delete-btn">
+                            <i class="fas fa-trash"></i> Xóa sản phẩm
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

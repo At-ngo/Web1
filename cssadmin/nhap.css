@@ -1,0 +1,101 @@
+/* Header */
+.header {
+    padding: calc(2vh + 2vw);
+    background-color: #333;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Đẩy các nội dung về phía bên phải */
+    
+  }
+  
+  /* Bố cục logo và liên kết */
+  .header_box {
+    padding: 2vw;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  /* Logo */
+  .header_box .logo {
+    margin: calc(-5vw + 1.5vh);
+    display: inline-block; /* Chỉ bao quanh nội dung */
+    text-decoration: none;
+    color: white;
+    font-family: 'Sen', sans-serif;
+    text-align: center;
+    gap: 0.5vw;
+  }
+  
+  .header_box .logo img {
+    width: calc(2.5vw + 1vh); /* Thu nhỏ chiều rộng */
+    height: calc(6vh); /* Thu nhỏ chiều cao */
+    margin-right: 2vw;
+  }
+  
+  .logo span {
+    font-size: calc(1vw + 0.5vh); /* Kích thước chữ */
+    font-family: 'Sen', sans-serif;
+    white-space: nowrap; /* Đảm bảo chữ không xuống dòng */
+    margin-left: -20%; /* Khoảng cách giữa logo và chữ */
+    line-height: 1; /* Đảm bảo dòng chữ không có khoảng cách lớn */
+    position: relative;
+    top: -2vh; /* Đẩy chữ lên phía trên */
+  }
+  
+  .header_box .logo p {
+    font-size: 1.5vw; /* Kích thước chữ */
+    margin: 0;
+  }
+  
+  .header_box .logo:hover {
+    background-color: transparent; /* Không mở rộng vùng hover */
+  }
+  
+  /* Xóa các padding/margin dư thừa */
+  .logo img, .logo p {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header_box .logo p {
+    font-size: 1.2vw;
+    margin: 0;
+  }
+  
+  /* Căn liên kết qua phải */
+  .header_links {
+    font-size: calc(0.8vh + 0.8vw);
+    flex-basis: auto;
+    margin-left: auto;
+    display: flex;
+    gap: 2vw;
+  }
+  
+  .header_links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .header_links a:hover {
+    text-decoration: underline;
+  }
+
+
+
+
+  /* Container tìm kiếm */
+.search-container {
+    max-width: 100%; /* Đảm bảo container có thể co giãn với độ rộng của viewport */
+    margin: 0 auto;
+    padding: calc(1vw + 1vh);
+    text-align: left;
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    gap: 15px; /* Khoảng cách giữa thanh tìm kiếm và nút */
+    margin-top: 0vh; /* Thêm một chút khoảng cách phía trên */
+    margin-left: 0vw;
+    width: 300vw; /* Giới hạn độ rộng của container */
+    z-index: 100; /* Đảm bảo thanh tìm kiếm nằm trên các phần tử khác */
+  }

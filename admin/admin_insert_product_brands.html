@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm nhãn hiệu sản phẩm</title>
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/insert_product_brands.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">ĐỒNG HỒ</p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" placeholder="Tìm kiếm nhãn hiệu...">
+            <button type="button">Tìm kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin_users.html"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="admin_orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a></li>
+                <li><a href="admin_product_brands.html"><i class="fas fa-tags"></i> Nhãn hiệu</a></li>
+                <li><a href="admin_product.html"><i class="fas fa-box"></i> Sản phẩm</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <div class="box">
+                <i class="fas fa-plus-circle"></i> Thêm nhãn hiệu sản phẩm
+                <button class="exit-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="admin_product_brands.html" style="color: white; text-decoration: none;">Thoát</a>
+                </button>
+            </div>
+
+            <div class="edit-container">
+                <form class="edit-form" action="#" method="post" enctype="multipart/form-data">
+                    <!-- Mã nhãn hiệu -->
+                    <div class="form-group">
+                        <label for="brandId">Mã nhãn hiệu:</label>
+                        <input type="text" id="brandId" name="brandId" placeholder="Ví dụ: BR004" required>
+                    </div>
+
+                    <!-- Tên nhãn hiệu -->
+                    <div class="form-group">
+                        <label for="brandName">Tên nhãn hiệu:</label>
+                        <input type="text" id="brandName" name="brandName" placeholder="Nhập tên nhãn hiệu..." required>
+                    </div>
+
+                    <!-- Ngày tạo -->
+                    <div class="form-group">
+                        <label for="createDate">Ngày tạo:</label>
+                        <input type="date" id="createDate" name="createDate" required>
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="form-group">
+                        <label for="logo">Logo:</label>
+                        <input type="file" id="logo" name="logo" accept="image/*" required>
+                    </div>
+
+                    <!-- Nút lưu & hủy -->
+                    <div class="form-buttons">
+                        <a href="admin_product_brands.html" class="save-btn">
+                            <i class="fas fa-save"></i> Lưu nhãn hiệu
+                        </a>
+                        <a href="admin_product_brands.html" class="delete-btn">
+                            <i class="fas fa-times"></i> Hủy bỏ
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

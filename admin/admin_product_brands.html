@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/sp.css">
+    <title>Quản lý nhãn hiệu - Cửa hàng đồng hồ</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <div>
+            <nav class="sidebar">
+                <div class="task-menu">
+                    <ul>
+                        <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                        <li><a href="../admin/admin_dashboard.html" target="_self" style="color: black;">
+                                <i class="fas fa-home"></i> Dashboard</a></li>
+
+                        <input type="checkbox" id="toggle-menu-1" hidden>
+                        <li><label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                                <i class="fa-solid fa-bars"></i> Quản lý danh mục
+                                <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                            </label></li>
+                        <div class="divider"></div>
+                        <ul class="menu-content">
+                            <li style="margin-left: 10px;"><a href="../admin/admin_users.html">
+                                    <p><strong>&gt;</strong> Người dùng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_import.html">
+                                    <p><strong>&gt;</strong> Phiếu nhập hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html" style="color:red;">
+                                    <p><strong>&gt;</strong> Loại sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product.html">
+                                    <p><strong>&gt;</strong> Sản phẩm</p>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="task-bar" style="margin-top: 30px;">
+                    <input type="checkbox" id="toggle-menu-2" hidden>
+                    <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                        <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
+                        <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                    </label>
+                    <ul class="menu-content-2">
+                        <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
+                                <p><strong>&gt;</strong> Đơn hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;"><a href="#task6">
+                                <p><strong>&gt;</strong> Báo cáo</p>
+                            </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div>
+            <div class="box">
+                <i class="fa-solid fa-bars" style="font-size: calc(0.8vw + 0.8vh);"></i>
+                <span style="margin-left: 2vw;">Quản lý nhãn hiệu đồng hồ</span>
+                <button
+                    style="margin-left: auto; display: flex; align-items: center; background-color: #007bff; color: white; padding: calc(0.3vw + 0.3vh) calc(0.6vw + 0.6vh); border: none; border-radius: 5px; cursor: pointer;">
+                    <i class="fa-solid fa-plus"
+                        style="font-size: calc(0.7vw + 0.7vh); color: white; margin-right: 5px;"></i>
+                    <a href="admin_insert_product_brands.html" target="_self" style="text-decoration: none; color: white;">Thêm nhãn hiệu</a>
+                </button>
+            </div>
+
+            <div class="boxcontent">
+                <!-- THANH CÔNG CỤ -->
+                <div style="display: flex;">
+                    <div class="pagination" style="margin-top: -67px; margin-left: 10px;">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                    <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 35vw; margin-top: 1vh; opacity: 0.5;">Trạng thái: Tất cả</p>
+                    <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 3vw; margin-top: 1vh; opacity: 0.5;">Ngày tạo: Tất cả</p>
+
+                    <section class="search-bar" style="width: 1vw; height: 1vh; margin-left: 8vw; margin-top: 1vh;">
+                        <input type="text" id="search" placeholder="Tìm nhãn hiệu...">
+                        <button type="button" style="border: none; background: none;">
+                            <i class="fas fa-search" style="font-size: 15px; color: gray;"></i>
+                        </button>
+                    </section>
+                </div>
+
+                <!-- BẢNG DỮ LIỆU -->
+                <table class="data-table-add">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Mã Nhãn Hiệu</th>
+                            <th>Tên Nhãn Hiệu</th>
+                            <th>Logo</th>
+                            <th>Ngày Tạo</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>BR001</td>
+                            <td>Casio</td>
+                            <td><img src="../img/casio.png" width="70"></td>
+                            <td>10/02/2021</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; color:red;">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </label>
+                                <a href="admin_edit_product_brands.html" style="color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>BR002</td>
+                            <td>Rolex</td>
+                            <td><img src="../img/rolex.png" width="70"></td>
+                            <td>25/06/2020</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; color:red;">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </label>
+                                <a href="admin_edit_product_brands.html" style="color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>BR003</td>
+                            <td>Seiko</td>
+                            <td><img src="../img/seiko.png" width="70"></td>
+                            <td>05/01/2022</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; color:red;">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </label>
+                                <a href="admin_edit_product_brands.html" style="color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- PHÂN TRANG DƯỚI -->
+                <div class="pagination" style="margin-top: 2vh; margin-left: 10px;">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP XÁC NHẬN XÓA -->
+    <input type="checkbox" id="popup-toggle" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;">Bạn có chắc muốn xóa nhãn hiệu này?</p>
+            <label for="popup-toggle" class="close-popup" style="margin-top: 3vh; background-color: gray;">Hủy bỏ</label>
+            <label for="popup-toggle" class="close-popup" style="margin-left: 1vw;">
+                <a href="admin_product_brands.html" target="_self" style="text-decoration: none; color: white;">Xác nhận</a>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
