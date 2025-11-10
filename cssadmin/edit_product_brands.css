@@ -11,3 +11,88 @@
 .form-group input[type="file"] {
     cursor: pointer;
 }
+
+/* Show success popups when corresponding checkboxes are checked */
+#popup-success-update { display: none; }
+#popup-success-update:checked + .popup-overlay { opacity: 1; visibility: visible; }
+#popup-success-update:checked + .popup-overlay .popup-content { transform: translateY(0); opacity: 1; }
+
+#popup-success-delete-edit { display: none; }
+#popup-success-delete-edit:checked + .popup-overlay { opacity: 1; visibility: visible; }
+#popup-success-delete-edit:checked + .popup-overlay .popup-content { transform: translateY(0); opacity: 1; }
+
+/* Show confirmation popup when requested */
+#popup-delete-confirm { display: none; }
+#popup-delete-confirm:checked + .popup-overlay.confirm-delete { opacity: 1; visibility: visible; }
+#popup-delete-confirm:checked + .popup-overlay.confirm-delete .popup-content { transform: translateY(0); opacity: 1; }
+
+/* When the success checkbox is checked, hide the confirm popup (confirm overlay placed earlier) */
+#popup-success-delete-edit:checked ~ .popup-overlay.confirm-delete { opacity: 0; visibility: hidden; }
+
+/* Ensure label-based delete button matches anchor styling */
+.form-buttons .delete-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #dc3545;
+    text-decoration: none;
+    transition: background-color 0.25s, transform 0.15s;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.form-buttons .delete-btn i { margin-right: 8px }
+.form-buttons .delete-btn:hover { background-color: #b02a37; transform: translateY(-2px); }
+
+/* ============================= */
+/* Hiển thị khung xem trước ảnh */
+/* ============================= */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-preview {
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #888;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.image-preview.has-image {
+    border: 2px solid #007bff;
+}
+
+.image-upload-text {
+    text-align: center;
+    color: #007bff;
+}
+
+.image-upload-text i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#logo {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

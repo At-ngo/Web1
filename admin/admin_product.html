@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../cssadmin/admin.css">
   <link rel="stylesheet" href="../cssadmin/sp.css">
   <title>Quản lý sản phẩm - Cửa hàng đồng hồ</title>
@@ -18,12 +17,10 @@
     <a class="logo" href="../admin/admin_dashboard.html">
       <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
     </a>
-
     <section class="search-bar">
       <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
       <button type="button">Tìm Kiếm</button>
     </section>
-
     <nav>
       <ul>
         <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
@@ -36,104 +33,106 @@
 
   <div class="main_container">
     <!-- SIDEBAR -->
-    <div>
-      <nav class="sidebar">
-        <div class="task-menu">
-          <ul>
-            <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
-            <li><a href="../admin/admin_dashboard.html" target="_self" style="color: black;">
-                <i class="fas fa-home"></i> Dashboard</a></li>
+    <nav class="sidebar">
+      <div class="task-menu">
+        <ul>
+          <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+          <li><a href="../admin/admin_dashboard.html" target="_self"><i class="fas fa-home"></i> Dashboard</a></li>
 
-            <input type="checkbox" id="toggle-menu-1" hidden>
-            <li><label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
-                <i class="fa-solid fa-bars"></i> Quản lý danh mục
-                <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
-              </label></li>
-            <div class="divider"></div>
-            <ul class="menu-content">
-              <li style="margin-left: 10px;"><a href="../admin/admin_users.html">
-                  <p><strong>&gt;</strong> Người dùng</p>
-                </a></li>
-              <li style="margin-left: 10px;"><a href="../admin/qadmin_import.html">
-                  <p><strong>&gt;</strong> Phiếu nhập hàng</p>
-                </a></li>
-              <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html">
-                  <p><strong>&gt;</strong> Loại sản phẩm</p>
-                </a></li>
-              <li style="margin-left: 10px;"><a href="../admin/admin_product.html" style="color:red;">
-                  <p><strong>&gt;</strong> Sản phẩm</p>
-                </a></li>
-            </ul>
+          <input type="checkbox" id="toggle-menu-1" hidden>
+          <li>
+            <label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+              <i class="fa-solid fa-bars"></i> Quản lý danh mục
+              <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+            </label>
+          </li>
+          <div class="divider"></div>
+          <ul class="menu-content">
+            <li style="margin-left: 10px;"><a href="../admin/admin_users.html"><p><strong>&gt;</strong> Người dùng</p></a></li>
+            <li style="margin-left: 10px;"><a href="../admin/admin_import.html"><p><strong>&gt;</strong> Phiếu nhập hàng</p></a></li>
+            <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html"><p><strong>&gt;</strong> Loại sản phẩm</p></a></li>
+            <li style="margin-left: 10px;"><a href="../admin/admin_product.html" style="color:red;"><p><strong>&gt;</strong> Sản phẩm</p></a></li>
+            <li style="margin-left: 10px;"><a href="../admin/admin_price.html"><p><strong>&gt;</strong> Giá bán</p></a></li>
+            <li style="margin-left: 10px;"><a href="../admin/admin_inventory.html"><p><strong>&gt;</strong> Tồn kho</p></a></li>
           </ul>
-        </div>
-
-        <!-- Giữ nguyên phần Quản lý giỏ hàng -->
-        <div class="task-bar" style="margin-top: 30px;">
-          <input type="checkbox" id="toggle-menu-2" hidden>
-          <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
-            <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
-            <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
-          </label>
-          <ul class="menu-content-2">
-            <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
-                <p><strong>&gt;</strong> Đơn hàng</p>
-              </a></li>
-            <li style="margin-left: 10px;"><a href="#task6">
-                <p><strong>&gt;</strong> Báo cáo</p>
-              </a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div>
-      <div class="box">
-        <i class="fa-solid fa-bars" style="font-size: calc(0.8vw + 0.8vh);"></i>
-        <span style="margin-left: 2vw;">Quản lý sản phẩm đồng hồ</span>
-        <button
-          style="margin-left: auto; display: flex; align-items: center; background-color: #007bff; color: white; padding: calc(0.3vw + 0.3vh) calc(0.6vw + 0.6vh); border: none; border-radius: 5px; cursor: pointer;">
-          <i class="fa-solid fa-plus"
-            style="font-size: calc(0.7vw + 0.7vh); color: white; margin-right: 5px;"></i>
-          <a href="admin_insert_product.html" target="_self" style="text-decoration: none; color: white;">Thêm sản phẩm</a>
-        </button>
+        </ul>
       </div>
 
-      <div class="boxcontent">
-        <!-- THANH LỌC & TÌM KIẾM -->
-        <div style="display: flex;">
-          <div class="pagination" style="margin-top: -67px; margin-left: 10px;">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">&raquo;</a>
-          </div>
-          <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 35vw; margin-top: 1vh; opacity: 0.5;">Trạng thái: Tất cả</p>
-          <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 3vw; margin-top: 1vh; opacity: 0.5;">Ngày tạo: Tất cả</p>
+      <div class="task-bar" style="margin-top: 30px;">
+        <input type="checkbox" id="toggle-menu-2" hidden>
+        <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+          <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
+          <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+        </label>
+        <ul class="menu-content-2">
+            <li style="margin-left: 10px; margin-top: 10px;"><a href="#"><p><strong>&gt;</strong> Đơn hàng</p></a></li>
+            <li style="margin-left: 10px;"><a href="#"><p><strong>&gt;</strong> Báo cáo</p></a></li>
+        </ul>
+      </div>
 
-          <section class="search-bar" style="width: 1vw; height: 1vh; margin-left: 8vw; margin-top: 1vh;">
-            <input type="text" id="search" placeholder="Tìm sản phẩm...">
-            <button type="button" style="border: none; background: none;">
-              <i class="fas fa-search" style="font-size: 15px; color: gray;"></i>
-            </button>
-          </section>
+      <hr class="menu-divider">
+
+      <div class="task-bar logout-bar" style="margin-top: 30px;">
+        <a href="../admin_login.html" class="toggle-btn logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Đăng xuất
+        </a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content-wrapper">
+      <!-- Box Header -->
+      <div class="box">
+        <i class="fas fa-box"></i>
+        <h3 style="margin: 0; font-size: 1.2rem;">Quản lý sản phẩm</h3>
+        <a href="admin_insert_product.html" id="add-product-btn" class="add-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span>Thêm sản phẩm</span>
+        </a>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="content-toolbar">
+        <div class="filters">
+            <div class="filter-item">
+                <label for="status-filter">Trạng thái:</label>
+                <select id="status-filter" name="status-filter">
+                    <option value="all">Tất cả</option>
+                    <option value="selling">Đang bán</option>
+                    <option value="stopped">Ngừng bán</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="brand-filter">Nhãn hiệu:</label>
+                <select id="brand-filter" name="brand-filter">
+                    <option value="all">Tất cả</option>
+                    <option value="casio">Casio</option>
+                    <option value="rolex">Rolex</option>
+                    <option value="seiko">Seiko</option>
+                </select>
+            </div>
         </div>
+        <section class="search-bar page-search">
+            <input type="text" id="name-search-input" placeholder="Tìm theo tên sản phẩm...">
+            <button type="button" aria-label="Tìm kiếm">
+                <i class="fas fa-search"></i>
+            </button>
+        </section>
+      </div>
 
-        <!-- BẢNG DỮ LIỆU -->
+      <!-- Table Content -->
+      <div class="boxcontent">
         <table class="data-table-add">
           <thead>
             <tr>
-              <th></th>
-              <th>Mã sản phẩm</th>
+              <th><input type="checkbox"></th>
+              <th>Mã SP</th>
               <th>Tên sản phẩm</th>
-              <th>Mã nhãn hiệu</th>
               <th>Ảnh</th>
               <th>Giá bán</th>
               <th>Số lượng</th>
-              <th>Mô tả</th>
               <th>Ngày tạo</th>
-              <th>Trạng thái</th> 
+              <th>Trạng thái</th>
               <th>Tác vụ</th>
             </tr>
           </thead>
@@ -141,71 +140,124 @@
             <tr>
               <td><input type="checkbox"></td>
               <td>SP001</td>
-              <td>Casio MTP-V002</td>
-              <td>BR001</td>
-              <td><img src="../img/casio.png" width="60"></td>
-              <td>1.200.000đ</td>
-              <td>25</td>
-              <td>Đồng hồ nam dây da, chống nước nhẹ, thiết kế cổ điển.</td>
+              <td class="product-name-cell">Casio Edifice ECB-10AT-1A</td>
+              <td><img src="../img/Casio/Casio Edifice ECB-10AT-1A.png"></td>
+              <td>950.000 VNĐ</td>
+              <td>32</td>
               <td>05/09/2024</td>
-              <td style="color: green;">Đang bán</td> 
+              <td><span class="status status-selling">Đang bán</span></td>
               <td>
-                <label for="popup-toggle" style="cursor: pointer; color:red;">
-                  <i class="fa-solid fa-trash-can"></i>
-                </label>
-                <a href="admin_edit_product.html" style="color:red;">
-                  <i class="fas fa-edit"></i>
-                </a>
+                <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
               </td>
             </tr>
-
             <tr>
               <td><input type="checkbox"></td>
               <td>SP002</td>
-              <td>Rolex Submariner</td>
-              <td>BR002</td>
-              <td><img src="../img/rolex.png" width="60"></td>
-              <td>350.000.000đ</td>
-              <td>5</td>
-              <td>Đồng hồ cao cấp, vỏ thép không gỉ, chịu nước sâu 300m.</td>
+              <td class="product-name-cell">Casio Edifice EFV-C100D-1B</td>
+              <td><img src="../img/Casio/Casio Edifice EFV-C100D-1B.jpg"></td>
+              <td>3.000.000 VNĐ</td>
+              <td>11</td>
               <td>10/01/2025</td>
-              <td style="color: green;">Đang bán</td> 
+              <td><span class="status status-selling">Đang bán</span></td>
               <td>
-                <label for="popup-toggle" style="cursor: pointer; color:red;">
-                  <i class="fa-solid fa-trash-can"></i>
-                </label>
-                <a href="admin_edit_product.html" style="color:red;">
-                  <i class="fas fa-edit"></i>
-                </a>
+                <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
               </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>SP003</td>
+              <td class="product-name-cell">Rolex Cosmograph Daytona</td>
+              <td><img src="../img/Rolex/Cosmograph Daytona.png"></td>
+              <td>185.000.000 VNĐ</td>
+              <td>3</td>
+              <td>10/01/2025</td>
+              <td><span class="status status-selling">Đang bán</span></td>
+              <td>
+                <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
+              </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>SP004</td>
+                <td class="product-name-cell">Rolex Day-Date 36</td>
+                <td><img src="../img/Rolex/Day-Date 36.png"></td>
+                <td>345.000.000 VNĐ</td>
+                <td>6</td>
+                <td>10/01/2025</td>
+                <td><span class="status status-selling">Đang bán</span></td>
+                <td>
+                  <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                  <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>SP005</td>
+                <td class="product-name-cell">Seiko 37 mm Nam SNK357K1</td>
+                <td><img src="../img/Seiko/Seiko 37mm Nam SNK357K1.jpg"></td>
+                <td>6.500.000 VNĐ</td>
+                <td>0</td>
+                <td>10/01/2025</td>
+                <td><span class="status status-stopped">Ngừng bán</span></td>
+                <td>
+                  <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                  <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>SP006</td>
+                <td class="product-name-cell">Seiko 38 mm Nam SNKD99K1</td>
+                <td><img src="../img/Seiko/Seiko 38mm Nam SNKD99K1.jpg"></td>
+                <td>15.500.000 VNĐ</td>
+                <td>9</td>
+                <td>10/01/2025</td>
+                <td><span class="status status-selling">Đang bán</span></td>
+                <td>
+                  <label for="popup-toggle"><i class="fa-solid fa-trash-can"></i></label>
+                  <a href="admin_edit_product.html"><i class="fas fa-edit"></i></a>
+                </td>
             </tr>
           </tbody>
         </table>
+      </div>
 
-        <!-- PHÂN TRANG -->
-        <div class="pagination" style="margin-top: 2vh; margin-left: 10px;">
-          <a href="#">&laquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">&raquo;</a>
-        </div>
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">&raquo;</a>
       </div>
     </div>
   </div>
 
   <!-- POPUP XÁC NHẬN XÓA -->
-  <input type="checkbox" id="popup-toggle" />
+  <input type="checkbox" id="popup-toggle" style="display:none;" />
   <div class="popup-overlay">
     <div class="popup-content">
-      <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
-      <p style="white-space: nowrap; margin-top: 3vh;">Bạn có chắc muốn xóa sản phẩm này?</p>
-      <label for="popup-toggle" class="close-popup" style="margin-top: 3vh; background-color: gray;">Hủy bỏ</label>
-      <label for="popup-toggle" class="close-popup" style="margin-left: 1vw;">
-        <a href="admin_products.html" target="_self" style="text-decoration: none; color: white;">Xác nhận</a>
-      </label>
+      <h2><i class="fa-solid fa-circle-exclamation" style="color: #f1c40f;"></i> Xác nhận xóa</h2>
+      <p>Bạn có chắc chắn muốn xóa sản phẩm này không?</p>
+      <div class="popup-actions">
+        <label for="popup-toggle" class="popup-btn cancel">Hủy bỏ</label>
+        <label for="popup-success-delete-product" class="popup-btn confirm">Xác nhận</label>
+      </div>
     </div>
   </div>
-</body>
 
+  <!-- POPUP XÓA THÀNH CÔNG -->
+  <input type="checkbox" id="popup-success-delete-product" style="display:none;" />
+  <div class="popup-overlay success-popup">
+    <div class="popup-content">
+      <h2><i class="fa-solid fa-check-circle" style="color: #28a745;"></i> Thành công</h2>
+      <p>Đã xóa sản phẩm thành công!</p>
+      <a href="admin_product.html" class="popup-btn ok">OK</a>
+    </div>
+  </div>
+
+</body>
 </html>

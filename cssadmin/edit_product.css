@@ -110,3 +110,170 @@
 .exit-btn i {
     margin-right: 5px;
 }
+
+/* Popup overlay (CSS-only) */
+.popup-toggle { display: none; }
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 9999;
+}
+
+.popup-overlay .popup-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 20px;
+    width: 92%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+    text-align: center;
+}
+
+.popup-content h3 { margin: 0 0 8px; font-size: 18px; }
+.popup-content p { margin: 0 0 14px; color: #444; }
+
+.ok-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.ok-btn:hover { background: #0056b3 }
+
+/* Show specific popups when their checkbox is checked */
+#popup-save-product:checked + .popup-overlay.save-popup,
+#popup-delete-success:checked + .popup-overlay.delete-popup,
+#popup-delete-confirm:checked + .popup-overlay.confirm-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popup-save-product:checked + .popup-overlay.save-popup .popup-content,
+#popup-delete-success:checked + .popup-overlay.delete-popup .popup-content,
+#popup-delete-confirm:checked + .popup-overlay.confirm-popup .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* When delete-success is checked, hide the confirm popup (confirm overlay appears later in DOM) */
+#popup-delete-success:checked ~ .popup-overlay.confirm-popup {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Restore original save/delete button colors on this edit-product form
+   Use a more specific selector so this file's rules override other files' rules */
+.edit-form .form-buttons .save-btn {
+    background-color: #007bff; /* original blue */
+    color: #fff;
+}
+.edit-form .form-buttons .save-btn:hover { background-color: #0056b3 }
+
+.edit-form .form-buttons .delete-btn {
+    background-color: #e74c3c; /* original red */
+    color: #fff;
+}
+.edit-form .form-buttons .delete-btn:hover { background-color: #c0392b }
+.brand-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: none; /* Ẩn ảnh khi chưa chọn */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-preview {
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #888;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.image-preview.has-image {
+    border: 2px solid #007bff;
+}
+
+.image-upload-text {
+    text-align: center;
+    color: #007bff;
+}
+
+.image-upload-text i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#productImage {
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-preview {
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #888;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.image-preview.has-image {
+    border: 2px solid #007bff;
+}
+
+.image-upload-text {
+    text-align: center;
+    color: #007bff;
+}
+
+.image-upload-text i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#logo {
+    cursor: pointer;
+}

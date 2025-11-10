@@ -69,21 +69,46 @@
 
                     <!-- Mã nhãn hiệu -->
                     <div class="form-group">
-                        <label for="brandId">Mã nhãn hiệu:</label>
-                        <input type="text" id="brandId" name="brandId" placeholder="VD: BR001" required>
+                        <label for="brandSelect">Mã nhãn hiệu:</label>
+                        <div class="brand-container">
+                            <select id="brandSelect" name="brandSelect">
+                            <option value="" selected>Chọn nhãn hiệu</option>
+                            <option value="casio">Casio</option>
+                            <option value="rolex">Rolex</option>
+                            <option value="seiko">Seiko</option>
+                            </select>
+                            <img id="brandImage" src="" alt="Ảnh nhãn hiệu" class="brand-image" />
+                        </div>
                     </div>
+
+                    <script>
+                        const brandSelect = document.getElementById('brandSelect');
+                        const brandImage = document.getElementById('brandImage');
+
+                        brandSelect.addEventListener('change', function() {
+                            const brand = this.value;
+                            if (brand) {
+                                brandImage.src = `../img/${brand}.png`; // đường dẫn ảnh
+                                brandImage.style.display = 'block';
+                            } else {
+                                brandImage.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
 
                     <!-- Giá bán -->
                     <div class="form-group">
-                        <label for="price">Giá bán:</label>
-                        <input type="text" id="price" name="price" placeholder="VD: 1.200.000đ" required>
+                        <label for="price">Giá bán (VNĐ):</label>
+                        <input type="text" id="price" name="price" placeholder="VD: 1.200.000" required>
                     </div>
 
                     <!-- Số lượng -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="quantity">Số lượng:</label>
                         <input type="number" id="quantity" name="quantity" placeholder="VD: 25" required>
-                    </div>
+                    </div> -->
 
                     <!-- Mô tả -->
                     <div class="form-group">
@@ -91,11 +116,42 @@
                         <textarea id="description" name="description" rows="4" placeholder="Nhập mô tả sản phẩm..."></textarea>
                     </div>
 
-                    <!-- Ảnh -->
-                    <div class="form-group">
-                        <label for="image">Ảnh sản phẩm:</label>
-                        <input type="file" id="image" name="image" accept="image/*" required>
+                    <!-- Ảnh sản phẩm -->
+                    <div class="form-group image-group">
+                        <label class="form-label">Hình ảnh sản phẩm</label>
+
+                        <div class="image-container">
+                            <div class="image-preview" id="imagePreview">
+                                <span class="image-upload-text">
+                                    <i class="fas fa-image"></i>
+                                    <p>Chưa có ảnh</p>
+                                </span>
+                            </div>
+                            <input type="file" id="productImage" name="productImage" accept="image/*">
+                        </div>
                     </div>
+
+                    <script>
+                        const fileInput = document.getElementById("productImage");
+                        const preview = document.getElementById("imagePreview");
+
+                        fileInput.addEventListener("change", (event) => {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    preview.style.backgroundImage = `url(${e.target.result})`;
+                                    preview.classList.add("has-image");
+                                    preview.innerHTML = "";
+                                };
+                                reader.readAsDataURL(file);
+                            } else {
+                                preview.style.backgroundImage = "";
+                                preview.classList.remove("has-image");
+                                preview.innerHTML = `<span class="image-upload-text"><i class='fas fa-image'></i><p>Chưa có ảnh</p></span>`;
+                            }
+                        });
+                    </script>
 
                     <!-- Trạng thái -->
                     <div class="form-group">
@@ -108,9 +164,10 @@
 
                     <!-- Nút lưu & hủy -->
                     <div class="form-buttons">
-                        <a href="admin_product.html" class="save-btn">
+                        <!-- label triggers CSS-only success popup -->
+                        <label for="popup-success-save-product" class="save-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
                             <i class="fas fa-save"></i> Lưu sản phẩm
-                        </a>
+                        </label>
                         <a href="admin_product.html" class="delete-btn">
                             <i class="fas fa-times"></i> Hủy bỏ
                         </a>
@@ -119,5 +176,14 @@
             </div>
         </div>
     </div>
+        <!-- Success popup for save product -->
+        <input type="checkbox" id="popup-success-save-product" />
+        <div class="popup-overlay success-save-product">
+            <div class="popup-content">
+                <h2><i class="fa-solid fa-check-circle" style="color: #007bff"></i> Thông báo</h2>
+                <p style="white-space: nowrap; margin-top: 3vh;">Lưu sản phẩm thành công</p>
+                <a href="admin_product.html" class="close-popup" style="background-color: #007bff; color: white;">OK</a>
+            </div>
+        </div>
 </body>
 </html>

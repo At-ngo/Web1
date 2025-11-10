@@ -68,10 +68,10 @@
                     </div>
 
                     <!-- Ngày tạo -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="createDate">Ngày tạo:</label>
                         <input type="date" id="createDate" name="createDate" value="2020-06-25" required>
-                    </div>
+                    </div> -->
 
                     <!-- Logo hiện tại -->
                     <div class="form-group">
@@ -80,23 +80,89 @@
                     </div>
 
                     <!-- Thay logo mới -->
-                    <div class="form-group">
-                        <label for="logo">Thay logo mới (nếu có):</label>
-                        <input type="file" id="logo" name="logo" accept="image/*">
+                    <div class="form-group image-group">
+                        <label for="logo">Thay logo mới:</label>
+
+                        <div class="image-container">
+                            <div class="image-preview" id="imagePreview">
+                                <span class="image-upload-text">
+                                    <i class="fas fa-image"></i>
+                                    <p>Chưa có ảnh mới</p>
+                                </span>
+                            </div>
+                            <input type="file" id="logo" name="logo" accept="image/*">
+                        </div>
                     </div>
+
+                    <script>
+                        const fileInput = document.getElementById("logo");
+                        const preview = document.getElementById("imagePreview");
+
+                        fileInput.addEventListener("change", (event) => {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    preview.style.backgroundImage = `url(${e.target.result})`;
+                                    preview.classList.add("has-image");
+                                    preview.innerHTML = "";
+                                };
+                                reader.readAsDataURL(file);
+                            } else {
+                                preview.style.backgroundImage = "";
+                                preview.classList.remove("has-image");
+                                preview.innerHTML = `<span class="image-upload-text"><i class='fas fa-image'></i><p>Chưa có ảnh mới</p></span>`;
+                            }
+                        });
+                    </script>
+
 
                     <!-- Nút cập nhật & xóa -->
                     <div class="form-buttons">
-                        <a href="admin_product_brands.html" class="save-btn">
+                        <!-- label triggers update success popup -->
+                        <label for="popup-success-update" class="save-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
                             <i class="fas fa-save"></i> Cập nhật thông tin
-                        </a>
-                        <a href="admin_product_brands.html" class="delete-btn">
+                        </label>
+                        <!-- label triggers delete confirmation popup first -->
+                        <label for="popup-delete-confirm" class="delete-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
                             <i class="fas fa-trash"></i> Xóa nhãn hiệu
-                        </a>
+                        </label>
                     </div>
 
                 </form>
             </div>
+        </div>
+    </div>
+
+    <!-- Success popups for update and delete actions -->
+    <input type="checkbox" id="popup-success-update" />
+    <div class="popup-overlay success-update">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: #007bff"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;">Cập nhật nhãn hiệu thành công</p>
+            <a href="admin_product_brands.html" class="close-popup" style="background-color: #007bff; color: white;">OK</a>
+        </div>
+    </div>
+    <!-- Delete confirmation popup (opens first). Confirm will trigger the existing success checkbox below -->
+    <input type="checkbox" id="popup-delete-confirm" />
+    <div class="popup-overlay confirm-delete">
+        <div class="popup-content">
+            <h2>Xác nhận</h2>
+            <p>Bạn có chắc muốn xóa nhãn hiệu này?</p>
+            <div style="margin-top:18px; display:flex; gap:12px; justify-content:center;">
+                <label for="popup-delete-confirm" class="close-popup" style="background:#6c757d; color:#fff;">Hủy</label>
+                <!-- confirm opens the success popup checkbox that already exists further below -->
+                <label for="popup-success-delete-edit" class="close-popup" style="background:#007bff; color:#fff;">Xác nhận</label>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="popup-success-delete-edit" />
+    <div class="popup-overlay success-delete-edit">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: red"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;">Đã xóa nhãn hiệu thành công</p>
+            <a href="admin_product_brands.html" class="close-popup" style="background-color: #007bff; color: white;">OK</a>
         </div>
     </div>
 </body>

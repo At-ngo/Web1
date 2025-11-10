@@ -55,10 +55,10 @@
 
             <div class="edit-container">
                 <form class="edit-form" action="#" method="post">
-                    <!-- Họ tên -->
+                    <!-- Họ tên (view-only) -->
                     <div class="form-group">
                         <label for="fullname">Họ tên:</label>
-                        <input type="text" id="fullname" name="fullname" value="Lâm Quốc Bảo" required>
+                        <input type="text" id="fullname" name="fullname" value="Lâm Quốc Bảo" readonly>
                     </div>
 
                     <!-- Mã khách hàng -->
@@ -70,61 +70,98 @@
                     <!-- Số điện thoại -->
                     <div class="form-group">
                         <label for="phone">Số điện thoại:</label>
-                        <input type="text" id="phone" name="phone" value="0901234567" required>
+                        <input type="text" id="phone" name="phone" value="0901234567" readonly>
                     </div>
 
                     <!-- Email -->
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" value="bao***@gmail.com" required>
+                        <input type="email" id="email" name="email" value="bao***@gmail.com" readonly>
                     </div>
 
                     <!-- Địa chỉ -->
                     <div class="form-group">
                         <label for="address">Địa chỉ:</label>
-                        <input type="text" id="address" name="address" value="120 Nguyễn Huệ, Q1, TP.HCM" required>
+                        <input type="text" id="address" name="address" value="120 Nguyễn Huệ, Q1, TP.HCM" readonly>
                     </div>
 
                     <!-- Ngày đăng ký -->
                     <div class="form-group">
                         <label for="registerDate">Ngày đăng ký:</label>
-                        <input type="date" id="registerDate" name="registerDate" value="2023-01-01" required>
+                        <input type="date" id="registerDate" name="registerDate" value="2023-01-01" readonly>
                     </div>
 
                     <!-- Trạng thái -->
                     <div class="form-group">
                         <label for="status">Trạng thái:</label>
-                        <select id="status" name="status">
-                            <option value="active" selected>Hoạt động</option>
-                            <option value="pending">Đang chờ</option>
-                            <option value="blocked">Bị khóa</option>
-                        </select>
+                        <input type="text" id="status" name="status" value="Hoạt động" readonly>
                     </div>
 
-                    <!-- RESET MẬT KHẨU & KHÓA/MỞ -->
+                    <!-- Action buttons -->
                     <div class="action-buttons">
-                        <a href="admin_users.html" class="reset-btn">
+                        <label for="popup-reset" class="btn btn-primary">
                             <i class="fas fa-key"></i> Đặt lại mật khẩu
-                        </a>
-                        <a href="admin_users.html" class="lock-btn">
-                            <i class="fas fa-lock"></i> Khóa tài khoản
-                        </a>
-                        <a href="admin_users.html" class="unlock-btn">
-                            <i class="fas fa-unlock"></i> Mở tài khoản
-                        </a>
-                    </div>
+                        </label>
 
-                    <!-- Nút lưu & xóa -->
-                    <div class="form-buttons">
-                        <a href="admin_users.html" class="save-btn">
-                            <i class="fas fa-save"></i> Lưu thay đổi
-                        </a>
-                        <a href="admin_users.html" class="delete-btn">
-                            <i class="fas fa-times"></i> Xóa dữ liệu
-                        </a>
+                        <label for="popup-lock" class="btn btn-danger">
+                            <i class="fas fa-lock"></i> Khoá tài khoản
+                        </label>
                     </div>
-
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup đặt lại mật khẩu -->
+    <input type="checkbox" id="popup-reset" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: #007bff"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Bạn có chắc muốn đặt lại mật khẩu về mặc định?</p>
+
+            <div class="popup-buttons">
+                <label for="popup-reset" class="cancel-btn">Hủy bỏ</label>
+                <label for="popup-success-reset" class="confirm-btn" style="background-color: #007bff;">Xác nhận</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup đặt lại mật khẩu thành công -->
+    <input type="checkbox" id="popup-success-reset" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: #007bff"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Mật khẩu đã được đặt lại về mặc định.</p>
+
+            <div class="popup-buttons">
+                <a href="admin_users.html" class="confirm-btn" style="background-color: #007bff;">OK</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup khóa tài khoản -->
+    <input type="checkbox" id="popup-lock" />
+    <div class="popup-overlay lock-popup">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Bạn thật sự muốn khóa tài khoản này?</p>
+
+            <div class="popup-buttons">
+                <label for="popup-lock" class="cancel-btn">Hủy bỏ</label>
+                <label for="popup-success-lock" class="confirm-btn" style="background-color: red;">Xác nhận</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup khóa tài khoản thành công -->
+    <input type="checkbox" id="popup-success-lock" />
+    <div class="popup-overlay success-lock">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: red"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Đã khóa tài khoản thành công.</p>
+
+            <div class="popup-buttons">
+                <a href="admin_users.html" class="confirm-btn" style="background-color: #007bff;">OK</a>
             </div>
         </div>
     </div>

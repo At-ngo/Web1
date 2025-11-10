@@ -96,10 +96,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-}
-
-#popup-toggle:checked ~ .popup-overlay {
-    display: flex;
+    z-index: 9999;
 }
 
 .popup-content {
@@ -107,6 +104,8 @@
     padding: 25px 40px;
     border-radius: 10px;
     text-align: center;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .popup-content h2 {
@@ -138,35 +137,61 @@
     background-color: red;
 }
 
-/* Nút hành động bổ sung */
+/* Nút hành động */
 .action-buttons {
     margin-top: 20px;
     display: flex;
     gap: 15px;
 }
 
-.action-buttons a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 6px;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: 500;
-    transition: background 0.2s;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.2s ease, opacity 0.2s;
+    white-space: nowrap;
 }
 
-.reset-btn {
-    background-color: #17a2b8;
-}
+.btn-primary { background-color: #007bff; }   /* Reset mật khẩu */
+.btn-danger { background-color: #dc3545; }    /* Khoá tài khoản */
 
-.lock-btn {
-    background-color: #dc3545;
-}
-
-.unlock-btn {
-    background-color: #28a745;
-}
-
-.action-buttons a:hover {
+.btn:hover {
     opacity: 0.85;
 }
 
+.btn i {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Ẩn 2 checkbox popup */
+#popup-reset,
+#popup-lock {
+    display: none;
+}
+
+/* Hiển thị popup khi được check */
+#popup-reset:checked + .popup-overlay,
+#popup-lock:checked + .popup-overlay {
+    display: flex;
+}
+
+/* Hiệu ứng OK sau khi xác nhận */
+#popup-success-reset,
+#popup-success-lock {
+    display: none;
+}
+
+#popup-success-reset:checked + .popup-overlay,
+#popup-success-lock:checked + .popup-overlay {
+    display: flex;
+}
