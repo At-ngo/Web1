@@ -1,0 +1,414 @@
+/* Các phần tử box 1, 2, 3 nằm ngang (Giữ nguyên, có thể dùng ở trang khác) */
+.box2,
+.box3 {
+    padding: calc(0.3vw + 0.3vh);
+    width: 15vw;
+    height: 5vh;
+    margin-top: 25px;
+    margin-left: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+/* ================================================= */
+/* SỬA .box ĐỂ GIỐNG .card-header CỦA price.css */
+/* ================================================= */
+.box {
+    font-size: 1.2rem; /* Dùng rem */
+    padding: 1rem 1.5rem; /* Dùng rem/px */
+    width: 100%;
+    height: auto; /* Để padding quyết định chiều cao */
+    
+    /* Thay đổi nền thành gradient xanh */
+    background: linear-gradient(195deg, #21bcff, #21a6ff);
+    color: white; /* Chữ trắng */
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    
+    /* Chỉ bo góc trên, để tạo thành 1 card thống nhất */
+    border-radius: 10px 10px 0 0;
+    box-shadow: none; /* Bỏ shadow riêng */
+}
+/* Đảm bảo icon và text trong .box cũng màu trắng */
+.box i,
+.box span {
+    color: white !important;
+    font-weight: 600; /* Thêm độ đậm cho tiêu đề */
+}
+
+
+/* === BỐ CỤC MỚI CHO TRANG === */
+.main-content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f2f5; /* Nền xám nhạt giống price.css */
+}
+
+/* ================================================= */
+/* SỬA .content-toolbar*/
+/* ================================================= */
+.content-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    margin-bottom: 0; /* Xóa margin, vì nó sẽ dính liền với .boxcontent */
+    padding: 1.5rem; /* Dùng rem */
+    background: #f8f9fa; /* Nền xám nhạt cho bộ lọc */
+    
+    /* Bỏ border, shadow, bo góc để nó nằm giữa header và body */
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.content-toolbar .filters {
+    display: flex;
+    gap: 20px;
+    opacity: 0.8;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.content-toolbar .search-bar.page-search {
+    width: auto;
+    margin: 0;
+    min-width: 200px;
+}
+
+/* ================================================= */
+/* SỬA .boxcontent*/
+/* ================================================= */
+.boxcontent {
+    font-size: 1rem;
+    padding: 1.5rem; /* Thống nhất padding 1.5rem */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    
+    /* Áp dụng shadow của .card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Chỉ bo góc dưới, để hoàn thành 1 card thống nhất */
+    border-radius: 0 0 10px 10px;
+    
+    overflow-x: auto;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.box4 {
+    padding: calc(0.3vw + 0.3vh);
+    width: 71vw;
+    height: 8vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: calc(1vw + 1vh);
+}
+
+
+/* ================================================= */
+/* THÊM MỚI: STYLE BẢNG (TABLE)*/
+/* ================================================= */
+
+/* Áp dụng cho table bên trong .boxcontent */
+.boxcontent table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Không cần background, shadow, radius vì .boxcontent đã có */
+}
+
+/* Header của bảng */
+.boxcontent thead {
+    background: #f8f9fa; /* Nền xám nhạt */
+    color: #344767;
+}
+
+/* Các ô header (th) và ô nội dung (td) */
+.boxcontent th,
+.boxcontent td {
+    padding: 14px 16px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef; /* Đường kẻ mỏng */
+}
+
+/* Tinh chỉnh ô header (th) */
+.boxcontent th {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Hàng chẵn trong body có nền khác */
+.boxcontent tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Hiệu ứng khi rê chuột vào hàng */
+.boxcontent tbody tr:hover {
+    background-color: #f3f4f8;
+    transition: 0.2s;
+}
+
+/* Thêm class cho cột Tên Mặt Hàng (Giữ nguyên) */
+.item-name-cell {
+    display: flex;
+    align-items: center;
+}
+.item-name-cell p {
+    margin: 0 !important;
+}
+
+
+/* Pagination */
+.pagination.bottom-pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 0 20px 0 0;
+    width: 100%;
+    background: transparent;
+}
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e3e7;
+  background: #fff;
+  color: #344767;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.pagination a:hover {
+  background-color: #f0f2f5;
+  border-color: #d2d6da;
+}
+.pagination a.active {
+  background-color: #21a6ff;
+  color: #fff;
+  border-color: #21a6ff;
+  font-weight: 600;
+}
+
+
+/* ================================================= */
+/* POPUP */
+/* ================================================= */
+#popup-toggle {
+    display: none;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#popup-toggle:checked+.popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+#popup-toggle:checked+.popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+.close-popup {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.close-popup:hover {
+    background-color: #0056b3;
+}
+
+
+/* ================================================= */
+/* SỬA BỘ LỌC*/
+/* ================================================= */
+.content-toolbar .filters {
+    opacity: 1;
+    align-items: center;
+}
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.filter-item label {
+    font-weight: 500;
+    color: #333;
+    opacity: 0.8;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Áp dụng style .form-control cho ô select VÀ input date */
+.filter-item select,
+.filter-item input[type="date"] {
+    /* Style sao chép từ .form-control của price.css */
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 0.875rem; /* 14px */
+    transition: all 0.2s;
+    
+    /* Style cũ giữ lại */
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 120px;
+    box-sizing: border-box; /* Thêm để input date không bị vỡ */
+}
+
+.filter-item select:focus,
+.filter-item input[type="date"]:focus {
+    /* Style sao chép từ .form-control:focus */
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+.filter-item select:focus {
+    /* Style sao chép từ .form-control:focus */
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+/* ================================================= */
+/* SỬA THANH TÌM KIẾM (ĐỂ GIỐNG HÌNH ẢNH) */
+/* ================================================= */
+
+/* Bọc cả input và button cho thẳng hàng */
+.content-toolbar .search-bar.page-search {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa ô tìm kiếm và nút */
+}
+
+/* Áp dụng style .form-control cho ô input tìm kiếm 
+  (Đây là phần quan trọng nhất) 
+*/
+.content-toolbar #page-search-input {
+    /* Style sao chép từ .form-control của price.css */
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 0.875rem; /* 14px */
+    transition: all 0.2s;
+    
+    /* Style cơ bản */
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    min-width: 200px;
+    box-sizing: border-box; /* Thêm để padding không làm vỡ layout */
+}
+
+/* Thêm hiệu ứng focus */
+.content-toolbar #page-search-input:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+/* Tinh chỉnh lại nút tìm kiếm (icon) */
+.content-toolbar .search-bar.page-search button {
+    border: none;
+    background: none;
+    padding: 0.5rem; /* Thêm padding để dễ bấm */
+    cursor: pointer;
+}
+.content-toolbar .search-bar.page-search button i {
+    font-size: 16px;
+    color: #6c757d; /* Màu xám */
+    transition: color 0.2s;
+}
+.content-toolbar .search-bar.page-search button:hover i {
+    color: #21a6ff; /* Màu xanh khi hover */
+}
+
+
+/* ================================================= */
+/* BỔ SUNG CÁC LỚP FORM TỪ (price.css) */
+/* ================================================= */
+
+/* Định nghĩa cho .form-group và .form-label */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #344767;
+}
+
+/* Định nghĩa cho .form-col (để nằm ngang) */
+.form-col {
+    flex: 1;
+    padding: 0 0.5rem;
+    min-width: 200px;
+}
+
+/* Định nghĩa cho .form-control (Ô input) */
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    box-sizing: border-box; /* Thêm này để đảm bảo padding không phá vỡ layout */
+    
+    /* Thêm style cho input date */
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}

@@ -1,0 +1,197 @@
+/* Khung tổng thể */
+.content {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.exit-btn {
+    margin-left: auto;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.exit-btn i {
+    margin-right: 5px;
+}
+
+.edit-container {
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 65%;
+}
+
+.edit-form .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-form label {
+    font-weight: bold;
+    width: 150px;
+}
+
+.edit-form input,
+.edit-form select {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.save-btn, .delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.save-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+/* POPUP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 25px 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.popup-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cancel-btn, .confirm-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.cancel-btn {
+    background-color: gray;
+}
+
+.confirm-btn {
+    background-color: red;
+}
+
+/* Nút hành động */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.2s ease, opacity 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary { background-color: #007bff; }   /* Reset mật khẩu */
+.btn-danger { background-color: #dc3545; }    /* Khoá tài khoản */
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn i {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Ẩn 2 checkbox popup */
+#popup-reset,
+#popup-lock {
+    display: none;
+}
+
+/* Hiển thị popup khi được check */
+#popup-reset:checked + .popup-overlay,
+#popup-lock:checked + .popup-overlay {
+    display: flex;
+}
+
+/* Hiệu ứng OK sau khi xác nhận */
+#popup-success-reset,
+#popup-success-lock {
+    display: none;
+}
+
+#popup-success-reset:checked + .popup-overlay,
+#popup-success-lock:checked + .popup-overlay {
+    display: flex;
+}

@@ -1,0 +1,351 @@
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #344767;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;/* Thứ j tràn ra ngoài sẽ bị cắt bớt*/
+        }
+
+        .card-header {
+            background: linear-gradient(195deg, #21bcff, #21a6ff);
+            color: white;
+            padding: 1rem 1.5rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            border-bottom-color: #21a6ff;
+            color: #21a6ff;
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #344767;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d2d6da;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: #21a6ff;
+            box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2);
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -0.5rem;
+        }
+
+        .form-col {
+            flex: 1;
+            padding: 0 0.5rem;
+            min-width: 200px;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(195deg, #21bcff, #21a6ff);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(195deg, #21bcff, #21a6ff);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-success {
+            background: #28a745;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+        }
+
+        .btn-info:hover {
+            background: #138496;
+        }
+
+        .material-icons-round {
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background: #f8f9fa;
+            color: #344767;
+        }
+
+        th,
+        td {
+            padding: 14px 16px;
+            font-size: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tbody tr:hover {
+            background-color: #f3f4f8;
+            transition: 0.2s;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        /* Search form */
+        .search-form {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Profit percentage input */
+        .percentage-input {
+            position: relative;
+        }
+
+        .percentage-input input {
+            padding-right: 2.5rem;
+        }
+
+        .percentage-symbol {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+
+
+        /* ======================== */
+/* STYLES CHO POPUP MODAL */
+/* ======================== */
+
+/* Lớp phủ nền mờ (ẩn ban đầu) */
+.modal-overlay {
+    position: fixed; /* Nằm cố định trên màn hình */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    z-index: 1000; /* Luôn nằm trên cùng */
+    
+    /* Sử dụng flex để căn giữa popup */
+    display: none; /* << Ẩn ban đầu */
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Bắt đầu với trạng thái trong suốt */
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Nội dung popup */
+.modal-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px; /* Bo góc như trong ảnh */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px; /* Giới hạn chiều rộng */
+    width: 90%;
+    transform: scale(0.9); /* Thu nhỏ ban đầu */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Icon hình tròn đỏ */
+.modal-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Tạo hình tròn */
+    background-color: #dc3545; /* Màu đỏ (giống màu lỗi) */
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px; /* Căn ! vào giữa theo chiều dọc */
+    margin: 0 auto 15px auto; /* Tự động căn giữa */
+}
+
+/* Tiêu đề "Thông báo" */
+.modal-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #344767; /* Màu chữ từ CSS của bạn */
+}
+
+/* Nội dung thông báo */
+.modal-content p {
+    margin: 0 0 25px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500; /* Thêm chút độ dày cho giống ảnh */
+}
+
+/* Nút "Xác nhận" */
+#modal-confirm-btn {
+    /* Tái sử dụng class .btn của bạn */
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #007bff; /* Màu xanh dương như trong ảnh */
+    text-decoration: none;
+}
+
+#modal-confirm-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Tab 1: Thanh trạng thái */
+/* Kiểu dáng chung */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px; /* Hình viên thuốc */
+    font-size: 13px;
+    font-weight: 600;
+    color: white; /* Chữ luôn màu trắng */
+    line-height: 1.5;
+    margin: 5px;
+}
+
+/* --- Màu sắc --- */
+
+/* 1. Kiểu Warning (Vàng/Cam) */
+.status-badge.status-warning {
+    background-color: #f5af37;
+}
+
+/* 2. Kiểu Success (Xanh) */
+.status-badge.status-success {
+    background-color: #45c399;
+}
+
+/* 3. Kiểu Danger (Đỏ) */
+.status-badge.status-danger {
+    background-color: #ef4444;
+}

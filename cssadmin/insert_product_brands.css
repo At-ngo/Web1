@@ -1,0 +1,211 @@
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.edit-form {
+    background-color: #fff;
+    width: 60%;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.save-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.form-buttons a:hover {
+    opacity: 0.9;
+}
+
+/* Make the label-based save button match the original anchor styles */
+.form-buttons .save-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.3s;
+    background-color: #007bff; /* fallback if .save-btn not applied */
+    cursor: pointer;
+}
+.form-buttons .save-btn i { margin-right: 8px; }
+
+.exit-btn {
+    margin-left: auto;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.exit-btn i {
+    margin-right: 5px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Popup styles for the save confirmation (CSS-only) */
+#popup-success-save {
+    display: none;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#popup-success-save:checked + .popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popup-success-save:checked + .popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-popup {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.close-popup:hover { background-color: #0056b3 }
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-preview {
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #888;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.image-preview.has-image {
+    border: 2px solid #007bff;
+}
+
+.image-upload-text {
+    text-align: center;
+    color: #007bff;
+}
+
+.image-upload-text i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#productImage {
+    cursor: pointer;
+}

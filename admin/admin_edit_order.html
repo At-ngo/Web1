@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết đơn nhập hàng</title>
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/edit_order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
+        </a>
+        <section class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khách hàng...">
+            <button type="button">Tìm kiếm</button>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin_users.html" class="active"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="admin_orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a></li>
+                <li><a href="admin_product_brands.html"><i class="fas fa-tags"></i> Nhãn hiệu</a></li>
+                <li><a href="admin_product.html"><i class="fas fa-box"></i> Sản phẩm</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="box">
+                <i class="fas fa-eye"></i> Chi tiết thông tin nhập hàng
+                <button class="exit-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="admin_import.html" style="color: white; text-decoration: none;">Thoát</a>
+                </button>
+            </div>
+
+            <div class="edit-container">
+                <form class="edit-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="fullname">Tên Khách Hàng:</label>
+                        <input type="text" id="fullname" name="fullname" value="Lâm Chấn Khang" readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerId">Mã Khách Hàng:</label>
+                        <input type="text" id="customerId" name="customerId" value="KH001" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số Điện Thoại:</label>
+                        <input type="text" id="phone" name="phone" value="0912345678" readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="lamck123@gmail.com" readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa Chỉ:</label>
+                        <input type="text" id="address" name="address" value="120 Võ Văn Kiệt, Bình Tiên, TP.HCM"
+                            readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderId">Mã Đơn:</label>
+                        <input type="text" id="orderId" name="orderId" value="MD001" readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Trạng thái:</label>
+                        <select id="status" name="status">
+                            <option>Mới đặt</option>
+                            <option>Đã xử lý</option>
+                            <option>Đã giao</option>
+                            <option>Đã hủy</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <label for="popup-toggle" class="save-btn">
+                            <i class="fas fa-save"></i> Lưu thay đổi
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="popup-toggle" hidden />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;"><b>ĐÃ CHỈNH SỬA</b></p>
+            <label for="popup-toggle" class="close-popup">
+                <a href="admin_order.html" target="_self" style="text-decoration: none; color: white;"><b>Xác
+                        nhận</b></a>
+            </label>
+        </div>
+    </div>
+
+</body>
+
+</html>

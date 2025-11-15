@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa khách hàng</title>
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/edit_customer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">ĐỒNG HỒ</p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khách hàng...">
+            <button type="button">Tìm kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin_users.html" class="active"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="admin_orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a></li>
+                <li><a href="admin_product_brands.html"><i class="fas fa-tags"></i> Nhãn hiệu</a></li>
+                <li><a href="admin_product.html"><i class="fas fa-box"></i> Sản phẩm</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <div class="box">
+                <i class="fas fa-user-edit"></i> Chỉnh sửa thông tin khách hàng
+                <button class="exit-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="admin_users.html" style="color: white; text-decoration: none;">Thoát</a>
+                </button>
+            </div>
+
+            <div class="edit-container">
+                <form class="edit-form" action="#" method="post">
+                    <!-- Họ tên (view-only) -->
+                    <div class="form-group">
+                        <label for="fullname">Họ tên:</label>
+                        <input type="text" id="fullname" name="fullname" value="Lâm Quốc Bảo" readonly>
+                    </div>
+
+                    <!-- Mã khách hàng -->
+                    <div class="form-group">
+                        <label for="customerId">Mã KH:</label>
+                        <input type="text" id="customerId" name="customerId" value="KH001" readonly>
+                    </div>
+
+                    <!-- Số điện thoại -->
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" name="phone" value="0901234567" readonly>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="bao***@gmail.com" readonly>
+                    </div>
+
+                    <!-- Địa chỉ -->
+                    <div class="form-group">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" name="address" value="120 Nguyễn Huệ, Q1, TP.HCM" readonly>
+                    </div>
+
+                    <!-- Ngày đăng ký -->
+                    <div class="form-group">
+                        <label for="registerDate">Ngày đăng ký:</label>
+                        <input type="date" id="registerDate" name="registerDate" value="2023-01-01" readonly>
+                    </div>
+
+                    <!-- Trạng thái -->
+                    <div class="form-group">
+                        <label for="status">Trạng thái:</label>
+                        <input type="text" id="status" name="status" value="Hoạt động" readonly>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="action-buttons">
+                        <label for="popup-reset" class="btn btn-primary">
+                            <i class="fas fa-key"></i> Đặt lại mật khẩu
+                        </label>
+
+                        <label for="popup-lock" class="btn btn-danger">
+                            <i class="fas fa-lock"></i> Khoá tài khoản
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup đặt lại mật khẩu -->
+    <input type="checkbox" id="popup-reset" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: #007bff"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Bạn có chắc muốn đặt lại mật khẩu về mặc định?</p>
+
+            <div class="popup-buttons">
+                <label for="popup-reset" class="cancel-btn">Hủy bỏ</label>
+                <label for="popup-success-reset" class="confirm-btn" style="background-color: #007bff;">Xác nhận</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup đặt lại mật khẩu thành công -->
+    <input type="checkbox" id="popup-success-reset" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: #007bff"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Mật khẩu đã được đặt lại về mặc định.</p>
+
+            <div class="popup-buttons">
+                <a href="admin_users.html" class="confirm-btn" style="background-color: #007bff;">OK</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup khóa tài khoản -->
+    <input type="checkbox" id="popup-lock" />
+    <div class="popup-overlay lock-popup">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Bạn thật sự muốn khóa tài khoản này?</p>
+
+            <div class="popup-buttons">
+                <label for="popup-lock" class="cancel-btn">Hủy bỏ</label>
+                <label for="popup-success-lock" class="confirm-btn" style="background-color: red;">Xác nhận</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup khóa tài khoản thành công -->
+    <input type="checkbox" id="popup-success-lock" />
+    <div class="popup-overlay success-lock">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle" style="color: red"></i> Thông báo</h2>
+            <p style="margin-top: 2vh;">Đã khóa tài khoản thành công.</p>
+
+            <div class="popup-buttons">
+                <a href="admin_users.html" class="confirm-btn" style="background-color: #007bff;">OK</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/inventory.css">
+    <title>Quản trị Admin - Cửa hàng đồng hồ</title>
+
+    <style>
+        /* Cấu trúc hộp cảnh báo chung */
+        .alert-pro {
+            display: flex;
+            /* Căn icon và chữ thẳng hàng */
+            align-items: center;
+            /* Căn giữa theo chiều dọc */
+            padding: 16px;
+            /* 1rem */
+            margin-bottom: 20px;
+            border-radius: 8px;
+            /* Bo góc */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+
+            /* Hiệu ứng đổ bóng mềm mại */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+
+            /* Đây là chìa khóa: Viền trái dày */
+            border-left-width: 5px;
+            border-left-style: solid;
+
+            /* Viền trên/dưới/phải trong suốt */
+            border-top: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        /* Kiểu chữ trong hộp */
+        .alert-pro .icon {
+            font-size: 20px;
+            /* Icon to rõ */
+            margin-right: 12px;
+            /* Khoảng cách với chữ */
+            line-height: 1;
+            /* Đảm bảo icon không bị lệch */
+        }
+
+        .alert-pro .text {
+            line-height: 1.5;
+        }
+
+        /* Kiểu "Warning" (Màu Vàng) */
+        .alert-pro.warning-pro {
+            background-color: #fffbeb;
+            /* Nền vàng RẤT nhạt */
+            border-left-color: #f59e0b;
+            /* Viền trái vàng cam */
+            border-top-color: #e9c537;
+            /* Viền mờ xung quanh (tinh tế) */
+            border-right-color: #e9c537;
+            border-bottom-color: #e9c537;
+        }
+
+        .alert-pro.warning-pro .text {
+            color: #92400e;
+            /* Màu chữ nâu đậm */
+        }
+
+        .alert-pro.warning-pro .text strong {
+            color: #b45309;
+            /* Màu chữ tiêu đề */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
+        </a>
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <div>
+            <nav class="sidebar">
+                <div class="task-menu">
+                    <ul>
+                        <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                        <li><a href="../admin/admin_dashboard.html" target="_self">
+                                <i class="fas fa-home"></i> Dashboard</a>
+                        </li>
+
+                        <input type="checkbox" id="toggle-menu-1" hidden>
+                        <li>
+                            <label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                                <i class="fa-solid fa-bars"></i> Quản lý danh mục
+                                <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                            </label>
+                        </li>
+                        <div class="divider"></div>
+
+                        <ul class="menu-content">
+                            <li style="margin-left: 10px;"><a href="../admin/admin_users.html">
+                                    <p><strong>&gt;</strong> Người dùng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_import.html">
+                                    <p><strong>&gt;</strong> Phiếu nhập hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html">
+                                    <p><strong>&gt;</strong> Loại sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product.html">
+                                    <p><strong>&gt;</strong> Sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_order.html">
+                                    <p><strong>&gt;</strong> Đơn đặt hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_price.html">
+                                    <p><strong>&gt;</strong> Giá bán</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_inventory.html">
+                                    <p><strong>&gt;</strong> Tồn kho</p>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="task-bar" style="margin-top: 30px;">
+                    <input type="checkbox" id="toggle-menu-2" hidden>
+                    <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                        <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
+                        <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                    </label>
+                    <ul class="menu-content-2">
+                        <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
+                                <p><strong>&gt;</strong> Đơn hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;"><a href="#task6">
+                                <p><strong>&gt;</strong> Báo cáo</p>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <hr class="menu-divider">
+
+                <div class="task-bar logout-bar" style="margin-top: 30px;">
+                    <a href="../admin_login.html" class="toggle-btn logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- MAIN -->
+        <main style="margin-left: 20px; min-height: 100vh; padding: 1.5rem; width: 100%">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="margin: 0; font-size: 1.2rem;">Quản lý giá bán</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab active" data-tab="category-profit">Tra cứu tồn kho</div>
+                        <div class="tab" data-tab="price-search">Tra cứu nhập/xuất kho</div>
+                    </div>
+
+                    <!-- Tab 1: Tra cứu tồn kho của sp, lsp tại một thời điểm -->
+                    <div class="tab-content active" id="category-profit">
+                        <div class="alert-pro warning-pro">
+                            <span style="padding-right: 2px; padding-bottom: 4px;">⚠️</span>
+                            <span class="text"><strong>Cảnh báo:</strong> Có 1 sản phẩm sắp hết hàng</span>
+                        </div>
+                        <div class="search-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="category-search">Tìm kiếm danh mục</label>
+                                        <input type="text" id="category-search" class="form-control"
+                                            placeholder="Nhập danh mục...">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="product-category">Danh mục</label>
+                                        <select id="product-category" class="form-control">
+                                            <option value="">Tất cả danh mục</option>
+                                            <option value="1">Casio</option>
+                                            <option value="2">Rolex</option>
+                                            <option value="3">Seiko </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Khoảng thời gian -->
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="price-range">Thời gian từ </label>
+                                        <input type="date" id="date-search" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="price-range">đến </label>
+                                        <input type="date" id="date-search" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-actions">
+                                <button class="btn btn-primary">
+                                    <i class="material-icons-round"></i> Tìm kiếm
+                                </button>
+                                <button class="btn btn-secondary" id="reset-category">
+                                    <i class="material-icons-round"></i> Đặt lại
+                                </button>
+                            </div>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Sản phẩm</th>
+                                    <th>mã nhãn hiệu</th>
+                                    <th>Nhãn hiệu</th>
+                                    <th class="text-center">Tồn kho</th>
+                                    <th class="text-center">Ngưỡng báo</th>
+                                    <th class="text-center">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Thanh trạng thái
+                                <span class="status-badge status-warning">Sắp hết hàng</span>
+                                <span class="status-badge status-success">Bình thường</span>
+                                <span class="status-badge status-danger">Hết hàng</span> 
+                                -->
+                                <tr>
+                                    <td>SP001</td>
+                                    <td>Casio MTP-V002</td>
+                                    <td>BR001</td>
+                                    <td>Casio</td>
+                                    <td class="text-center">8</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">
+                                        <span class="status-badge status-success">Bình thường</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SP002</td>
+                                    <td>Rolex Submariner</td>
+                                    <td>BR002</td>
+                                    <td>Rolex</td>
+                                    <td class=" text-center">2</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">
+                                        <span class="status-badge status-success">Bình thường</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SP003</td>
+                                    <td>Seiko-k115</td>
+                                    <td>BR003</td>
+                                    <td>Seiko</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">25</td>
+                                    <td class="text-center">
+                                        <span class="status-badge status-warning">Sắp hết hàng</span>
+                                    </td>
+                                </tr>
+                                <!--  -->
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Tab 2: Tra cứu nhập - xuất - tồn theo một khoảng thời gian -->
+                    <div class="tab-content" id="price-search">
+                        <div class="search-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="category-search">Tìm kiếm</label>
+                                        <input type="text" id="category-search" class="form-control"
+                                            placeholder="Nhập...">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="product-category">Danh mục</label>
+                                        <select id="product-category" class="form-control">
+                                            <option value="">Tất cả danh mục</option>
+                                            <option value="1">Casio</option>
+                                            <option value="2">Rolex</option>
+                                            <option value="3">Seiko </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Khoảng thời gian -->
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="price-range">Thời gian từ </label>
+                                        <input type="date" id="date-search" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label" for="price-range">đến </label>
+                                        <input type="date" id="date-search" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-actions">
+                                <button class="btn btn-primary">
+                                    <i class="material-icons-round"></i> Tìm kiếm
+                                </button>
+                                <button class="btn btn-secondary" id="reset-category">
+                                    <i class="material-icons-round"></i> Đặt lại
+                                </button>
+                            </div>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Sản phẩm</th>
+                                    <th>mã nhãn hiệu</th>
+                                    <th>Nhãn hiệu</th>
+                                    <th class="text-center">Số lượng nhập </th>
+                                    <th class="text-center">Số lượng xuất</th>
+                                    <th class="text-center">Tồn Kho</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SP001</td>
+                                    <td>Casio MTP-V002</td>
+                                    <td>BR001</td>
+                                    <td>Casio</td>
+                                    <td class="text-center">15</td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">8</td>
+                                </tr>
+                                <tr>
+                                    <td>SP002</td>
+                                    <td>Rolex Submariner</td>
+                                    <td>BR002</td>
+                                    <td>Rolex</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">2</td>
+                                </tr>
+                                <tr>
+                                    <td>SP003</td>
+                                    <td>Seiko-k115</td>
+                                    <td>BR003</td>
+                                    <td>Seiko</td>
+                                    <td class="text-center">25</td>
+                                    <td class="text-center">15</td>
+                                    <td class="text-center">10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <div id="custom-modal-overlay" class="modal-overlay">
+
+        <div class="modal-content">
+            <div class="modal-icon">!</div>
+
+            <h3 id="modal-title">Thông báo</h3>
+
+            <p id="modal-message">Nội dung sẽ được thay đổi bằng JavaScript</p>
+
+            <button id="modal-confirm-btn">Xác nhận</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Reset buttons
+        document.getElementById('reset-category').addEventListener('click', function () {
+            document.getElementById('category-search').value = '';
+            document.getElementById('profit-range').value = '';
+        });
+
+        document.getElementById('reset-product').addEventListener('click', function () {
+            document.getElementById('product-search').value = '';
+            document.getElementById('product-category').value = '';
+        });
+
+        document.getElementById('reset-price').addEventListener('click', function () {
+            document.getElementById('price-product-search').value = '';
+            document.getElementById('price-category').value = '';
+            document.getElementById('price-range').value = '';
+        });
+
+        // Lấy các phần tử của modal
+        const modalOverlay = document.getElementById('custom-modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalMessage = document.getElementById('modal-message');
+        const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+        const modalIcon = document.querySelector('.modal-icon');
+
+        /**
+         * Hàm để hiển thị popup
+         * @param {string} title - Tiêu đề
+         * @param {string} message - Nội dung (cho phép <br> để xuống hàng)
+         * @param {string} type - 'success' (mặc định) hoặc 'error'
+         */
+        function showCustomAlert(title, message, type = 'success') {
+            modalTitle.textContent = title;
+            modalMessage.innerHTML = message;
+
+            if (type === 'error') {
+                modalIcon.style.backgroundColor = '#dc3545'; // Màu đỏ lỗi
+                modalIcon.textContent = '!';
+            } else {
+                modalIcon.style.backgroundColor = '#28a745'; // Màu xanh success
+                modalIcon.textContent = '✓'; // Dấu check
+            }
+
+            modalOverlay.style.display = 'flex';
+            // Thêm hiệu ứng
+            setTimeout(() => {
+                modalOverlay.style.opacity = '1';
+                modalOverlay.querySelector('.modal-content').style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        /**
+         * Hàm để ẩn popup
+         */
+        function hideCustomAlert() {
+            modalOverlay.style.opacity = '0';
+            modalOverlay.querySelector('.modal-content').style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+            }, 200); // Đợi hiệu ứng kết thúc rồi mới ẩn
+        }
+
+        // Thêm sự kiện click cho nút "Xác nhận" và lớp phủ
+        modalConfirmBtn.addEventListener('click', hideCustomAlert);
+
+        modalOverlay.addEventListener('click', function (event) {
+            if (event.target === modalOverlay) {
+                hideCustomAlert();
+            }
+        });
+
+
+        // Save buttons for profit percentages
+        document.querySelectorAll('.btn-success').forEach(button => {
+            button.addEventListener('click', function () {
+                // Hiển thị popup với nội dung "Đã lưu thành công"
+                showCustomAlert(
+                    "Thông báo",           // Tiêu đề
+                    "Đã lưu thành công!",  // Nội dung mới
+                    'success'              // Kiểu 'success' (dấu check màu xanh)
+                );
+            });
+        });
+
+        // Edit buttons for price search
+        // document.querySelectorAll('.btn-info').forEach(button => {
+        //     button.addEventListener('click', function () {
+        //         showCustomAlert(
+        //             "Thông báo",
+        //             "PHIẾU HÀNG ĐÃ HOÀN THÀNH<br>KHÔNG THỂ CHỈNH SỬA",
+        //             'error' // Kiểu là 'error'
+        //         );
+        //     });
+        // });
+    </script>
+
+
+</body>
+
+</html>

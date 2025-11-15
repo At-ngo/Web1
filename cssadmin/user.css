@@ -1,0 +1,322 @@
+/* =========================
+   USERS PAGE - match admin_import style
+   ========================= */
+
+/* Keep existing small boxes if re-used elsewhere */
+.box2, .box3 {
+  padding: calc(0.3vw + 0.3vh);
+  width: 15vw;
+  height: 5vh;
+  margin-top: 25px;
+  margin-left: 30px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+/* Blue gradient header like admin_import */
+.box {
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(195deg, #21bcff, #21a6ff);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
+  box-shadow: none;
+}
+.box i, .box span, .box h3 { color: white !important; font-weight: 600; }
+
+/* Layout wrapper like admin_import */
+.main-content-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f0f2f5;
+}
+
+/* Toolbar (filters + searches) */
+.content-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.content-toolbar .filters {
+  display: flex;
+  gap: 20px;
+  opacity: 1;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-item label {
+  font-weight: 500;
+  color: #344767;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.filter-item select {
+  padding: 8px 12px;
+  border: 1px solid #d2d6da;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  cursor: pointer;
+  min-width: 150px;
+  transition: all 0.2s;
+}
+.filter-item select:focus {
+  border-color: #21a6ff;
+  box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+  outline: none;
+}
+
+/* === UPDATE HERE: REVERTED SEARCH BUTTON STYLE === */
+.content-toolbar .search-bar.page-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.content-toolbar .search-bar.page-search input {
+    height: 38px;
+    border: 1px solid #d2d6da;
+    border-radius: 6px;
+    padding: 0 12px;
+    background-color: #fff;
+    min-width: 220px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+.content-toolbar .search-bar.page-search input:focus {
+  border-color: #21a6ff;
+  box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+  outline: none;
+}
+.content-toolbar .search-bar.page-search button {
+  border: none;
+  background: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.content-toolbar .search-bar.page-search button i {
+  font-size: 16px;
+  color: #6c757d;
+  transition: color 0.2s;
+}
+.content-toolbar .search-bar.page-search button:hover i {
+  color: #21a6ff;
+}
+/* ============================================= */
+
+/* Card body */
+.boxcontent {
+  padding: 1.5rem;
+  width: 100%;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* Table styles */
+.boxcontent table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.boxcontent tbody tr:hover { background-color: #f9fbff; }
+
+
+/* Pagination */
+.pagination.bottom-pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 0 20px 0 0;
+    width: 100%;
+    background: transparent;
+}
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e3e7;
+  background: #fff;
+  color: #344767;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.pagination a:hover {
+  background-color: #f0f2f5;
+  border-color: #d2d6da;
+}
+.pagination a.active {
+  background-color: #21a6ff;
+  color: #fff;
+  border-color: #21a6ff;
+  font-weight: 600;
+}
+
+
+/* Popups */
+.popup-overlay {
+  position: fixed; inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#popup-toggle:checked ~ .popup-overlay,
+#popup-toggle_1:checked ~ .popup-overlay,
+#popup-success-lock:checked ~ .popup-overlay,
+#popup-success-unlock:checked ~ .popup-overlay {
+  opacity: 1; visibility: visible;
+}
+.popup-content {
+    background-color: #fff;
+    padding: 24px 28px;
+    border-radius: 12px;
+    width: min(92vw, 460px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.close-popup {
+  display: inline-block; margin-top: 16px; padding: 10px 18px;
+  background-color: #007bff; color: white; border: none; border-radius: 8px;
+  text-decoration: none; font-size: 14px; cursor: pointer;
+}
+
+
+/* ===================================================
+   TABLE CELL STYLING
+   =================================================== */
+.data-table-add tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.data-table-add th,
+.data-table-add td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table-add thead th {
+  background: #f8f9fa;
+  color: #344767;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.item-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+}
+
+.item-name-cell img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.item-name-cell p { margin: 0; font-weight: 500; }
+
+.data-table-add td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+.data-table-add th:last-child {
+  text-align: center;
+}
+
+
+/* ===================================================
+   ACTION BUTTONS
+   =================================================== */
+.data-table-add td a,
+.data-table-add td label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    margin: 0 4px;
+    text-decoration: none;
+    transition: all .15s ease;
+    cursor: pointer;
+}
+
+.data-table-add td label[for="popup-toggle"] {
+    background: rgba(220, 53, 69, 0.08);
+    color: #dc3545;
+}
+.data-table-add td label[for="popup-toggle_1"] {
+    background: rgba(40, 167, 69, 0.08);
+    color: #28a745;
+}
+
+.data-table-add td a[href*="edit"] {
+    background: rgba(33, 166, 255, 0.08);
+    color: #21a6ff;
+}
+
+.data-table-add td a:hover,
+.data-table-add td label:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+/* ================================= */
+/*   USER STATUS STYLING             */
+/* ================================= */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.status-active {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-locked {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}

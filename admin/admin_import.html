@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/import.css">
+    <title>Quản trị Admin - Cửa hàng đồng hồ</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
+        </a>
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <div>
+            <nav class="sidebar">
+                <div class="task-menu">
+                    <ul>
+                        <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                        <li><a href="../admin/admin_dashboard.html" target="_self">
+                                <i class="fas fa-home"></i> Dashboard</a>
+                        </li>
+
+                        <input type="checkbox" id="toggle-menu-1" hidden>
+                        <li>
+                            <label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                                <i class="fa-solid fa-bars"></i> Quản lý danh mục
+                                <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                            </label>
+                        </li>
+                        <div class="divider"></div>
+
+                        <ul class="menu-content">
+                            <li style="margin-left: 10px;"><a href="../admin/admin_users.html">
+                                    <p><strong>&gt;</strong> Người dùng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_import.html">
+                                    <p><strong>&gt;</strong> Phiếu nhập hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html">
+                                    <p><strong>&gt;</strong> Loại sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product.html">
+                                    <p><strong>&gt;</strong> Sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_order.html">
+                                    <p><strong>&gt;</strong> Đơn đặt hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_price.html">
+                                    <p><strong>&gt;</strong> Giá bán</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_inventory.html">
+                                    <p><strong>&gt;</strong> Tồn kho</p>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="task-bar" style="margin-top: 30px;">
+                    <input type="checkbox" id="toggle-menu-2" hidden>
+                    <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                        <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
+                        <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                    </label>
+                    <ul class="menu-content-2">
+                        <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
+                                <p><strong>&gt;</strong> Đơn hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;"><a href="#task6">
+                                <p><strong>&gt;</strong> Báo cáo</p>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <hr class="menu-divider">
+
+                <div class="task-bar logout-bar" style="margin-top: 30px;">
+                    <a href="../admin_login.html" class="toggle-btn logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-content-wrapper">
+            <div class="box">
+                <i style="font-size: calc(0.8vw + 0.8vh);"></i>
+                <h3 style="margin: 0; font-size: 1.2rem;">Quản lý nhập sản phẩm</h3>
+            </div>
+
+            <div class="content-toolbar">
+                <div class="filters">
+                    <div class="filter-item">
+                        <label for="status-filter">Trạng thái:</label>
+                        <select id="status-filter" name="status-filter">
+                            <option value="all">Tất cả</option>
+                            <option value="completed">Hoàn Thành</option>
+                            <option value="pending">Đang Nhập</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="date-filter">Ngày nhập:</label>
+                        <select id="date-filter" name="date-filter">
+                            <option value="all">Tất cả</option>
+                            <option value="today">Hôm nay</option>
+                            <option value="last7days">7 ngày qua</option>
+                            <option value="last30days">30 ngày qua</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="toolbar-actions-right">
+                    <label for="create-popup-toggle" class="btn btn-primary">
+                        <i class="fas fa-plus" style="font-size: 12px;"></i> Tạo phiếu nhập
+                    </label>
+
+                    <section class="search-bar page-search">
+                        <input type="text" id="page-search-input" placeholder="Tìm trong danh sách...">
+                        <button type="button" style="border: none; background: none;">
+                            <i class="fas fa-search" style="font-size: 15px; color: gray;"></i>
+                        </button>
+                    </section>
+                </div>
+            </div>
+
+            <div class="boxcontent">
+                <table class="data-table-add">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Mã Phiếu</th>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Địa Chỉ Nguồn Hàng</th>
+                            <th>Ngày Nhập</th>
+                            <th>Trạng thái</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Casio MTP-V002</p>
+                            </td>
+                            <td>MP001</td>
+                            <td>SP001</td>
+                            <td>120</td>
+                            <td>120 Võ Văn Kiệt, Bình Tiên, TP.HCM</td>
+                            <td>19/10/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Rolex Submariner</p>
+                            </td>
+                            <td>MP002</td>
+                            <td>SP002</td>
+                            <td>30</td>
+                            <td>45 Phạm văn Chí, Bình Phú, TP.HCM</td>
+                            <td>25/07/2025</td>
+                            <td style="color:green">Hoàn Thành</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Casio MTP-1183A</p>
+                            </td>
+                            <td>MP003</td>
+                            <td>SP003</td>
+                            <td>100</td>
+                            <td>25 Nguyễn Trãi, Chợ Quán TP.HCM</td>
+                            <td>17/04/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>G-Shock GA-2100</p>
+                            </td>
+                            <td>MP005</td>
+                            <td>SP005</td>
+                            <td>200</td>
+                            <td>KCN Tân Bình, Tây Thạnh, TP.HCM</td>
+                            <td>01/11/2025</td>
+                            <td style="color:green">Hoàn Thành</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Tissot Le Locle</p>
+                            </td>
+                            <td>MP006</td>
+                            <td>SP006</td>
+                            <td>25</td>
+                            <td>70 Đồng Khởi, Bến Nghé, TP.HCM</td>
+                            <td>06/11/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Seiko 5 Automatic</p>
+                            </td>
+                            <td>MP006</td>
+                            <td>SP006</td>
+                            <td>50</td>
+                            <td>15 KCN Sóng Thần, Đông Thạnh, TP.HCM</td>
+                            <td>22/11/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination bottom-pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="popup-toggle" />
+    <div class="popup-overlay" id="warning-popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;"><b>PHIẾU HÀNG ĐÃ HOÀN THÀNH</b></p>
+            <p style="white-space: nowrap; margin-top: 1vh;"><b>KHÔNG THỂ CHỈNH SỬA</b></p>
+            <label for="popup-toggle" class="close-popup" style="margin-left: 1vw;">
+                <a href="admin_import.html" target="_self" style="text-decoration: none; color: white;"><b>Xác
+                        nhận</b></a>
+            </label>
+        </div>
+    </div>
+
+    <input type="checkbox" id="create-popup-toggle" />
+    <div class="popup-overlay" id="create-popup-overlay">
+        <div class="popup-content popup-form">
+            <h2>Tạo phiếu nhập hàng mới</h2>
+
+            <form action="#" method="POST" id="create-import-form">
+                <div class="form-group">
+                    <label for="product-name">Tên sản phẩm:</label>
+                    <input type="text" id="product-name" name="product-name" placeholder="Ví dụ: Casio MTP-V002"
+                        required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label for="product-sku">Mã sản phẩm (SKU):</label>
+                        <input type="text" id="product-sku" name="product-sku" placeholder="Ví dụ: SP001" required>
+                    </div>
+                    <div class="form-group-half">
+                        <label for="product-quantity">Số lượng:</label>
+                        <input type="number" id="product-quantity" name="product-quantity" placeholder="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-source">Địa chỉ nguồn hàng:</label>
+                    <input type="text" id="product-source" name="product-source" placeholder="Ví dụ: 120 Võ Văn Kiệt..."
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="import-date">Ngày nhập:</label>
+                    <input type="date" id="import-date" name="import-date" required>
+                </div>
+
+                <div class="form-actions">
+                    <label for="create-popup-toggle" class="btn btn-secondary close-popup">Hủy</label>
+                    <button type="submit" class="btn btn-primary">Lưu phiếu nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <input type="checkbox" id="success-popup-toggle" />
+    <div class="popup-overlay" id="success-popup-overlay">
+        <div class="popup-content">
+            <div class="modal-icon success">
+                <div class="modal-icon-line tip"></div>
+                <div class="modal-icon-line long"></div>
+            </div>
+
+            <h2 style="margin-top: 20px;">Thành công</h2>
+            <p style="font-size: 16px;">Đã lưu phiếu nhập thành công!</p>
+
+            <label for="success-popup-toggle" class="close-popup">
+                <b>Đóng</b>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        // Tìm form và các checkbox điều khiển popup
+        const createForm = document.getElementById('create-import-form');
+        const createPopupCheckbox = document.getElementById('create-popup-toggle');
+        const successPopupCheckbox = document.getElementById('success-popup-toggle');
+
+        // Lắng nghe sự kiện khi form được submit (nhấn nút "Lưu")
+        createForm.addEventListener('submit', function (event) {
+
+            // 1. Ngăn trang web tải lại
+            event.preventDefault();
+
+            // 2. Đóng popup "Tạo phiếu nhập"
+            createPopupCheckbox.checked = false;
+
+            // 3. Mở popup "Đã lưu thành công"
+            successPopupCheckbox.checked = true;
+
+            // 4. Xóa nội dung form sau khi lưu
+            createForm.reset();
+        });
+    </script>
+
+</body>
+
+</html>

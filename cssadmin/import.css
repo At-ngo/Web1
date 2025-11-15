@@ -1,0 +1,462 @@
+/* ================================================= */
+/* PHẦN LAYOUT CHÍNH (TỪ .box ĐẾN .boxcontent) */
+/* ================================================= */
+
+.box {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(195deg, #21bcff, #21a6ff);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+    box-shadow: none;
+}
+.box i,
+.box h3 {
+    color: white !important;
+    font-weight: 600;
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.boxcontent {
+    font-size: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 10px 10px;
+    overflow-x: auto;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ================================================= */
+/* THANH LỌC VÀ TÌM KIẾM (.content-toolbar) */
+/* ================================================= */
+
+.content-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Thêm gap để responsive */
+    margin-bottom: 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* BỘ LỌC (BÊN TRÁI) */
+.content-toolbar .filters {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép rớt hàng trên di động */
+    gap: 20px;
+    align-items: center;
+}
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.filter-item label {
+    font-weight: 500;
+    color: #333;
+    opacity: 0.8;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.filter-item select {
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 120px;
+}
+.filter-item select:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+/* NÚT VÀ TÌM KIẾM (BÊN PHẢI) */
+.toolbar-actions-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Cho phép rớt hàng */
+    gap: 15px; 
+}
+
+/* Nút "Tạo phiếu nhập" */
+.btn.btn-primary {
+    background: linear-gradient(195deg, #21bcff, #21a6ff);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex; /* Thêm để icon và chữ căn giữa */
+    align-items: center;
+    gap: 6px;
+    /* Thêm border để giống các nút submit */
+    border: none;
+}
+.btn.btn-primary:hover {
+    background: linear-gradient(195deg, #21a6ff, #21bcff);
+}
+
+/* Thanh tìm kiếm */
+.content-toolbar .search-bar.page-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+    margin: 0;
+    min-width: 200px;
+}
+.content-toolbar #page-search-input {
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    width: 100%; /* Cho phép co giãn */
+    box-sizing: border-box;
+}
+.content-toolbar #page-search-input:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+.content-toolbar .search-bar.page-search button {
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.content-toolbar .search-bar.page-search button i {
+    font-size: 16px;
+    color: #6c757d;
+    transition: color 0.2s;
+}
+.content-toolbar .search-bar.page-search button:hover i {
+    color: #21a6ff;
+}
+
+/* ================================================= */
+/* STYLE BẢNG (TABLE) */
+/* ================================================= */
+.boxcontent table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.boxcontent thead {
+    background: #f8f9fa;
+    color: #344767;
+}
+.boxcontent th,
+.boxcontent td {
+    padding: 14px 16px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+.boxcontent th {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.boxcontent tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+.boxcontent tbody tr:hover {
+    background-color: #f3f4f8;
+    transition: 0.2s;
+}
+.item-name-cell {
+    display: flex;
+    align-items: center;
+}
+.item-name-cell p {
+    margin: 0 !important;
+}
+
+/* Pagination */
+.pagination.bottom-pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 0 20px 0 0;
+    width: 100%;
+    background: transparent;
+}
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e3e7;
+  background: #fff;
+  color: #344767;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.pagination a:hover {
+  background-color: #f0f2f5;
+  border-color: #d2d6da;
+}
+.pagination a.active {
+  background-color: #21a6ff;
+  color: #fff;
+  border-color: #21a6ff;
+  font-weight: 600;
+}
+
+/* ================================================= */
+/* POPUP CHUNG (ĐÃ SỬA LỖI TRÙNG LẶP) */
+/* ================================================= */
+        
+/* Ẩn các checkbox trigger */
+#popup-toggle,
+#create-popup-toggle,
+#success-popup-toggle {
+    display: none;
+}
+
+/* Style chung cho TẤT CẢ overlay (nền mờ) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Style chung cho TẤT CẢ nội dung popup */
+.popup-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Style chung cho nút đóng (Xác nhận, Đóng) */
+.close-popup {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.close-popup:hover {
+    background-color: #0056b3;
+}
+
+/* === BỘ KÍCH HOẠT CỤ THỂ (FIX LỖI) === */
+
+/* 1. Kích hoạt POPUP CẢNH BÁO (dùng ID) */
+#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 2. Kích hoạt POPUP TẠO MỚI (dùng ID) */
+#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 3. Kích hoạt POPUP THÀNH CÔNG (dùng ID) */
+#success-popup-toggle:checked ~ .popup-overlay#success-popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+#success-popup-toggle:checked ~ .popup-overlay#success-popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ================================================= */
+/* POPUP FORM (TẠO MỚI) */
+/* ================================================= */
+
+/* Style cho Form Popup mới */
+.popup-content.popup-form {
+    width: 500px;
+    max-width: 90%;
+    text-align: left;
+    padding: 25px 30px;
+}
+.popup-form h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #344767;
+}
+
+/* Style cho các trường nhập liệu trong form */
+.popup-form .form-group {
+    margin-bottom: 15px;
+}
+.popup-form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #344767;
+}
+
+/* Tái sử dụng phong cách .form-control */
+.popup-form input[type="text"],
+.popup-form input[type="number"],
+.popup-form input[type="date"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+.popup-form input[type="text"]:focus,
+.popup-form input[type="number"]:focus,
+.popup-form input[type="date"]:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+/* Style cho form 2 cột (Mã SP và Số lượng) */
+.popup-form .form-row {
+    display: flex;
+    gap: 15px;
+}
+.popup-form .form-group-half {
+    flex: 1;
+    margin-bottom: 15px;
+}
+.popup-form .form-group-half label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #344767;
+}
+
+/* Style cho các nút Hủy / Lưu */
+.popup-form .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+/* Style riêng cho nút Hủy (là 1 label) */
+.popup-form .close-popup {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #6c757d; /* Màu .btn-secondary */
+}
+.popup-form .close-popup:hover {
+    background: #5a6268;
+}
+
+/* ================================================= */
+/* POPUP "ĐÃ LƯU THÀNH CÔNG" */
+/* ================================================= */
+
+/* Style cho icon dấu check (✓) màu xanh */
+.modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+.modal-icon.success {
+    background-color: #28a745; /* Màu xanh lá */
+}
+.modal-icon-line {
+    height: 5px;
+    background-color: #fff;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2;
+}
+.modal-icon-line.tip {
+    width: 20px;
+    left: 10px;
+    top: 28px;
+    transform: rotate(45deg);
+}
+.modal-icon-line.long {
+    width: 35px;
+    right: 8px;
+    top: 24px;
+    transform: rotate(-45deg);
+}

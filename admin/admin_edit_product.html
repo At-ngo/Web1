@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa sản phẩm</title>
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/edit_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">ĐỒNG HỒ</p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" placeholder="Tìm kiếm sản phẩm...">
+            <button type="button">Tìm kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin_users.html"><i class="fas fa-users"></i> Khách hàng</a></li>
+                <li><a href="admin_orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a></li>
+                <li><a href="admin_product_brands.html" class="active"><i class="fas fa-tags"></i> Nhãn hiệu</a></li>
+                <li><a href="admin_product.html" class="active"><i class="fas fa-box"></i> Sản phẩm</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <div class="box">
+                <i class="fas fa-edit"></i> Chỉnh sửa sản phẩm
+                <button class="exit-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="admin_product.html" style="color: white; text-decoration: none;">Thoát</a>
+                </button>
+            </div>
+
+            <div class="edit-container">
+                <form class="edit-form" action="#" method="post" enctype="multipart/form-data">
+                    <!-- Mã sản phẩm -->
+                    <div class="form-group">
+                        <label for="productId">Mã sản phẩm:</label>
+                        <input type="text" id="productId" name="productId" value="SP001" readonly>
+                    </div>
+
+                    <!-- Tên sản phẩm -->
+                    <div class="form-group">
+                        <label for="productName">Tên sản phẩm:</label>
+                        <input type="text" id="productName" name="productName" value="Casio Edifice ECB-10AT-1A"
+                            required>
+                    </div>
+
+                    <!-- Nhãn hiệu -->
+                    <div class="form-group">
+                        <label for="brandSelect">Mã nhãn hiệu:</label>
+                        <div class="brand-container">
+                            <select id="brandSelect" name="brandSelect">
+                                <option value="">Chọn nhãn hiệu</option>
+                                <option value="casio" selected>Casio</option>
+                                <option value="rolex">Rolex</option>
+                                <option value="seiko">Seiko</option>
+                            </select>
+                            <img id="brandImage" src="" alt="Ảnh nhãn hiệu" class="brand-image" />
+                        </div>
+                    </div>
+
+                    <script>
+                        const brandSelect = document.getElementById('brandSelect');
+                        const brandImage = document.getElementById('brandImage');
+
+                        function updateBrandImage() {
+                            const brand = brandSelect.value;
+                            if (brand) {
+                                brandImage.src = `../img/${brand}.png`;
+                                brandImage.style.display = 'block';
+                            } else {
+                                brandImage.style.display = 'none';
+                            }
+                        }
+
+                        brandSelect.addEventListener('change', updateBrandImage);
+
+                        window.addEventListener('DOMContentLoaded', updateBrandImage);
+                    </script>
+
+                    <!-- Giá bán -->
+                    <div class="form-group">
+                        <label for="price">Giá bán (VNĐ):</label>
+                        <input type="text" id="price" name="price" value="950000" required>
+                    </div>
+
+
+                    <!-- Số lượng -->
+                    <!-- <div class="form-group">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" id="quantity" name="quantity" value="25" required>
+                    </div> -->
+
+                    <!-- Mô tả -->
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea id="description" name="description"
+                            rows="4">Đồng hồ thể thao dòng Edifice, mặt số nhiều kim nổi bật, dây thép không gỉ, phù hợp đi học/đi làm hằng ngày.</textarea>
+                    </div>
+
+                    <!-- Ngày tạo -->
+                    <!-- <div class="form-group">
+                        <label for="createDate">Ngày tạo:</label>
+                        <input type="date" id="createDate" name="createDate" value="2024-09-05" required>
+                    </div> -->
+
+                    <!-- Trạng thái -->
+                    <div class="form-group">
+                        <label for="status">Trạng thái:</label>
+                        <select id="status" name="status">
+                            <option selected>Đang bán</option>
+                            <option>Ngừng bán</option>
+                        </select>
+                    </div>
+
+                    <!-- Ảnh hiện tại -->
+                    <div class="form-group">
+                        <label>Ảnh hiện tại:</label>
+                        <img src="../img/Casio/Casio Edifice ECB-10AT-1A.png" width="120"
+                            style="border-radius:8px; border:1px solid #ccc;">
+                    </div>
+
+                    <!-- Thay ảnh mới -->
+                    <div class="form-group image-group">
+                        <label for="logo">Thay ảnh sản phẩm mới:</label>
+
+                        <div class="image-container">
+                            <div class="image-preview" id="imagePreview">
+                                <span class="image-upload-text">
+                                    <i class="fas fa-image"></i>
+                                    <p>Chưa có ảnh mới</p>
+                                </span>
+                            </div>
+                            <input type="file" id="logo" name="logo" accept="image/*">
+                        </div>
+                    </div>
+
+                    <script>
+                        const fileInput = document.getElementById("logo");
+                        const preview = document.getElementById("imagePreview");
+
+                        fileInput.addEventListener("change", (event) => {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    preview.style.backgroundImage = `url(${e.target.result})`;
+                                    preview.classList.add("has-image");
+                                    preview.innerHTML = "";
+                                };
+                                reader.readAsDataURL(file);
+                            } else {
+                                preview.style.backgroundImage = "";
+                                preview.classList.remove("has-image");
+                                preview.innerHTML = `<span class="image-upload-text"><i class='fas fa-image'></i><p>Chưa có ảnh mới</p></span>`;
+                            }
+                        });
+                    </script>
+
+                    <!-- Nút lưu & xóa -->
+                    <div class="form-buttons">
+                        <!-- Use label to toggle the save-success popup; keep class so appearance is unchanged -->
+                        <label for="popup-save-product" class="save-btn" style="cursor:pointer">
+                            <i class="fas fa-save"></i> Cập nhật sản phẩm
+                        </label>
+
+                        <!-- Use label to toggle the delete-confirm popup first; keep class so appearance is unchanged -->
+                        <label for="popup-delete-confirm" class="delete-btn" style="cursor:pointer">
+                            <i class="fas fa-trash"></i> Xóa sản phẩm
+                        </label>
+                    </div>
+
+                    <!-- Save success popup markup (placed after triggers) -->
+                    <input type="checkbox" id="popup-save-product" class="popup-toggle" style="display:none">
+                    <div class="popup-overlay save-popup">
+                        <div class="popup-content">
+                            <h3>Lưu sản phẩm thành công</h3>
+                            <p>Sản phẩm đã được cập nhật.</p>
+                            <a href="admin_product.html" class="ok-btn">OK</a>
+                        </div>
+                    </div>
+
+                    <!-- Delete success popup (hidden checkbox placed BEFORE the confirm overlay so we can hide the confirm when success is checked) -->
+                    <input type="checkbox" id="popup-delete-success" class="popup-toggle" style="display:none">
+                    <div class="popup-overlay delete-popup">
+                        <div class="popup-content">
+                            <h3>Xóa sản phẩm thành công</h3>
+                            <p>Sản phẩm đã được xóa.</p>
+                            <a href="admin_product.html" class="ok-btn">OK</a>
+                        </div>
+                    </div>
+
+                    <!-- Delete confirmation popup (opens first). Clicking Confirm will check #popup-delete-success -->
+                    <input type="checkbox" id="popup-delete-confirm" class="popup-toggle" style="display:none">
+                    <div class="popup-overlay confirm-popup">
+                        <div class="popup-content">
+                            <h3>Xác nhận xóa</h3>
+                            <p>Bạn có chắc muốn xóa sản phẩm này?</p>
+                            <div style="display:flex; gap:12px; justify-content:center; margin-top:12px;">
+                                <label for="popup-delete-confirm" class="ok-btn" style="background:#6c757d;">Hủy</label>
+                                <label for="popup-delete-success" class="ok-btn">Xác nhận</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/order.css">
+    <title>Quản trị Admin - Cửa hàng đồng hồ</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
+        </a>
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        <!-- SIDEBAR -->
+        <div>
+            <nav class="sidebar">
+                <div class="task-menu">
+                    <ul>
+                        <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                        <li><a href="../admin/admin_dashboard.html" target="_self">
+                                <i class="fas fa-home"></i> Dashboard</a>
+                        </li>
+
+                        <input type="checkbox" id="toggle-menu-1" hidden>
+                        <li>
+                            <label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                                <i class="fa-solid fa-bars"></i> Quản lý danh mục
+                                <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                            </label>
+                        </li>
+                        <div class="divider"></div>
+
+                        <ul class="menu-content">
+                            <li style="margin-left: 10px;"><a href="../admin/admin_users.html">
+                                    <p><strong>&gt;</strong> Người dùng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_import.html">
+                                    <p><strong>&gt;</strong> Phiếu nhập hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product_brands.html">
+                                    <p><strong>&gt;</strong> Loại sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_product.html">
+                                    <p><strong>&gt;</strong> Sản phẩm</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_order.html">
+                                    <p><strong>&gt;</strong> Đơn đặt hàng</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_price.html">
+                                    <p><strong>&gt;</strong> Giá bán</p>
+                                </a></li>
+                            <li style="margin-left: 10px;"><a href="../admin/admin_inventory.html">
+                                    <p><strong>&gt;</strong> Tồn kho</p>
+                                </a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="task-bar" style="margin-top: 30px;">
+                    <input type="checkbox" id="toggle-menu-2" hidden>
+                    <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);">
+                        <i class="fas fa-shopping-cart"></i> Quản lý giỏ hàng
+                        <span style="font-size: 12px; margin-left: 5px;">&#9660;</span>
+                    </label>
+                    <ul class="menu-content-2">
+                        <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
+                                <p><strong>&gt;</strong> Đơn hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;"><a href="#task6">
+                                <p><strong>&gt;</strong> Báo cáo</p>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <hr class="menu-divider">
+
+                <div class="task-bar logout-bar" style="margin-top: 30px;">
+                    <a href="../admin_login.html" class="toggle-btn logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-content-wrapper">
+            <div class="box">
+                <i style="font-size: calc(0.8vw + 0.8vh);"></i>
+                <h3 style="margin: 0; font-size: 1.2rem;">Quản lý đơn đặt hàng</h3>
+            </div>
+
+            <div class="content-toolbar">
+                <div class="filters">
+                    <div class="filter-item">
+                        <label for="status-filter">Trạng thái:</label>
+                        <select id="status-filter" name="status-filter">
+                            <option value="all">Tất cả</option>
+                            <option>Mới đặt</option>
+                            <option>Đã xử lý</option>
+                            <option>Đã giao</option>
+                            <option>Đã hủy</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-item">
+                        <label for="date-from">Thời gian từ:</label>
+                        <input type="date" id="date-from">
+                    </div>
+                    <div class="filter-item">
+                        <label for="date-to">đến:</label>
+                        <input type="date" id="date-to">
+                    </div>
+                </div>
+
+                <section class="search-bar page-search">
+                    <input type="text" id="page-search-input" placeholder="Tìm trong danh sách...">
+                    <button type="button" style="border: none; background: none;">
+                        <i class="fas fa-search" style="font-size: 15px; color: gray;"></i>
+                    </button>
+                </section>
+            </div>
+
+            <div class="boxcontent">
+                <table class="data-table-add">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Khách Hàng</th>
+                            <th>Mã KH</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Email</th>
+                            <th>Địa Chỉ Giao</th>
+                            <th>Mã Đơn</th>
+                            <th>Trạng thái</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Lâm Chấn Khang</p>
+                            </td>
+                            <td>KH001</td>
+                            <td>0912345678</td>
+                            <td>lamck123@gmail.com</td>
+                            <td>120 Võ Văn Kiệt, Bình Tiên, TP.HCM</td>
+                            <td>MD001</td>
+                            <td style="color:gray">Mới đặt</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Phạm Hải Đăng</p>
+                            </td>
+                            <td>KH002</td>
+                            <td>0972 163 480</td>
+                            <td>phdang147@gmail.com</td>
+                            <td>45 Phạm văn Chí, Bình Phú, TP.HCM</td>
+                            <td>MD002</td>
+                            <td style="color:orange">Đã xử lý</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Nguyễn Văn Cường</p>
+                            </td>
+                            <td>KH003</td>
+                            <td>0907 846 512</td>
+                            <td>vancuong999@gmail.com</td>
+                            <td>25 Nguyễn Trãi, Chợ Quán TP.HCM</td>
+                            <td>MD003</td>
+                            <td style="color:green">Đã giao</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Cao Minh Khiêm</p>
+                            </td>
+                            <td>MP005</td>
+                            <td>0984 235 671</td>
+                            <td>caokhiem241@gmail.com</td>
+                            <td>KCN Tân Bình, Tây Thạnh, TP.HCM</td>
+                            <td>MD004</td>
+                            <td style="color:red">Đã hủy</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Trần Văn An</p>
+                            </td>
+                            <td>KH004</td>
+                            <td>0905123456</td>
+                            <td>an.tran@gmail.com</td>
+                            <td>15 Lê Lợi, Thủ Dầu Một, TP.HCM</td>
+                            <td>MD005</td>
+                            <td style="color:orange">Đã xử lý</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Lê Thị Bích</p>
+                            </td>
+                            <td>KH005</td>
+                            <td>0988765432</td>
+                            <td>bich.le@yahoo.com</td>
+                            <td>32 Nguyễn Huệ, Phú Thọ Hòa, Đà Nẵng</td>
+                            <td>MD006</td>
+                            <td style="color:green">Đã giao</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Đỗ Văn Hùng</p>
+                            </td>
+                            <td>KH006</td>
+                            <td>0918111222</td>
+                            <td>hung.do@outlook.com</td>
+                            <td>77 Pasteur, Tân Sơn Nhất, TP.HCM</td>
+                            <td>MD007</td>
+                            <td style="color:gray">Mới đặt</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Hoàng Thị Mai</p>
+                            </td>
+                            <td>KH007</td>
+                            <td>0399888777</td>
+                            <td>mai.hoang@gmail.com</td>
+                            <td>22 Lý Tự Trọng, Hoàn Kiếm, Hà Nội</td>
+                            <td>MD008</td>
+                            <td style="color:red">Đã hủy</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Vũ Minh Tuấn</p>
+                            </td>
+                            <td>KH008</td>
+                            <td>0868555444</td>
+                            <td>tuanvu@gmail.com</td>
+                            <td>99 Hai Bà Trưng, Tây Thạnh, TP.HCM</td>
+                            <td>MD009</td>
+                            <td style="color:gray">Mới đặt</td>
+                            <td>
+                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination bottom-pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="popup-toggle" />
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
+            <p style="white-space: nowrap; margin-top: 3vh;"><b>PHIẾU HÀNG ĐÃ HOÀN THÀNH</b></p>
+            <p style="white-space: nowrap; margin-top: 1vh;"><b>KHÔNG THỂ CHỈNH SỬA</b></p>
+            <label for="popup-toggle" class="close-popup" style="margin-left: 1vw;">
+                <a href="admin_import.html" target="_self" style="text-decoration: none; color: white;"><b>Xác
+                        nhận</b></a>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>

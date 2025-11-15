@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <title>Dashboard Quản Trị - Cửa Hàng Đồng Hồ</title>
+</head>
+
+<body>
+    <!-- Phần đầu trang -->
+    <header class="header">
+        <a class="logo" href="../admin/dashboard.html">
+            <p class="demo" style="margin-left: 1vw"> WATCH STORE </p>
+        </a>
+
+        ```
+        <!-- Thanh tìm kiếm -->
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#" title="Gmail"><img src="../img/email.png" width="40" height="30"></a></li>
+                <li><a href="#" title="Thông báo"><img src="../img/bell.png" width="30" height="30"></a></li>
+                <li><a href="#" title="Tin nhắn"><img src="../img/messenger.png" width="35" height="30"></a></li>
+                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Phần thân trang -->
+    <main class="main">
+        <div>
+            <!-- Sidebar -->
+            <nav class="sidebar">
+                <div class="task-menu">
+                    <ul>
+                        <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                        <li><a href="../admin/admin_dashboard.html" target="_self" style="color: black;"> <i
+                                    class="fas fa-home"></i> Dashboard</a></li>
+
+                        <input type="checkbox" id="toggle-menu-1" hidden>
+                        <li><label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);"><i
+                                    class="fa-solid fa-bars"></i> Quản lí danh mục <span
+                                    style="font-size: 12px; margin-left: 5px;">&#9660;</span></label></li>
+                        <div class="divider"></div>
+
+                        <ul class="menu-content">
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_users.html">
+                                    <p><strong>&gt;</strong> Người dùng</p>
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_import.html">
+                                    <p><strong>&gt;</strong> Phiếu nhập hàng</p>
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_product_brands.html">
+                                    <p><strong>&gt;</strong> Loại sản phẩm</p>
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_product.html">
+                                    <p><strong>&gt;</strong> Sản phẩm</p>
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_price.html">
+                                    <p><strong>&gt;</strong> Giá bán</p>
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px;">
+                                <a href="../admin/admin_inventory.html">
+                                    <p><strong>&gt;</strong> Tồn kho</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="task-bar" style="margin-top: 30px;">
+                    <input type="checkbox" id="toggle-menu-2" hidden>
+                    <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);"><i
+                            class="fas fa-shopping-cart"></i> Quản lý giỏ hàng <span
+                            style="font-size: 12px; margin-left: 5px;">&#9660;</span></label>
+                    <ul class="menu-content-2">
+                        <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5">
+                                <p><strong>&gt;</strong> Đơn hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;"><a href="#task6">
+                                <p><strong>&gt;</strong> Báo cáo</p>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <hr class="menu-divider">
+
+                <div class="task-bar logout-bar" style="margin-top: 30px;">
+                    <a href="../admin_login.html" class="toggle-btn logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
+
+            </nav>
+        </div>
+
+        <div>
+            <!-- Thống kê nhanh -->
+            <div class="market">
+                <div class="col">
+                    <div class="col1">
+                        <div class="col-left">
+                            <h3 class="text-border" style="font-size: 50px; margin-top: 20px">12.476</h3>
+                            <h4 class="text-border">Khách Hàng Đã Đăng Ký</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="col2">
+                        <div class="col-left">
+                            <h3 class="text-border" style="font-size: 50px; margin-top: 20px">35.260</h3>
+                            <h4 class="text-border">Lượt Truy Cập Hằng Ngày</h4>
+                        </div>
+                        <div class="col-right">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="col3">
+                        <div class="col-left">
+                            <h3 class="text-border" style="font-size: 50px; margin-top: 20px">5.643</h3>
+                            <h4 class="text-border">Hóa Đơn Hôm Nay</h4>
+                        </div>
+                        <div class="col-right">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biểu đồ -->
+            <div class="room">
+                <div>
+                    <img src="../img/bieudo.jpg" class="bieudo">
+                    <h4 style="text-align: center; margin:10px; color: rgb(122, 122, 122)">
+                        Biểu đồ doanh thu sản phẩm đồng hồ năm 2024
+                    </h4>
+
+                    <div class="bieudocon">
+                        <div class="bieudocon-left">
+                            <img src="../img/thang.png" width="620" height="500">
+                            <h4 style="text-align: center; margin:10px; color: rgb(122, 122, 122)">
+                                Biểu đồ doanh thu theo tháng
+                            </h4>
+                        </div>
+                        <div class="bieudocon-right">
+                            <img src="../img/tuan.png" width="550" height="500">
+                            <h4 style="text-align: center; margin:10px; color: rgb(122, 122, 122)">
+                                Biểu đồ doanh thu theo tuần
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Bảng Doanh Thu -->
+                    <div style="display: flex">
+                        <div class="map-left">
+                            <h2 style="width: 300px; margin-bottom:25px">TỔNG DOANH THU</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:40%; text-align: center">Sản Phẩm</th>
+                                        <th style="width:20%;">Đã Bán</th>
+                                        <th style="width:20%;">Tổng Thu</th>
+                                        <th style="width:5%;">In</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="hoadon">
+                                    <tr>
+                                        <td>Casio MTP-V002GL</td>
+                                        <td style="text-align: center">125</td>
+                                        <td style="text-align: center">62.500.000</td>
+                                        <td><a href="../admin/hoadonSP.html"><i class="fa-solid fa-plus"
+                                                    style="color: black;"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Citizen Eco-Drive</td>
+                                        <td style="text-align: center">88</td>
+                                        <td style="text-align: center">79.200.000</td>
+                                        <td><a href="../admin/hoadonSP.html"><i class="fa-solid fa-plus"
+                                                    style="color: black;"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Orient Sun and Moon</td>
+                                        <td style="text-align: center">62</td>
+                                        <td style="text-align: center">94.300.000</td>
+                                        <td><a href="../admin/hoadonSP.html"><i class="fa-solid fa-plus"
+                                                    style="color: black;"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rolex Datejust</td>
+                                        <td style="text-align: center">18</td>
+                                        <td style="text-align: center">540.000.000</td>
+                                        <td><a href="../admin/hoadonSP.html"><i class="fa-solid fa-plus"
+                                                    style="color: black;"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- MAP -->
+                        <div class="map-right">
+                            <h2 style="width: 300px; margin-top: 35px; margin-bottom: 10px">THỊ TRƯỜNG TOÀN CẦU</h2>
+                            <img src="../img/map.png" width="720px">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thống kê khách hàng -->
+                <div style="display: flex">
+                    <div class="khachhang-left">
+                        <h2 style="width: 300px; margin-top: 20px; margin-bottom: 15px">KHÁCH HÀNG TIÊU BIỂU</h2>
+                        <div class="khachhang">
+                            <div class="tenkh">
+                                <p>Ngọc Sơn</p>
+                            </div>
+                            <div class="kh kh1">
+                                <p>25.000.000</p>
+                            </div>
+                            <div class="tenkh">
+                                <p>Minh Tú</p>
+                            </div>
+                            <div class="kh kh2">
+                                <p>18.450.000</p>
+                            </div>
+                            <div class="tenkh">
+                                <p>Hữu Phát</p>
+                            </div>
+                            <div class="kh kh3">
+                                <p>12.980.000</p>
+                            </div>
+                            <div class="tenkh">
+                                <p>Hoàng Nam</p>
+                            </div>
+                            <div class="kh kh4">
+                                <p>9.360.000</p>
+                            </div>
+                        </div>
+                        <h4 style="text-align: center; margin-top:10px; color: rgb(122, 122, 122)">
+                            Biểu đồ chi tiêu khách hàng năm 2024
+                        </h4>
+                    </div>
+
+                    <div class="khachhang-right">
+                        <h2 style="color: red; font-size: 30px; width:100%; padding: 10px;">Khách Hàng Thân Thiết</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">Tên</th>
+                                    <th>Ngày Tạo</th>
+                                    <th style="width:20%;">SĐT</th>
+                                    <th style="width:20%;">Địa Chỉ</th>
+                                    <th style="width:20%;">Đã Chi Trả</th>
+                                    <th style="width:5%;">In</th>
+                                </tr>
+                            </thead>
+                            <tbody class="hoadon">
+                                <tr>
+                                    <td>Ngọc Sơn</td>
+                                    <td>15/06/2022</td>
+                                    <td style="text-align: center">***</td>
+                                    <td style="text-align: center">Hà Nội</td>
+                                    <td style="text-align: center">25.000.000</td>
+                                    <td><a href="../admin/hoadonKH.html"><i class="fa-solid fa-plus"
+                                                style="color: black;"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Minh Tú</td>
+                                    <td>03/11/2023</td>
+                                    <td style="text-align: center">***</td>
+                                    <td style="text-align: center">Đà Nẵng</td>
+                                    <td style="text-align: center">18.450.000</td>
+                                    <td><a href="../admin/hoadonKH.html"><i class="fa-solid fa-plus"
+                                                style="color: black;"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Hữu Phát</td>
+                                    <td>10/02/2024</td>
+                                    <td style="text-align: center">***</td>
+                                    <td style="text-align: center">TP.HCM</td>
+                                    <td style="text-align: center">12.980.000</td>
+                                    <td><a href="../admin/hoadonKH.html"><i class="fa-solid fa-plus"
+                                                style="color: black;"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Hoàng Nam</td>
+                                    <td>01/09/2023</td>
+                                    <td style="text-align: center">***</td>
+                                    <td style="text-align: center">Cần Thơ</td>
+                                    <td style="text-align: center">9.360.000</td>
+                                    <td><a href="../admin/hoadonKH.html"><i class="fa-solid fa-plus"
+                                                style="color: black;"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    ```
+
+</body>
+
+</html>

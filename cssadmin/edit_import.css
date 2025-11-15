@@ -1,0 +1,354 @@
+/* Khung tổng thể */
+.content {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.exit-btn {
+    margin-left: auto;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.exit-btn i {
+    margin-right: 5px;
+}
+
+.edit-container {
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 65%;
+}
+
+.edit-form .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-form label {
+    font-weight: bold;
+    width: 150px;
+}
+
+.edit-form input,
+.edit-form select {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.save-btn, .delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.save-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+/* Ẩn checkbox */
+#popup-toggle {
+    display: none;
+}
+
+/* Nền mờ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    /* Luôn giữ overlay trong DOM */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Mặc định ẩn */
+    visibility: hidden;
+    /* Ẩn khỏi giao diện */
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Hiển thị overlay khi checkbox được chọn */
+#popup-toggle:checked+.popup-overlay {
+    opacity: 1;
+    /* Hiển thị */
+    visibility: visible;
+    /* Làm popup hiện */
+}
+
+/* Nội dung popup */
+.popup-content {
+    background-color: white;
+    padding: 40px; /* Giảm padding */
+    border-radius: 8px;
+    text-align: center;
+    width: 350px; /* Giảm độ rộng */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    /* Vị trí ban đầu */
+    opacity: 0;
+    /* Ẩn ban đầu */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Khi mở popup */
+#popup-toggle:checked+.popup-overlay .popup-content {
+    transform: translateY(0);
+    /* Di chuyển vào vị trí trung tâm */
+    opacity: 1;
+    /* Hiện popup */
+}
+
+/* Nút đóng */
+.close-popup {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    background-color: #0056b3;
+}
+
+
+
+.cancel-btn, .confirm-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.cancel-btn {
+    background-color: gray;
+}
+
+.confirm-btn {
+    background-color: red;
+}
+
+/* Nút hành động bổ sung */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.action-buttons a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.reset-btn {
+    background-color: #17a2b8;
+}
+
+.lock-btn {
+    background-color: #dc3545;
+}
+
+.unlock-btn {
+    background-color: #28a745;
+}
+
+.action-buttons a:hover {
+    opacity: 0.85;
+}
+
+/* ================================================= */
+/* STYLE CHO NÚT VÀ FORM TẠO PHIẾU NHẬP */
+/* ================================================= */
+
+/* 1. Sửa header .box để căn chỉnh 2 bên */
+.box {
+    /* Đảm bảo các thuộc tính này được áp dụng */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đẩy 2 bên ra xa */
+}
+.box-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 2. Style cho nút "Tạo phiếu nhập" (nút trắng trên nền xanh) */
+.btn.btn-primary-white {
+    background: #ffffff;
+    color: #21a6ff;
+    font-weight: 600;
+    padding: 0.5rem 1rem; /* Thu nhỏ nút một chút */
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px; /* Bo góc */
+    cursor: pointer;
+}
+.btn.btn-primary-white:hover {
+    background: #f0f2f5;
+    color: #21a6ff;
+}
+.btn.btn-primary-white i {
+    margin-right: 6px; /* Khoảng cách icon và chữ */
+}
+
+/* 3. Style cho Form Popup mới */
+.popup-content.popup-form {
+    width: 500px; /* Cho form rộng hơn */
+    max-width: 90%;
+    text-align: left; /* Form nên căn trái */
+    padding: 25px 30px;
+}
+.popup-form h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #344767;
+}
+
+/* 4. Style cho các trường nhập liệu trong form */
+.popup-form .form-group {
+    margin-bottom: 15px;
+}
+.popup-form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #344767;
+}
+
+/* Tái sử dụng phong cách .form-control */
+.popup-form input[type="text"],
+.popup-form input[type="number"],
+.popup-form input[type="date"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+.popup-form input[type="text"]:focus,
+.popup-form input[type="number"]:focus,
+.popup-form input[type="date"]:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
+    outline: none;
+}
+
+/* 5. Style cho form 2 cột (Mã SP và Số lượng) */
+.popup-form .form-row {
+    display: flex;
+    gap: 15px;
+}
+.popup-form .form-group-half {
+    flex: 1; /* Chia đôi cột */
+    margin-bottom: 15px;
+}
+.popup-form .form-group-half label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #344767;
+}
+
+/* 6. Style cho các nút Hủy / Lưu */
+.popup-form .form-actions {
+    display: flex;
+    justify-content: flex-end; /* Đẩy nút về bên phải */
+    gap: 10px;
+    margin-top: 25px;
+}
+/* Style riêng cho nút Hủy (là 1 label) */
+.popup-form .close-popup {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #6c757d; /* Màu .btn-secondary */
+}
+.popup-form .close-popup:hover {
+    background: #5a6268;
+}
+
+/* 7. CSS để kích hoạt popup MỚI */
+/* Ẩn popup mới */
+.popup-overlay#create-popup-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+/* Hiện popup mới khi checkbox được check */
+input#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+input#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
