@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const renderProducts = [
   {
     "productCode": "CA01",
-    "image": "../../image/Casio/CASIO AMW-880-1A.png",
+    "image": "../image/Casio/CASIO AMW-880-1A.png",
     "category": "Casio",
     "name": "Casio AMW-880-1A",
     "price": "1.250.000 VNĐ",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA02",
-    "image": "../../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
+    "image": "../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
     "category": "Casio",
     "name": "Casio Edifice ECB-10AT-1A",
     "price": "950.000 VNĐ",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA03",
-    "image": "../../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg",
+    "image": "../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-C100D-1B",
     "price": "3.000.000 VNĐ",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA04",
-    "image": "../../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg",
+    "image": "../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg",
     "category": "Casio",
     "name": "Casio Edifice EQS-940BL-1A",
     "price": "4.200.000 VNĐ",
@@ -50,16 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA05",
-    "image": "../../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
+    "image": "../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
     "category": "Casio",
-    "name": "Casio Gshock DW-5600BBN-1E",
+    "name": "Casio Gshock DW-1E",
     "price": "5.500.000 VNĐ",
     "description": "Từ G-SHOCK, thương hiệu đồng hồ không ngừng đặt ra các tiêu chuẩn mới về độ bền của đồng hồ hiển thị giờ hiện hành và tung ra thị trường một loạt các mẫu máy cơ bản có màu đen đơn sắc cùng dây đeo bằng vải.Mẫu cơ bản là DW-5600, vốn là kiệt tác mang phong cách đồng hồ G-SHOCK nguyên thủy. Đồng hồ Casio G-Shock DW-5600BBN-1 là chiếc đồng hồ đẳng cấp của dòng đồng hồ G-Shock từ hãng đồng hồ Casio Japan Movement. Được lấy cảm hứng sự vất vả và ngày đêm làm việc của các chiến sĩ quân đội, Casio G-Shock đã phát hành những mẫu đồng hồ mới với phiên bản BLACK đi kèm với dòng dây đeo đặc biệt từ vải CORDURA. Những phiên bản đặc biệt chính là DW-5600, GA-100 và DW-6900. Casio G-Shock DW-5600BBN-1E là một mẫu đồng hồ mang màu đen đơn sắc được kết hợp với dây đeo bằng vải nhiều người ưa thích bởi sự hữu dụng và tính thời trang cao.",
     "availability": true
   },
   {
     "productCode": "CA06",
-    "image": "../../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg",
+    "image": "../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg",
     "category": "Casio",
     "name": "Casio Gshock GA-2100KE-7A",
     "price": "1.450.000 VNĐ",
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA07",
-    "image": "../../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
+    "image": "../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
     "category": "Casio",
     "name": "Casio Gshock GM-2100G-1A9",
     "price": "2.800.000 VNĐ",
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA08",
-    "image": "../../image/Casio/CASIO LTP-V005L-1A.jpg",
+    "image": "../image/Casio/CASIO LTP-V005L-1A.jpg",
     "category": "Casio",
     "name": "Casio LCP-V005L-1A",
     "price": "1.950.000 VNĐ",
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA09",
-    "image": "../../image/Casio/CASIO MTP-B185D-1A.png",
+    "image": "../image/Casio/CASIO MTP-B185D-1A.png",
     "category": "Casio",
     "name": "Casio MTP-B185B-1A",
     "price": "1.300.000 VNĐ",
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   },
   {
     "productCode": "CA10",
-    "image": "../../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg",
+    "image": "../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-620D-1A4",
     "price": "1.100.000 VNĐ",

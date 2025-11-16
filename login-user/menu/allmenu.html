@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất cả</title>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="../../css/fontawesome-free-6.6.0-web/css/all.min.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="../../css/tatca.css" />
+</head>
+<body>
+    <header>
+        <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="../index_user.html" class="logo">
+            <img src="../../image/logo.png">
+        </a>
+        <nav class="nav-menu" id="home">
+            <ul style="line-height: 1.8;">
+                <li><a href="../../index.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
+                <li class="dropdown active">
+                    <a href="../menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
+                    <ul class="sub-menu">
+                        <li><a href="../menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="../menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="../menu/seiko.html"><span>Seiko</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="../news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li><a href="../introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
+                <li><a href="../contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+            </ul>
+        </nav>
+        <!-- SEARCH -->
+        <div class="icon">
+            <div class="searchToggle">
+                <i class="fa-solid fa-x cancel"></i>
+                <i class="fa-solid fa-magnifying-glass search"></i>
+            </div>
+            <div class="searchBox">
+                <form class="search-form" action="../search.html" method="get">
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="../search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="icon-item">
+                <a href="../cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="javascript:void(0);">
+                    <img src="../../image/khac/user.png">
+                    <ul class="dropdown-user1">
+                        <li><a href="../profile.html">Thông tin cá nhân</a></li>
+                        <li><a href="../profile.html?openHistory=true">Đơn đã mua</a></li>
+                        <li><a href="../../index.html">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="poster">
+        <img href="../../index.html" src="../../image/poster/banner3.jpg" alt="">
+    </div>
+    <!-- BREADCRUMB -->
+    <section id="all-menu-section" class="breadcrumb_section container">
+        <nav aria-label="custom-breadcrumb">
+            <ol class="custom-breadcrumb">
+                <li class="custom-breadcrumb-item"><a href="../../index.html">Trang chủ</a></li>
+                <li class="custom-breadcrumb-item"><a href="./allmenu.html">Thực đơn</a></li>
+                <li class="custom-breadcrumb-item active" aria-current="page">Tất cả</li>
+            </ol>
+        </nav>
+    </section>
+    <div class="custom-product_tags">
+        <a class="btn btn-outline-secondary " role="button" href="./allmenu.html" type="Tất cả">Tất cả</a>
+        <a class="btn btn-outline-secondary" role="button" href="./casio.html#casio-section" type="Casio">Casio</a>
+        <a class="btn btn-outline-secondary" role="button" href="./rolex.html#rolex-section" type="Rolex">Rolex</a>
+        <a class="btn btn-outline-secondary " role="button" href="./seiko.html#seiko-section" type="Seiko">Seiko</a>
+    </div>
+    <div class="product__filter mb-2 text-end">
+        <div class="filter--sort ">
+            <p>Sắp xếp theo:</p>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Mặc định</option>
+                <option value="1">Bán chạy</option>
+                <option value="2">Giá tăng dần</option>
+                <option value="3">Giá giảm dần</option>
+                <option value="4">Từ A-Z</option>
+                <option value="5">Từ Z-A</option>
+            </select>
+        </div>
+    </div>
+    <div id="custom-wrapper">
+        <ul class="custom-products">
+        </ul>
+        <!-- ... -->
+        <ul class=" pagination" style="justify-content: center;">
+            <li class="page1"><i class="fa-solid fa-angles-left"></i></li>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li> <!-- Thêm trang thứ 3 -->
+            <li class="page2"><i class="fa-solid fa-angles-right"></i></li>
+        </ul>
+        <!-- Modal Thông báo Đặt mua -->
+        <div class="custom-modal" id="custom-order-modal">
+            <div class="custom-modal-content">
+                <span class="custom-close-btn" id="custom-close-order-modal">&times;</span>
+                <h3><b>Thông báo</b></h3>
+                <p>Đã thêm sản phẩm vào giỏ hàng!</p>
+                <div class="custom-modal-actions">
+                    <button class="custom-modal-btn" id="custom-continue-shopping-btn">Tiếp tục lựa chọn</button>
+                    <button class="custom-modal-btn" id="custom-go-to-cart-btn">Đi đến giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="../index_user.html">Trang chủ</a></li>
+                    <li><a href="../menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="../news.html">Tin tức</a></li>
+                    <li><a href="../introduce.html">Giới thiệu</a></li>
+                    <li><a href="../contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Kết nối với chúng tôi</h2>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="footer-section members">
+                <h2>Thành viên</h2>
+                <ul>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
+                    <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
+                    <li><a href="#">Trần Thị Xuân Thanh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
+        </div>
+    </footer>
+    <!-- TOP -->
+    <div id="scrollToTopBtn">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <script src="../../js/phantrangmenu.js"></script>
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/thongbao.js"></script>
+    <!-- BOOSTRAP JS  -->
+    <script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload = function () {
+            if (window.location.hash === "#all-menu-section") {
+                setTimeout(function () {
+                    var section = document.getElementById("all-menu-section");
+                    if (section) {
+                        window.scrollTo({
+                            top: section.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+            // Hàm chuẩn hóa dữ liệu giỏ hàng
+            function normalizeCart(cart) {
+                return cart.map(item => ({
+                    productCode: item.productCode || "",
+                    name: item.name,
+                    size: item.size || "S",
+                    price: typeof item.price === "string"
+                        ? parseInt(item.price.replace(/\./g, ""))
+                        : item.price,
+                    image: item.image || "",
+                    quantity: item.quantity || 1
+                }));
+            }
+        
+            cart = normalizeCart(cart);
+            localStorage.setItem("cart", JSON.stringify(cart));
+        
+            function updateCartQuantity() {
+                const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+                const cartQuantityElement = document.getElementById("cartQuantity");
+                if (cartQuantityElement) {
+                    cartQuantityElement.textContent = totalQuantity > 0 ? totalQuantity : 0;
+                }
+            }
+        
+            function addToCart(product, quantity = 1, size = "S") {
+                const existingProductIndex = cart.findIndex(
+                    (item) => item.productCode === product.productCode && item.size === size
+                );
+        
+                if (existingProductIndex > -1) {
+                    cart[existingProductIndex].quantity += quantity;
+                } else {
+                    cart.push({
+                        ...product,
+                        quantity,
+                        size,
+                    });
+                }
+        
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartQuantity(); 
+            }
+        
+            function attachBuyNowEvents() {
+                document.querySelectorAll(".buy-now").forEach(button => {
+                    button.addEventListener("click", function () {
+                        const productItem = this.closest(".custom-product-item");
+                        const product = {
+                            productCode: productItem.dataset.productCode,
+                            name: productItem.querySelector(".custom-product-name").textContent,
+                            price: parseInt(productItem.querySelector(".custom-product-price").textContent.replace(/\./g, "")),
+                            image: productItem.querySelector(".custom-product-thumb img").src,
+                        };
+        
+                        addToCart(product); 
+                    });
+                });
+            }
+        
+            attachBuyNowEvents();
+            updateCartQuantity();
+        
+            const pagination = document.querySelector(".pagination");
+            if (pagination) {
+                pagination.addEventListener("click", function () {
+                    setTimeout(() => {
+                        attachBuyNowEvents(); 
+                    }, 500);
+                });
+            }
+        });
+        
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

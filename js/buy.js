@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "productCode": "CA05",
     "image": "../../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
     "category": "Casio",
-    "name": "Casio Gshock DW-5600BBN-1E",
+    "name": "Casio Gshock DW-1E",
     "price": "5.500.000 VNĐ",
     "description": "Từ G-SHOCK, thương hiệu đồng hồ không ngừng đặt ra các tiêu chuẩn mới về độ bền của đồng hồ hiển thị giờ hiện hành và tung ra thị trường một loạt các mẫu máy cơ bản có màu đen đơn sắc cùng dây đeo bằng vải.Mẫu cơ bản là DW-5600, vốn là kiệt tác mang phong cách đồng hồ G-SHOCK nguyên thủy. Đồng hồ Casio G-Shock DW-5600BBN-1 là chiếc đồng hồ đẳng cấp của dòng đồng hồ G-Shock từ hãng đồng hồ Casio Japan Movement. Được lấy cảm hứng sự vất vả và ngày đêm làm việc của các chiến sĩ quân đội, Casio G-Shock đã phát hành những mẫu đồng hồ mới với phiên bản BLACK đi kèm với dòng dây đeo đặc biệt từ vải CORDURA. Những phiên bản đặc biệt chính là DW-5600, GA-100 và DW-6900. Casio G-Shock DW-5600BBN-1E là một mẫu đồng hồ mang màu đen đơn sắc được kết hợp với dây đeo bằng vải nhiều người ưa thích bởi sự hữu dụng và tính thời trang cao.",
     "availability": true

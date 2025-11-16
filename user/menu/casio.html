@@ -47,39 +47,64 @@
             <div class="searchBox">
                 <form class="search-form" action="../search.html" method="get">
                     <ul class="search-bar">
-                        <li class="dropdown-bar1">
-                            <div id="drop-text" class="dropdown-text">
-                                <span id="span">Tất cả</span>
-                                <i id="icon" class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul id="list" class="dropdown-list">
-                                <li class="dropdown-list-item">Tất cả</li>
-                                <li class="dropdown-list-item">Cà phê phin</li>
-                                <li class="dropdown-list-item">Phindi</li>
-                                <li class="dropdown-list-item">Freeze</li>
-                                <li class="dropdown-list-item">Trà</li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-bar2">
-                            <div id="price-drop-text" class="dropdown-text">                                
-                                <span id="price-span">Khoảng giá</span>
-                                <i id="price-icon" class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul id="price-list" class="dropdown-list">
-                                <li class="dropdown-list-item">Khoảng giá</li>
-                                <li class="dropdown-list-item">Dưới 40.000 VNĐ</li>
-                                <li class="dropdown-list-item">40.000 - 50.000 VNĐ</li>
-                                <li class="dropdown-list-item">Trên 50.000 VNĐ</li>
-                            </ul>
-                        </li>
                         <li class="search-box">
-                            <input type="text" id="search-input" placeholder="Tìm kiếm..." required/>
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
                             </button>
                         </li>
                     </ul>
                 </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="../search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="icon-item">
                 <a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -331,9 +356,9 @@
             </div>
             <div class="footer-section social">
                 <h2>Kết nối với chúng tôi</h2>
-                <a href="https://web.facebook.com/highlandscoffeevietnam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/highlandscoffeevietnam/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <div class="footer-section members">
                 <h2>Thành viên</h2>
@@ -374,6 +399,44 @@
                 }, 100); 
             }
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
     </script>
 </body>
 </html>

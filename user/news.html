@@ -18,20 +18,19 @@
             <img src="../image/logo.png">
         </a>
         <nav class="nav-menu" id="home">
-            <ul>
+            <ul style="line-height: 1.8;">
                 <li><a href="../index.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
                 <li class="dropdown">
-                    <a href="./menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thực đơn</a>
+                    <a href="./menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
                     <ul class="sub-menu">
-                        <li><a href="./menu/phin-menu.html"><span>Cà phê phin</span></a></li>
-                        <li><a href="./menu/phindi-menu.html"><span>Phindi</span></a></li>
-                        <li><a href="./menu/freeze-menu.html"><span>Freeze</span></a></li>
-                        <li><a href="./menu/tra-menu.html"><span>Trà</span></a></li>
+                        <li><a href="./menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="./menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="./menu/seiko.html"><span>Seiko</span></a></li>
                     </ul>
                 </li>
                 <li class="active"><a href="#"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
                 <li><a href="./introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
-                <li><a href="./contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+                <li><a href="./contact.html"><i class="fa-solid fa-newspaper"></i>Liên hệ</a></li>               
             </ul>
         </nav>
         <!-- SEARCH -->
@@ -42,40 +41,65 @@
             </div>
             <div class="searchBox">
                 <form class="search-form" action="./search.html" method="get">
-                <ul class="search-bar">
-                    <li class="dropdown-bar1">
-                        <div id="drop-text" class="dropdown-text">
-                            <span id="span">Tất cả</span>
-                            <i id="icon" class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul id="list" class="dropdown-list">
-                            <li class="dropdown-list-item">Tất cả</li>
-                            <li class="dropdown-list-item">Cà phê phin</li>
-                            <li class="dropdown-list-item">Phindi</li>
-                            <li class="dropdown-list-item">Freeze</li>
-                            <li class="dropdown-list-item">Trà</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-bar2">
-                        <div id="price-drop-text" class="dropdown-text">                                
-                            <span id="price-span">Khoảng giá</span>
-                            <i id="price-icon" class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul id="price-list" class="dropdown-list">
-                            <li class="dropdown-list-item">Khoảng giá</li>
-                            <li class="dropdown-list-item">Dưới 40.000 VNĐ</li>
-                            <li class="dropdown-list-item">40.000 - 50.000 VNĐ</li>
-                            <li class="dropdown-list-item">Trên 50.000 VNĐ</li>
-                        </ul>
-                    </li>
-                    <li class="search-box">
-                        <input type="text" id="search-input" placeholder="Tìm kiếm..." required/>
-                        <button type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </li>
-                </ul>
-            </form>
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="./search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="icon-item">
                 <a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -107,50 +131,51 @@
     <main style="padding-top: 80px;"> 
         <section class="news"> 
             <div class="container"> 
-                <h1>Tin tức mới nhất</h1> 
+                <h1>Khám phá thế giới đồng hồ</h1> 
                 <div class="divider"></div>
                 <hr>
                 <div class="row">
                     <div class="col-md-4"> 
                         <div class="news-item"> 
-                            <img src="../image/news/khuyenmai.png" alt="News 1"> 
-                            <h2>Chương trình khuyến mãi</h2> 
-                            <p>Highlands Coffee mang đến cho bạn những ưu đãi không thể bỏ qua! Đến và thưởng thức các món yêu thích với giá ưu đãi hấp dẫn cho mọi khách hàng!</p> 
-                            <a href="https://promo.highlandscoffee.com.vn/uudai4/lay-ma-thanh-cong" target="_blank">Đọc thêm</a> 
+                            <img src="../image/news/casionews.png" alt="Casio"> 
+                            <h2>Casio – Bền bỉ, năng động và hiện đại</h2> 
+                            <p>Thương hiệu Casio nổi tiếng với sự bền bỉ, tiện dụng và phong cách năng động. Từ dòng G-Shock mạnh mẽ đến Baby-G trẻ trung, Casio luôn đồng hành cùng mọi hoạt động hàng ngày của bạn.</p> 
+                            <a href="https://www.casio.com/" target="_blank">Tìm hiểu thêm</a> 
                         </div> 
                     </div> 
                     <div class="col-md-4"> 
                         <div class="news-item"> 
-                            <img src="../image/news/monmoi.png" alt="News 2"> 
-                            <h2>Khám phá thức uống mới</h2> 
-                            <p>Highlands Coffee hân hạnh mang đến bạn thức uống mới với hương vị độc đáo, sẵn sàng chinh phục vị giác của mọi khách hàng!</p> 
-                            <a href="https://www.highlandscoffee.com.vn/vn/thom-qua-mong-ngot-anh-dao-bo-doi-tra.html" target="_blank">Đọc thêm</a> 
+                            <img src="../image/news/rolexnews.png" alt="Rolex"> 
+                            <h2>Rolex – Biểu tượng của đẳng cấp</h2> 
+                            <p>Rolex là biểu tượng của sự sang trọng và tinh tế. Mỗi chiếc đồng hồ Rolex được chế tác thủ công với độ chính xác tuyệt đối, khẳng định vị thế và phong cách sống đẳng cấp của người sở hữu.</p> 
+                            <a href="https://www.rolex.com/" target="_blank">Khám phá ngay</a> 
                         </div> 
                     </div> 
                     <div class="col-md-4"> 
                         <div class="news-item"> 
-                            <img src="../image/news/workshop.png" alt="News 3"> 
-                            <h2>Hành trình xanh</h2> 
-                            <p>Cùng Highlands Coffee bảo vệ môi trường bằng cách đổi ly nhựa cũ lấy quà. Tham gia ngay và lan tỏa thông điệp sống xanh đến mọi người!</p> 
-                            <a href="https://web.facebook.com/highlandscoffeevietnam/posts/ti%E1%BA%BFp-n%E1%BB%91i-nh%E1%BB%AFng-c%C3%A1nh-tay-xanh-highlands-coffee-t%E1%BB%B1-h%C3%A0o-mang-%C4%91%E1%BA%BFn-b%E1%BA%A1n-th%E1%BB%AD-th%C3%A1ch-30-n/2491014664312696/?_rdc=1&_rdr" target="_blank">Đọc thêm</a> 
+                            <img src="../image/news/seikonews.png" alt="Seiko"> 
+                            <h2>Seiko – Tinh hoa công nghệ Nhật Bản</h2> 
+                            <p>Với hơn 140 năm lịch sử, Seiko không ngừng đổi mới và sáng tạo trong từng chi tiết. Các bộ sưu tập Seiko kết hợp hoàn hảo giữa truyền thống thủ công và công nghệ hiện đại.</p> 
+                            <a href="https://www.seikowatches.com/" target="_blank">Xem chi tiết</a> 
                         </div> 
                     </div> 
                 </div> 
             </div> 
         </section>
     </main>
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section about">
                 <h2>Về chúng tôi</h2>
-                <p>Chúng tôi cung cấp các loại đồ uống chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
             </div>
             <div class="footer-section links">
                 <h2>Liên kết</h2>
                 <ul>
                     <li><a href="../index.html">Trang chủ</a></li>
-                    <li><a href="./menu/allmenu.html">Thực đơn</a></li>
+                    <li><a href="../user/menu/allmenu.html">Thương hiệu</a></li>
                     <li><a href="./news.html">Tin tức</a></li>
                     <li><a href="./introduce.html">Giới thiệu</a></li>
                     <li><a href="./contact.html">Liên hệ</a></li>
@@ -158,24 +183,23 @@
             </div>
             <div class="footer-section social">
                 <h2>Kết nối với chúng tôi</h2>
-                <a href="https://web.facebook.com/highlandscoffeevietnam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/highlandscoffeevietnam/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <div class="footer-section members">
                 <h2>Thành viên</h2>
                 <ul>
-                    <li><a href="#">Lê Thị Thủy Tiên</a></li>
-                    <li><a href="#">Võ Thị Thu Luyện</a></li>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
                     <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
                     <li><a href="#">Trần Thị Xuân Thanh</a></li>
-                    <li><a href="#">Nguyễn Huỳnh Yến Linh</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <hr>
-            &copy; Highlands Coffee | Thiết kế bởi Nhóm A07
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
         </div>
     </footer>
     <!-- TOP -->
@@ -183,5 +207,112 @@
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div> 
     <script src="../js/nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
+    </script>
+    <script>
+        // Mở/đóng modal giỏ hàng
+        function openLoginModal() {
+            document.getElementById('login-modal').style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('login-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const cartIcon = document.getElementById('cart-icon');
+
+            // Bấm icon giỏ hàng → mở modal
+            if (cartIcon) {
+                cartIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openLoginModal();
+                });
+            }
+
+            // Đóng modal bằng nút ×
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeLoginModal);
+            }
+
+            // Đóng modal khi bấm ngoài
+            document.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeLoginModal();
+                }
+            });
+
+            // Nút Đăng nhập → chuyển trang
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function () {
+                    window.location.href = './login_user.html';
+                });
+            }
+
+            // Nút Đăng ký → chuyển trang (đã sửa đường dẫn đúng)
+            if (registerBtn) {
+                registerBtn.addEventListener('click', function () {
+                    window.location.href = './signup_user.html';
+                });
+            }
+
+            // Dropdown user (giữ nguyên hoạt động tốt)
+            const userIcon = document.querySelector('.icon-item > a');
+            const dropdown = document.querySelector('.dropdown-user');
+
+            if (userIcon && dropdown) {
+                userIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('show');
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

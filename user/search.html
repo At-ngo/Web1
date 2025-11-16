@@ -18,20 +18,19 @@
             <img src="../image/logo.png">
         </a>
         <nav class="nav-menu" id="home">
-            <ul>
+            <ul style="line-height: 1.8;">
                 <li><a href="../index.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
-                <li class="dropdown active">
-                    <a href="../user/menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thực đơn</a>
+                <li class="dropdown">
+                    <a href="./menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
                     <ul class="sub-menu">
-                        <li><a href="../user/menu/phin-menu.html"><span>Cà phê phin</span></a></li>
-                        <li><a href="../user/menu/phindi-menu.html"><span>Phindi</span></a></li>
-                        <li><a href="../user/menu/freeze-menu.html"><span>Freeze</span></a></li>
-                        <li><a href="../user/menu/tra-menu.html"><span>Trà</span></a></li>
+                        <li><a href="./menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="./menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="./menu/seiko.html"><span>Seiko</span></a></li>
                     </ul>
                 </li>
-                <li><a href="./news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li class="active"><a href="#"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
                 <li><a href="./introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
-                <li><a href="./contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+                <li><a href="./contact.html"><i class="fa-solid fa-newspaper"></i>Liên hệ</a></li>               
             </ul>
         </nav>
         <!-- SEARCH -->
@@ -42,40 +41,65 @@
             </div>
             <div class="searchBox">
                 <form class="search-form" action="./search.html" method="get">
-                <ul class="search-bar">
-                    <li class="dropdown-bar1">
-                        <div id="drop-text" class="dropdown-text">
-                            <span id="span">Tất cả</span>
-                            <i id="icon" class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul id="list" class="dropdown-list">
-                            <li class="dropdown-list-item">Tất cả</li>
-                            <li class="dropdown-list-item">Cà phê phin</li>
-                            <li class="dropdown-list-item">Phindi</li>
-                            <li class="dropdown-list-item">Freeze</li>
-                            <li class="dropdown-list-item">Trà</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-bar2">
-                        <div id="price-drop-text" class="dropdown-text">                                
-                            <span id="price-span">Khoảng giá</span>
-                            <i id="price-icon" class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul id="price-list" class="dropdown-list">
-                            <li class="dropdown-list-item">Khoảng giá</li>
-                            <li class="dropdown-list-item">Dưới 40.000 VNĐ</li>
-                            <li class="dropdown-list-item">40.000 - 50.000 VNĐ</li>
-                            <li class="dropdown-list-item">Trên 50.000 VNĐ</li>
-                        </ul>
-                    </li>
-                    <li class="search-box">
-                        <input type="text" id="search-input" placeholder="Tìm kiếm..." required/>
-                        <button type="submit" href="./search.html">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </li>
-                </ul>
-            </form>
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="./search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="icon-item">
                 <a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -108,49 +132,86 @@
         <section class="search-results">
             <div class="container">
                 <h2>Kết quả tìm kiếm</h2>
-                <p class="results-count">Tìm thấy <b>6</b> sản phẩm phù hợp cho <b>"phin"</b></p>
+                <p class="results-count">Tìm thấy <b>6</b> sản phẩm phù hợp cho <b>"Casio"</b></p>
                 <div class="product-grid" style ="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; justify-items: center; text-align: center;">
                     <div class="mon">
-                        <img src="../image/phin/phisuanda_nho.png">
-                        <a href="../user/menu/phin-menu.html">CÀ PHÊ PHIN</a>
-                        <h3>Phin sữa đá</h3>
-                        <p class="price">35.000 VNĐ</p>
+                        <img src="../../image/Casio/CASIO AMW-880-1A.png" alt="Casio AMW-880-1A">
+                        <a href="../user/menu/casio-menu.html">CASIO</a>
+                        <h3>Casio AMW-880-1A</h3>
+                        <p class="price">1.250.000 VNĐ</p>
                         <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
+
                     <div class="mon">
-                        <img src="../image/phin/phindenda_nho.png">
-                        <a href="../user/menu/phin-menu.html">CÀ PHÊ PHIN</a>
-                        <h3>Phin đen đá</h3>
-                        <p class="price">32.000 VNĐ</p>
+                        <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Edifice ECB-10AT-1A</h3>
+                        <p class="price">950.000 VNĐ</p>
                         <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
+
                     <div class="mon">
-                        <img src="../image/phindi/phindihanhnhan_nho.png">
-                        <a href="../user/menu/phindi-menu.html">PHINDI</a>
-                        <h3>Phindi hạnh nhân</h3>
-                        <p class="price">55.000 VNĐ</p>
+                        <img src="../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg" alt="Casio Edifice EFV-C100D-1B">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Edifice EFV-C100D-1B</h3>
+                        <p class="price">3.000.000 VNĐ</p>
                         <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
+
                     <div class="mon">
-                        <img src="../image/phindi/phindikemsua_nho.png">
-                        <a href="../user/menu/phindi-menu.html">PHINDI</a>
-                        <h3>Phindi kem sữa</h3>
-                        <p class="price">55.000 VNĐ</p>
+                        <img src="../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg" alt="Casio Edifice EQS-940BL-1A">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Edifice EQS-940BL-1A</h3>
+                        <p class="price">4.200.000 VNĐ</p>
                         <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
+
                     <div class="mon">
-                        <img src="../image/phindi/phindichoco_nho.png">
-                        <a href="../user/menu/phindi-menu.html">PHINDI</a>
-                        <h3>Phindi choco</h3>
-                        <p class="price">55.000 VNĐ</p>
+                        <img src="../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg" alt="Casio Gshock DW-5600BBN-1E">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Gshock DW-5600BBN-1E</h3>
+                        <p class="price">5.500.000 VNĐ</p>
                         <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
+
                     <div class="mon">
-                        <img src="../image/phindi/phindicassia_nho.png">
-                        <a href="../user/menu/phindi-menu.html">PHINDI</a>
-                        <h3>Phindi cassia</h3>
-                        <p class="price">55.000 VNĐ</p>
-                        <a class="btn" style="background-color: #999 !important; color: #fff !important; cursor: not-allowed;">Hết hàng</a>
+                        <img src="../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg" alt="Casio Gshock GA-2100SKE-7A">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Gshock GA-2100SKE-7A</h3>
+                        <p class="price">1.450.000 VNĐ</p>
+                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
+                    </div>
+
+                    <div class="mon">
+                        <img src="../image/Casio/CASIO GSHOCK GM-2100G-1A9.png" alt="Casio Gshock GM-2100G-1A9">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Gshock GM-2100G-1A9</h3>
+                        <p class="price">2.800.000 VNĐ</p>
+                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
+                    </div>
+
+                    <div class="mon">
+                        <img src="../image/Casio/CASIO LTP-V005L-1A.jpg" alt="Casio LTP-V005L-1A">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio LTP-V005L-1A</h3>
+                        <p class="price">1.950.000 VNĐ</p>
+                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
+                    </div>
+
+                    <div class="mon">
+                        <img src="../image/Casio/CASIO MTP-B185D-1A.png" alt="Casio MTP-B185D-1A">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio MTP-B185D-1A</h3>
+                        <p class="price">1.300.000 VNĐ</p>
+                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
+                    </div>
+
+                    <div class="mon">
+                        <img src="../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg" alt="Casio Edifice EFV-620D-1A4">
+                        <a href="../user/menu/casio.html">CASIO</a>
+                        <h3>Casio Edifice EFV-620D-1A4</h3>
+                        <p class="price">1.100.000 VNĐ</p>
+                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
                     </div>
                 </div>
             </div>
@@ -179,38 +240,37 @@
         <div class="footer-container">
             <div class="footer-section about">
                 <h2>Về chúng tôi</h2>
-                <p>Chúng tôi cung cấp các loại đồ uống chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
             </div>
             <div class="footer-section links">
                 <h2>Liên kết</h2>
                 <ul>
                     <li><a href="../index.html">Trang chủ</a></li>
-                    <li><a href="../user/menu/allmenu.html">Thực đơn</a></li>
-                    <li><a href="../user/news.html">Tin tức</a></li>
-                    <li><a href="../user/introduce.html">Giới thiệu</a></li>
-                    <li><a href="../user/contact.html">Liên hệ</a></li>
+                    <li><a href="../user/menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="./news.html">Tin tức</a></li>
+                    <li><a href="./introduce.html">Giới thiệu</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer-section social">
                 <h2>Kết nối với chúng tôi</h2>
-                <a href="https://web.facebook.com/highlandscoffeevietnam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/highlandscoffeevietnam/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <div class="footer-section members">
                 <h2>Thành viên</h2>
                 <ul>
-                    <li><a href="#">Lê Thị Thủy Tiên</a></li>
-                    <li><a href="#">Võ Thị Thu Luyện</a></li>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
                     <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
                     <li><a href="#">Trần Thị Xuân Thanh</a></li>
-                    <li><a href="#">Nguyễn Huỳnh Yến Linh</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <hr>
-            &copy; Highlands Coffee | Thiết kế bởi Nhóm A07
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
         </div>
     </footer>
     <!-- TOP -->
@@ -219,5 +279,112 @@
     </div> 
     <script src="../js/nav.js"></script>
     <script src="../js/resultfind.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
+    </script>
+    <script>
+        // Mở/đóng modal giỏ hàng
+        function openLoginModal() {
+            document.getElementById('login-modal').style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('login-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const cartIcon = document.getElementById('cart-icon');
+
+            // Bấm icon giỏ hàng → mở modal
+            if (cartIcon) {
+                cartIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openLoginModal();
+                });
+            }
+
+            // Đóng modal bằng nút ×
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeLoginModal);
+            }
+
+            // Đóng modal khi bấm ngoài
+            document.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeLoginModal();
+                }
+            });
+
+            // Nút Đăng nhập → chuyển trang
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function () {
+                    window.location.href = './login_user.html';
+                });
+            }
+
+            // Nút Đăng ký → chuyển trang (đã sửa đường dẫn đúng)
+            if (registerBtn) {
+                registerBtn.addEventListener('click', function () {
+                    window.location.href = './signup_user.html';
+                });
+            }
+
+            // Dropdown user (giữ nguyên hoạt động tốt)
+            const userIcon = document.querySelector('.icon-item > a');
+            const dropdown = document.querySelector('.dropdown-user');
+
+            if (userIcon && dropdown) {
+                userIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('show');
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

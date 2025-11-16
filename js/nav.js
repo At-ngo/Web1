@@ -245,3 +245,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cartQuantityElement.textContent = count || 0;
 });
+
+document.getElementById("login-btn").onclick = function () {
+    window.location.href = "./login_user.html";
+};
+
+document.getElementById("register-btn").onclick = function () {
+    window.location.href = "./signup_user.html";
+};
+
+// Đóng modal
+document.getElementById("close-modal").onclick = function () {
+    document.getElementById("login-modal").style.display = "none";
+};
+

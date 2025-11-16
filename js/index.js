@@ -275,7 +275,7 @@ const renderProducts = [
     "productCode": "CA05",
     "image": "./image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
     "category": "Casio",
-    "name": "Casio Gshock DW-5600BBN-1E",
+    "name": "Casio Gshock DW-1E",
     "price": "5.500.000 VNĐ",
     "description": "Từ G-SHOCK, thương hiệu đồng hồ không ngừng đặt ra các tiêu chuẩn mới về độ bền...",
     "availability": true
@@ -544,4 +544,41 @@ document.addEventListener("DOMContentLoaded", function () {
   registerButton.addEventListener("click", function() {
     window.location.href = "../user/signup_user.html";
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const filterBtn = document.getElementById('openFilterModal');
+  const modal = document.getElementById('advancedSearchModal');
+  const closeBtn = modal?.querySelector('.close-modal');
+  const resetBtn = modal?.querySelector('.btn-reset');
+
+  if (!filterBtn || !modal) return;
+
+  // MỞ MODAL
+  filterBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+    setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+  });
+
+  // ĐÓNG MODAL
+  closeBtn?.addEventListener('click', () => {
+      modal.classList.remove('active');
+  });
+
+  // Click ngoài
+  modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+  });
+
+  // ESC
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+      }
+   });
+
+  // Reset form
+      resetBtn?.addEventListener('click', () => {
+          document.getElementById('advancedSearchForm').reset();
+       });
 });

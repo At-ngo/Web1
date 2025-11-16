@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Thông Tin Cá Nhân</title>
+</head>
+<body>
+    <header>
+        <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="./index_user.html" class="logo">
+            <img src="../image/logo.png">
+        </a>
+        <nav class="nav-menu" id="home">
+            <ul>
+                <li class=""><a href="../login-user/index_user.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
+                <li class="dropdown">
+                    <a href="../login-user/menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
+                    <ul class="sub-menu">
+                        <li><a href="../login-user/menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="../login-user/menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="../login-user/menu/seiko.html"><span>Seiko</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="../login-user/news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li><a href="../login-user/introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
+                <li><a href="./contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+            </ul>
+        </nav>
+        <!-- SEARCH -->
+        <div class="icon">
+            <div class="searchToggle">
+                <i class="fa-solid fa-x cancel"></i>
+                <i class="fa-solid fa-magnifying-glass search"></i>
+            </div>
+            <div class="searchBox">
+                <form class="search-form" action="./search.html" method="get">
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="./search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="icon-item">
+                <a href="./cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            <div class="icon-item">
+                <a href="javascript:void(0);">
+                    <img src="../image/khac/user.png">
+                    <ul class="dropdown-user1">
+                        <li><a href="#">Thông tin cá nhân</a></li>
+                        <li onclick="showOrderHistory()"><a href="#">Đơn đã mua</a></li>
+                        <li><a href="../index.html">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- PROFILE -->
+    <main style="padding-top: 80px;">
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="sidebar-item"><i class="fa-solid fa-user"></i>Tài Khoản Của Tôi</div>
+                <div id="account-menu" class="sidebar-dropdown">
+                    <div class="sidebar-item active" id="profile" onclick="showProfile()"><i class="fa-solid fa-file"></i>Hồ Sơ</div>
+                    <div class="sidebar-item" id="address" onclick="showAddress()"><i class="fa-solid fa-location-dot"></i>Địa Chỉ</div>
+                    <div class="sidebar-item" id="changePassword" onclick="showChangePassword()"><i class="fa-solid fa-key"></i>Đổi Mật Khẩu</div>
+                </div>
+                <div class="sidebar-item" id="order-history" onclick="showOrderHistory()"><i class="fa-solid fa-bag-shopping"></i>Đơn đã mua</div>
+                <div class="sidebar-item" onclick="showOtherOption()"><i class="fa-solid fa-gear"></i>Cài Đặt Khác</div>
+            </div>                                             
+            <div class="profile-details" id="profile-details">
+                <!-- Các thông tin cá nhân -->
+                <div class="info-details">
+                    <div class="avatar-container">
+                        <img id="profile-img" src="../image/khac/user.png" alt="Ảnh đại diện">
+                        <label for="file-upload" class="file-upload-label">Chọn ảnh</label>
+                        <input type="file" id="file-upload" class="file-upload" accept="image/*" style="display: none;" />
+                    </div> 
+                    <div class="form-group">
+                        <label for="username">Tên đăng nhập:</label>
+                        <input type="text" id="username" value="nhom10" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Tên:</label>
+                        <input type="text" id="name" value="Đông Ất">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" value="atngo@gmail.com">
+                        <button class="btn-edit">Thêm</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" value="**********17" disabled>
+                        <button class="btn-edit">Thay đổi</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Giới tính:</label>
+                        <div class="gender-options">
+                            <label for="male"><input type="radio" id="male" name="gender" value="male"> Nam</label>
+                            <label for="female"><input type="radio" id="female" name="gender" value="female" checked> Nữ</label>
+                            <label for="other"><input type="radio" id="other" name="gender" value="other"> Khác</label>
+                        </div>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Ngày sinh:</label>
+                        <input type="date" id="birthdate" value="2005-12-01">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-save">Lưu</button>
+                    </div>
+                </div>
+            </div>            
+            <!-- Phần Địa Chỉ -->
+            <div class="profile-details" id="address-details" style="display: none;">
+                <div class="address-header">
+                    <h2>Địa chỉ của tôi</h2>
+                    <button class="btn-add-new" id="updateBtn">+ Thêm địa chỉ mới</button>
+                </div>
+                <div class="address-list">
+                    <!-- Địa chỉ 1 -->
+                    <div class="address-item">
+                        <div class="address-info">
+                            <p><strong>Nhóm 10</strong></p>
+                            <p>(+84) 865 172 517</p>
+                            <p>273 Đ. An Dương Vương, Phường Chợ Quán, TP. Hồ Chí Minh</p>
+                            <p class="btn-set-default">Mặc định</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="btn-edit">Cập nhật</button>
+                            <button class="btn-delete">Xóa</button>
+                            <button class="btn-default-setting" style="cursor: not-allowed;">Thiết lặp mặc định</button>
+                        </div>
+                    </div>        
+                    <!-- Địa chỉ 2 -->
+                    <div class="address-item">
+                        <div class="address-info">
+                            <p><strong>Ngô Đông Ất</strong></p>
+                            <p>(+84) 865 172 517</p>
+                            <p>4 Đ. Nguyễn Trãi, Phường Bàn Cờ, TP. Hồ Chí Minh</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="btn-edit">Cập nhật</button>
+                            <button class="btn-delete">Xóa</button>
+                            <button class="btn-default-setting">Thiết lặp mặc định</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Xác nhận Xóa -->
+                <div id="deleteConfirmationPopup" class="custom-modal-container" style="display: none;">
+                    <div class="custom-modal-box">
+                        <h2>Xác nhận xóa</h2>
+                        <p>Bạn có chắc chắn muốn <b>xóa</b> địa chỉ này không?</p>
+                        <div class="custom-modal-x">
+                            <button type="button" id="confirmDeleteAction">Đồng ý</button>
+                            <button type="button" id="cancelDeleteAction">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="addressModalPopup" class="modal-container">
+                    <div class="modal-box">
+                        <h2>Địa chỉ</h2>
+                        <form>
+                            <input type="text" id="fullName" placeholder="Họ và tên">
+                            <input type="text" id="phoneNumber" placeholder="Số điện thoại">                
+                            <select id="region">
+                                <option value="" disabled selected>Tỉnh/Thành phố</option>                                
+                                    <option value="Hà Nội">Hà Nội</option>
+                                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                    <option value="Hà Nội">Hà Nội</option>
+                                    <option value="Đà Nẵng">Đà Nẵng</option>
+                                    <option value="Cần Thơ">Cần Thơ</option>
+                                    <option value="Hải Phòng">Hải Phòng</option>
+                                    <option value="Nha Trang">Nha Trang</option>
+                                    <option value="Đà Lạt">Đà Lạt</option>
+                                    <option value="Vũng Tàu">Vũng Tàu</option>
+                                    <option value="Huế">Huế</option>
+                                    <option value="Buôn Ma Thuột">Buôn Ma Thuột</option>
+                                    <option value="Vinh">Vinh</option>
+                                    <option value="Quy Nhơn">Quy Nhơn</option>
+                                    <option value="Long Xuyên">Long Xuyên</option>
+                                    <option value="Thái Nguyên">Thái Nguyên</option>
+                                    <option value="Nam Định">Nam Định</option>
+                                    <option value="Rạch Giá">Rạch Giá</option>
+                                    <option value="Thái Bình">Thái Bình</option>
+                                    <option value="Thanh Hóa">Thanh Hóa</option>
+                                    <option value="Hạ Long">Hạ Long</option>
+                            </select>   
+                            <select id="region">
+                                <option value="" disabled selected>Phường/Xã</option>                                
+                                    <option value="Phường 1">Phường 1</option>
+                                    <option value="Phường 2">Phường 2</option>
+                                    <option value="Phường 3">Phường 3</option>
+                                    <option value="Phường 4">Phường 4</option>
+                                    <option value="Phường 5">Phường 5</option>
+                                    <option value="Phường 6">Phường 6</option>
+                                    <option value="Phường 7">Phường 7</option>
+                                    <option value="Phường 8">Phường 8</option>
+                                    <option value="Phường 9">Phường 9</option>
+                                    <option value="Phường 10">Phường 10</option>
+                                    <option value="Phường 11">Phường 11</option>
+                                    <option value="Phường 12">Phường 12</option>
+                                    <option value="Phường 13">Phường 13</option>
+                                    <option value="Phường 14">Phường 14</option>
+                                    <option value="Phường 15">Phường 15</option>
+                                    <option value="Phường 16">Phường 16</option>
+                                    <option value="Phường 17">Phường 17</option>
+                                    <option value="Phường 18">Phường 18</option>
+                                    <option value="Phường 19">Phường 19</option>
+                                    <option value="Phường 20">Phường 20</option>
+                                    <option value="Phường An Khánh">Phường An Khánh</option>
+                                    <option value="Phường An Lợi Đông">Phường An Lợi Đông</option>
+                                    <option value="Phường An Phú">Phường An Phú</option>
+                                    <option value="Phường Bình An">Phường Bình An</option>
+                                    <option value="Phường Bình Khánh">Phường Bình Khánh</option>
+                                    <option value="Phường Bình Trưng Đông">Phường Bình Trưng Đông</option>
+                                    <option value="Phường Bình Trưng Tây">Phường Bình Trưng Tây</option>
+                                    <option value="Phường Cát Lái">Phường Cát Lái</option>
+                                    <option value="Phường Long Bình">Phường Long Bình</option>
+                                    <option value="Phường Long Phước">Phường Long Phước</option>
+                                    <option value="Phường Long Thạnh Mỹ">Phường Long Thạnh Mỹ</option>
+                                    <option value="Phường Long Trường">Phường Long Trường</option>
+                                    <option value="Phường Phú Hữu">Phường Phú Hữu</option>
+                                    <option value="Phường Phước Bình">Phường Phước Bình</option>
+                                    <option value="Phường Phước Long A">Phường Phước Long A</option>
+                                    <option value="Phường Phước Long B">Phường Phước Long B</option>
+                                    <option value="Phường Tân Hưng">Phường Tân Hưng</option>
+                                    <option value="Phường Tân Kiểng">Phường Tân Kiểng</option>
+                                    <option value="Phường Chợ Quán">Phường Chợ Quán</option>
+                                    <option value="Phường Tân Phong">Phường Tân Phong</option>
+                                    <option value="Phường Tân Phú">Phường Tân Phú</option>
+                                    <option value="Phường Tân Quy">Phường Tân Quy</option>
+                                    <option value="Phường Tân Thuận Đông">Phường Tân Thuận Đông</option>
+                                    <option value="Phường Tân Thuận Tây">Phường Tân Thuận Tây</option>
+                                    <option value="Phường Thảo Điền">Phường Thảo Điền</option>
+                                    <option value="Phường Thủ Thiêm">Phường Thủ Thiêm</option>
+                                    <option value="Phường Trường Thạnh">Phường Trường Thạnh</option>
+                                    <option value="Xã Bình Chánh">Xã Bình Chánh</option>
+                                    <option value="Xã Cần Thạnh">Xã Cần Thạnh</option>
+                                    <option value="Xã Long Hòa">Xã Long Hòa</option>
+                                    <option value="Xã Lý Nhơn">Xã Lý Nhơn</option>
+                                    <option value="Xã Nhơn Đức">Xã Nhơn Đức</option>
+                                    <option value="Xã Phú Xuân">Xã Phú Xuân</option>
+                                    <option value="Xã Vĩnh Lộc A">Xã Vĩnh Lộc A</option>
+                                    <option value="Xã Vĩnh Lộc B">Xã Vĩnh Lộc B</option>
+                            </select>                          
+                            <input type="text" id="detailedAddress" placeholder="Địa chỉ cụ thể">                               
+                            <label>Loại địa chỉ:</label>
+                            <div class="address-category">
+                                <button type="button" class="address-type-btn" data-type="Nhà Riêng">Nhà Riêng</button>
+                                <button type="button" class="address-type-btn" data-type="Văn Phòng">Văn Phòng</button>
+                            </div>                                                                       
+                            <div class="set-default">
+                                <input type="checkbox" id="setDefaultAddress">
+                                <label for="setDefaultAddress">Đặt làm địa chỉ mặc định</label>
+                            </div>                
+                            <div class="modal-actions">
+                                <button type="button" id="cancelBtn">Trở Lại</button>
+                                <button type="submit" id="saveBtn">Hoàn thành</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+            <!-- Đổi Mật Khẩu -->
+            <div class="profile-details" id="change-password-details" style="display: none;">
+                <div class="change-password-header">
+                    <h2>Đổi Mật Khẩu</h2>
+                </div>
+                <div class="change-password-form">
+                    <div class="form-group">
+                        <label for="current-password">Mật khẩu hiện tại:</label>
+                        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Mật khẩu mới:</label>
+                        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Xác nhận mật khẩu mới:</label>
+                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-save" onclick="changePassword()">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Đơn mua -->
+            <div class="profile-details" id="order-history-details" style="display: none;">
+            <div class="order-container">
+                <div class="order-tabs">
+                    <button class="tab active">Tất cả</button>
+                    <button class="tab">Chờ thanh toán</button>
+                    <button class="tab">Vận chuyển</button>
+                    <button class="tab">Chờ giao hàng</button>
+                    <button class="tab">Hoàn thành</button>
+                    <button class="tab">Đã hủy</button>
+                </div>
+
+                <div class="order-details">
+
+                    <!-- ==================== ĐƠN HÀNG 1 – CHỜ THANH TOÁN (HÓA ĐƠN CŨ) ==================== -->
+                    <div class="order-item" data-status="waiting-payment">
+                        <div class="order-header">
+                            <span class="order-status-wait">Chờ thanh toán </span>|
+                            <a href="#" class="status-link"> CHỜ THANH TOÁN</a>
+                        </div>
+
+                        <!-- Sản phẩm 1 -->
+                        <div class="order-product">
+                            <div class="product-image">
+                                <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Casio Edifice ECB-10AT-1A</p>
+                                <p class="product-type">Casio</p>
+                                <p class="product-quantity">x1</p>
+                            </div>
+                            <p class="product-price">950.000 VNĐ</p>
+                        </div>
+
+                        <!-- Sản phẩm 2 -->
+                        <div class="order-product">
+                            <div class="product-image">
+                                <img src="../image/Rolex/Day-Date 36.png" alt="Day-Date 36">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Day-Date 36</p>
+                                <p class="product-type">Rolex</p>
+                                <p class="product-quantity">x1</p>
+                            </div>
+                            <p class="product-price">345.000.000 VNĐ</p>
+                        </div>
+
+                        <!-- Sản phẩm 3 -->
+                        <div class="order-product">
+                            <div class="product-image">
+                                <img src="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg" alt="Seiko 40.5mm Nam SRPB41J1">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Seiko 40.5mm Nam SRPB41J1</p>
+                                <p class="product-type">Seiko</p>
+                                <p class="product-quantity">x1</p>
+                            </div>
+                            <p class="product-price">16.000.000 VNĐ</p>
+                        </div>
+
+                        <div class="order-total">
+                            <p>Thành tiền: <strong>362.070.000 VNĐ</strong></p>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="reorder-btn">Mua lại</button>
+                            <button class="contact-seller-btn">Liên hệ</button>
+                            <button class="review-btn">Xem đánh giá</button>
+                        </div>
+                        <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
+                    </div>
+
+                    <!-- ==================== ĐƠN HÀNG 2 – HOÀN THÀNH (NGẪU NHIÊN) ==================== -->
+                    <div class="order-item" data-status="completed">
+                        <div class="order-header">
+                            <span class="order-status-finish">Giao hàng thành công </span>|
+                            <a href="#" class="status-link"> HOÀN THÀNH</a>
+                        </div>
+
+                        <!-- Sản phẩm ngẫu nhiên 1 -->
+                        <div class="order-product">
+                            <div class="product-image">
+                                <img src="../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg" alt="Casio Gshock GA-2100SKE-7A">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Casio Gshock GA-2100SKE-7A</p>
+                                <p class="product-type">Casio</p>
+                                <p class="product-quantity">x1</p>
+                            </div>
+                            <p class="product-price">1.450.000 VNĐ</p>
+                        </div>
+
+                        <!-- Sản phẩm ngẫu nhiên 2 -->
+                        <div class="order-product">
+                            <div class="product-image">
+                                <img src="../image/Rolex/Land-Dweller 40.png" alt="Land-Dweller 40">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Land-Dweller 40</p>
+                                <p class="product-type">Rolex</p>
+                                <p class="product-quantity">x1</p>
+                            </div>
+                            <p class="product-price">315.000.000 VNĐ</p>
+                        </div>
+
+                        <div class="order-total">
+                            <p>Thành tiền: <strong>316.480.000 VNĐ</strong></p>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="reorder-btn">Mua lại</button>
+                            <button class="contact-seller-btn">Liên hệ</button>
+                            <button class="review-btn">Xem đánh giá</button>
+                        </div>
+                        <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="./index_user.html">Trang chủ</a></li>
+                    <li><a href="./menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="./news.html">Tin tức</a></li>
+                    <li><a href="./introduce.html">Giới thiệu</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Kết nối với chúng tôi</h2>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="footer-section members">
+                <h2>Thành viên</h2>
+                <ul>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
+                    <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
+                    <li><a href="#">Trần Thị Xuân Thanh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
+        </div>
+    </footer>
+    <!-- TOP -->
+    <div id="scrollToTopBtn">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/profile.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("openHistory") === "true") {
+            // Ẩn phần Hồ sơ
+            const profileDetails = document.getElementById("profile-details");
+            if (profileDetails) profileDetails.style.display = "none";
+
+            // Hiển thị phần Đơn đã mua
+            const orderHistory = document.getElementById("order-history-details");
+            if (orderHistory) orderHistory.style.display = "block";
+
+            // Cập nhật menu bên trái active
+            const profileMenu = document.getElementById("profile");
+            const orderMenu = document.getElementById("order-history");
+            if (profileMenu) profileMenu.classList.remove("active");
+            if (orderMenu) orderMenu.classList.add("active");
+        }
+    });
+    </script>
+
+</body>
+</html>
