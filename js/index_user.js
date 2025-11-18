@@ -369,30 +369,35 @@ function renderPage(page) {
 }
 
 function updatePagination() {
-  const totalPages = Math.ceil(renderProducts.length / itemsPerPage);
+      const totalPages = Math.ceil(renderProducts.length / itemsPerPage);
 
-  const prevButton = document.querySelector(".page1");
-  const nextButton = document.querySelector(".page2");
+      const prevButton = document.querySelector(".page1");
+      const nextButton = document.querySelector(".page2");
+      const listPageElement = document.querySelector(".pagination");
 
-  const pageLinks = document.querySelectorAll(".listpage li:not(.page1):not(.page2)");
+      if (!listPageElement) {
+          console.error("Không tìm thấy phần tử .pagination");
+          return;
+      }
 
-  if (currentPage === 1) {
-    prevButton.classList.add("disabled");
-    nextButton.classList.remove("disabled");
-    pageLinks.forEach((link) => link.classList.remove("active"));
-    pageLinks[0].classList.add("active");
-  } else if (currentPage === totalPages) {
-    nextButton.classList.add("disabled");
-    prevButton.classList.remove("disabled");
-    pageLinks.forEach((link) => link.classList.remove("active"));
-    pageLinks[1].classList.add("active");
-  } else {
-    prevButton.classList.remove("disabled");
-    nextButton.classList.remove("disabled");
-    pageLinks.forEach((link) => link.classList.remove("active"));
-    pageLinks[currentPage - 1].classList.add("active");
+      const pageLinks = listPageElement.querySelectorAll("li:not(.page1):not(.page2)");
+
+      if (currentPage === 1) {
+          prevButton.classList.add("disabled");
+          nextButton.classList.remove("disabled");
+      } else if (currentPage === totalPages) {
+          nextButton.classList.add("disabled");
+          prevButton.classList.remove("disabled");
+      } else {
+          prevButton.classList.remove("disabled");
+          nextButton.classList.remove("disabled");
+      }
+
+      pageLinks.forEach((link) => link.classList.remove("active"));
+      if (pageLinks[currentPage - 1]) {
+          pageLinks[currentPage - 1].classList.add("active");
+      }
   }
-}
 
 document.querySelector(".page1").addEventListener("click", function () {
   if (currentPage > 1) {
@@ -474,118 +479,3 @@ thumbnails.forEach((thumbnail) => {
 });
 });
 
-/* Hàm khởi tạo phân trang */
-function initPagination() {
-
-  const productListElement = document.querySelector("#productList");
-  if (!productListElement) {
-      console.error("Không tìm thấy phần tử #product-list");
-  }
-
-
-  const itemsPerPage = 4;
-  let currentPage = 1;
-
-  function renderPage(page) {
-
-      productListElement.innerHTML = "";
-
-      const start = (page - 1) * itemsPerPage;
-      const end = page * itemsPerPage;
-      const productsToShow = renderProducts.slice(start, end);
-
-      productsToShow.forEach((product) => {
-          const productHTML = `
-              <div class="menu_item" data-product='${JSON.stringify(product)}'>
-                  <div class="menu_item_img">
-                      <a href="#">
-                          <img src="${product.image}" alt="${product.name}" class="menu_img">
-                      </a>
-                      <p class="product-category" style="text-align: center;">
-                          ${product.category.toUpperCase()}
-                      </p>
-                  </div>
-                  <div class="menu_item_info">
-                      <a>
-                          <h3 class="menu_item_title">
-                              <strong>${product.name}</strong>
-                          </h3>
-                      </a>
-                      <p class="price_item">${product.price}</p>
-                  </div>
-              </div>
-          `;
-          productListElement.insertAdjacentHTML("beforeend", productHTML);
-
-          const productElement = productListElement.lastElementChild;
-          productElement.addEventListener("click", () => {
-            product.image = '../.' + product.image
-              localStorage.setItem("selectedProduct", JSON.stringify(product));
-              window.location.href = "./user/product/mota.html";
-          });
-      });
-  }
-
-  function updatePagination() {
-      const totalPages = Math.ceil(renderProducts.length / itemsPerPage);
-
-      const prevButton = document.querySelector(".page1");
-      const nextButton = document.querySelector(".page2");
-      const listPageElement = document.querySelector(".pagination");
-
-      if (!listPageElement) {
-          console.error("Không tìm thấy phần tử .pagination");
-          return;
-      }
-
-      const pageLinks = listPageElement.querySelectorAll("li:not(.page1):not(.page2)");
-
-      if (currentPage === 1) {
-          prevButton.classList.add("disabled");
-          nextButton.classList.remove("disabled");
-      } else if (currentPage === totalPages) {
-          nextButton.classList.add("disabled");
-          prevButton.classList.remove("disabled");
-      } else {
-          prevButton.classList.remove("disabled");
-          nextButton.classList.remove("disabled");
-      }
-
-      pageLinks.forEach((link) => link.classList.remove("active"));
-      if (pageLinks[currentPage - 1]) {
-          pageLinks[currentPage - 1].classList.add("active");
-      }
-  }
-
-  document.querySelector(".page1").addEventListener("click", function () {
-      if (currentPage > 1) {
-          currentPage--;
-          renderPage(currentPage);
-          updatePagination();
-      }
-  });
-
-  document.querySelector(".page2").addEventListener("click", function () {
-      const totalPages = Math.ceil(renderProducts.length / itemsPerPage);
-      if (currentPage < totalPages) {
-          currentPage++;
-          renderPage(currentPage);
-          updatePagination();
-      }
-  });
-
-  const listPageElement = document.querySelector(".pagination");
-  if (listPageElement) {
-      const pageLinks = listPageElement.querySelectorAll("li:not(.page1):not(.page2)");
-      pageLinks.forEach(function (pageLink, index) {
-          pageLink.addEventListener("click", function () {
-              currentPage = index + 1;
-              renderPage(currentPage);
-              updatePagination();
-          });
-      });
-  }
-
-  renderPage(currentPage);
-  updatePagination();
-}
