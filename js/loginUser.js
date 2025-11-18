@@ -67,11 +67,11 @@ function fakeLoginSuccess() {
         modalsuccess.classList.add('active');
         // Tự động chuyển trang sau 1.5 giây
         setTimeout(() => {
-            window.location.href = '../../index_user.html'; // Hoặc trang chủ bạn muốn
+            window.location.href = '../login-user/index_user.html'; // Hoặc trang chủ bạn muốn
         }, 1500);
     } else {
         // Nếu không có modal → chuyển luôn
-        window.location.href = '../../index_user.html';
+        window.location.href = '../login-user/index_user.html';
     }
 }
 
