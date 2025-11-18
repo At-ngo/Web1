@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/goods.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <title>Kết Quả Tìm Kiếm</title>
+    <title>Đơn hàng</title>
 </head>
+
 <body>
     <header>
         <div class="toggle">
@@ -19,17 +22,17 @@
         </a>
         <nav class="nav-menu" id="home">
             <ul>
-                <li class="active"><a href="../login-user/index_user.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
+                <li class="active"><a href="../login_user/index_user.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
                 <li class="dropdown">
-                    <a href="../login-user/menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
+                    <a href="../login_user/menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
                     <ul class="sub-menu">
-                        <li><a href="../login-user/menu/casio.html"><span>Casio</span></a></li>
-                        <li><a href="../login-user/menu/rolex.html"><span>Rolex</span></a></li>
-                        <li><a href="../login-user/menu/seiko.html"><span>Seiko</span></a></li>
+                        <li><a href="../login_user/menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="../login_user/menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="../login_user/menu/seiko.html"><span>Seiko</span></a></li>
                     </ul>
                 </li>
-                <li><a href="../login-user/news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
-                <li><a href="../login-user/introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
+                <li><a href="../login_user/news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li><a href="../login_user/introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
                 <li><a href="./contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
             </ul>
         </nav>
@@ -102,7 +105,7 @@
                 </div>
             </div>
             <div class="icon-item">
-                <a href="./cart.html">
+                <a href="../login_user/cart.html" class="cart-link">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-count">0</span>
                 </a>
@@ -111,7 +114,7 @@
                 <a href="javascript:void(0);">
                     <img src="../image/khac/user.png">
                     <ul class="dropdown-user1">
-                        <li><a href="./profile.html">Thông tin cá nhân</a></li>
+                        <li><a href="../login_user/profile.html">Thông tin cá nhân</a></li>
                         <li><a href="./profile.html?openHistory=true">Đơn đã mua</a></li>
                         <li><a href="../index.html">Đăng xuất</a></li>
                     </ul>
@@ -119,116 +122,91 @@
             </div>
         </div>
     </header>
-    <!-- RESULT FIND -->
-    <main style="padding-top: 80px;">
-        <section class="search-results">
-            <div class="container">
-                <h2>Kết quả tìm kiếm</h2>
-                <p class="results-count">Tìm thấy <b>6</b> sản phẩm phù hợp cho <b>"Casio"</b></p>
-                <div class="product-grid" style ="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; justify-items: center; text-align: center;">
-                    <div class="mon">
-                        <img src="../../image/Casio/CASIO AMW-880-1A.png" alt="Casio AMW-880-1A">
-                        <a href="../user/menu/casio-menu.html">CASIO</a>
-                        <h3>Casio AMW-880-1A</h3>
-                        <p class="price">1.250.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb_section container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../login_user/index_user.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../login_user/cart.html">Giỏ hàng</a></li>
+                <li class="breadcrumb-item"><a href="../login_user/payment.html">Thanh toán</a></li>
+                <li class="breadcrumb-item"><a href="../login_user/thanks.html">Cảm ơn</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><strong>Đơn hàng</strong></li>
 
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Edifice ECB-10AT-1A</h3>
-                        <p class="price">950.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
+            </ol>
+        </nav>
+    </section>
+    <!-- PROFILE -->
+    <div class="goods__content row">
+        <div class="goods__content__left col-6">
+            <h2 style="padding-left: 110px;"><strong>Chi tiết đơn hàng</strong></h2>
+        </div>
+    </div>
+    <main>
+    <div class="profile-container">
+        <div class="order-details">
+            <div class="order-item" data-status="completed">
+                <div class="order-header">
+                    <h4>Giao đến</h4>
+                    <span class="order-status-wait">Đông Ất</span> |
+                    <span class="status-link">(+84) 865 172 517</span>
+                    <p class="diachinhan">273 Đ. An Dương Vương, Phường Chợ Quán, TP. Hồ Chí Minh</p>
 
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg" alt="Casio Edifice EFV-C100D-1B">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Edifice EFV-C100D-1B</h3>
-                        <p class="price">3.000.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg" alt="Casio Edifice EQS-940BL-1A">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Edifice EQS-940BL-1A</h3>
-                        <p class="price">4.200.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg" alt="Casio Gshock DW-5600BBN-1E">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Gshock DW-5600BBN-1E</h3>
-                        <p class="price">5.500.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg" alt="Casio Gshock GA-2100SKE-7A">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Gshock GA-2100SKE-7A</h3>
-                        <p class="price">1.450.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO GSHOCK GM-2100G-1A9.png" alt="Casio Gshock GM-2100G-1A9">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Gshock GM-2100G-1A9</h3>
-                        <p class="price">2.800.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO LTP-V005L-1A.jpg" alt="Casio LTP-V005L-1A">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio LTP-V005L-1A</h3>
-                        <p class="price">1.950.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO MTP-B185D-1A.png" alt="Casio MTP-B185D-1A">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio MTP-B185D-1A</h3>
-                        <p class="price">1.300.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
-                    </div>
-
-                    <div class="mon">
-                        <img src="../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg" alt="Casio Edifice EFV-620D-1A4">
-                        <a href="../user/menu/casio.html">CASIO</a>
-                        <h3>Casio Edifice EFV-620D-1A4</h3>
-                        <p class="price">1.100.000 VNĐ</p>
-                        <a class="btn btn-primary" id="order-btn">Đặt mua</a>
+                    <!-- BẢNG HIỂN THỊ NGAY - KHÔNG BỊ ẨN -->
+                    <div class="order-details-table" style="margin-top: 20px; display: block !important;">
+                        <table border="1" cellspacing="0" cellpadding="10" style="width:100%; border-collapse: collapse; display: table !important;">
+                            <thead style="background-color: #426EB4; color: white;">
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Thương hiệu</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá</th>
+                                    <th>Phí vận chuyển</th>
+                                    <th>Tổng</th>
+                                    <th>Phương thức Thanh toán</th>
+                                </tr>
+                            </thead>
+                            <tbody style="display: table-row-group !important;">
+                                <tr>
+                                    <td>Casio Edifice ECB-10AT-1A</td>
+                                    <td>Casio</td>
+                                    <td>1</td>
+                                    <td>950.000 VNĐ</td>
+                                    <td></td>
+                                    <td>980.000 VNĐ</td>
+                                    <td rowspan="3" style="text-align:center; vertical-align: middle;">Tài khoản ngân hàng</td>
+                                </tr>
+                                <tr>
+                                    <td>Day-Date 36</td>
+                                    <td>Rolex</td>
+                                    <td>1</td>
+                                    <td>345.000.000 VNĐ</td>
+                                    <td></td>
+                                    <td>345.050.000 VNĐ</td>
+                                </tr>
+                                <tr>
+                                    <td>Seiko 40.5mm Nam SRPB41J1</td>
+                                    <td>Seiko</td>
+                                    <td>1</td>
+                                    <td>16.000.000 VNĐ</td>
+                                    <td></td>
+                                    <td>16.040.000 VNĐ</td>
+                                </tr>
+                                <tr style="font-weight:bold;">
+                                    <td colspan="4" style="text-align:right;">Tổng cộng:</td>
+                                    <td>10.000 VNĐ</td>
+                                    <td style="color:#426EB4;">362.080.000 VNĐ</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <ul class="pagination">
-                <li class="page1"><i class="fa-solid fa-angles-left"></i></li>
-                <li class="active">1</li>
-                <li>2</li>
-                <li class="page2"><i class="fa-solid fa-angles-right"></i></li>
-            </ul> 
-            <!-- Modal Thông báo Đặt mua -->
-            <div class="custom-modal" id="custom-order-modal">
-                <div class="custom-modal-content">
-                    <span class="custom-close-btn" id="custom-close-order-modal">&times;</span>
-                    <h3><b>Thông báo</b></h3>
-                    <p>Đã thêm sản phẩm vào giỏ hàng!</p>
-                    <div class="custom-modal-actions">
-                        <button class="custom-modal-btn" id="custom-continue-shopping-btn">Tiếp tục lựa chọn</button>
-                        <button class="custom-modal-btn" id="custom-go-to-cart-btn">Đi đến giỏ hàng</button>
-                    </div>
-                </div>
-            </div>   
-        </section>
-    </main> 
+        </div>
+    </div>
+    </main>
     <!-- FOOTER -->
-     <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-section about">
                 <h2>Về chúng tôi</h2>
@@ -237,11 +215,11 @@
             <div class="footer-section links">
                 <h2>Liên kết</h2>
                 <ul>
-                    <li><a href="../index_user.html">Trang chủ</a></li>
-                    <li><a href="../menu/allmenu.html">Thương hiệu</a></li>
-                    <li><a href="../news.html">Tin tức</a></li>
-                    <li><a href="../introduce.html">Giới thiệu</a></li>
-                    <li><a href="../contact.html">Liên hệ</a></li>
+                    <li><a href="./index_user.html">Trang chủ</a></li>
+                    <li><a href="./menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="./news.html">Tin tức</a></li>
+                    <li><a href="./introduce.html">Giới thiệu</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer-section social">
@@ -270,8 +248,6 @@
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
     <script src="../js/nav.js"></script>
-    <script src="../js/buy.js"></script>
-    <script src="../js/resultfind.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
         const filterBtn = document.getElementById('openFilterModal');
@@ -310,5 +286,45 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            updateCartQuantity();
+        });
+
+        window.addEventListener("storage", function (event) {
+            if (event.key === "cart") {
+                updateCartQuantity();
+            }
+        });
+
+        function updateCartQuantity() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartQuantityElement = document.getElementById("cartQuantity");
+
+            if (cartQuantityElement) {
+                cartQuantityElement.textContent = totalQuantity;
+            }
+        }
+
+    </script>
+
+    <script>
+        document.getElementById('show-details').addEventListener('click', function () {
+            const table = document.querySelector('.order-details-table');
+            table.style.display = 'block';
+            table.style.opacity = '1';
+            table.style.visibility = 'visible';
+        });
+
+        document.getElementById('show-details').addEventListener('click', function () {
+            const table = document.querySelector('.order-details-table');
+            table.classList.add('show');
+        });
+
+
+    </script>
+
 </body>
+
 </html>
