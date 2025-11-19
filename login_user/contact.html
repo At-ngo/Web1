@@ -28,9 +28,9 @@
                         <li><a href="./menu/seiko.html"><span>Seiko</span></a></li>
                     </ul>
                 </li>
-                <li><a href="./news.html"><i class="fa-solid fa-phone"></i>Tin tức</a></li>
+                <li><a href="./news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
                 <li><a href="./introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
-                <li class="active"><a href="#"><i class="fa-solid fa-newspaper"></i>Liên hệ</a></li>
+                <li class="active"><a href="#"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
             </ul>
         </nav>
         <!-- SEARCH -->
@@ -154,7 +154,68 @@
                 </div>
             </div>
         </section>
-    </main>  
+    </main> 
+    <!-- SUCCESS TOAST -->
+    <div id="successToast" class="success-toast">
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast-message">Gửi thông điệp thành công!</div>
+        <div class="toast-progress"></div>
+    </div>
+    <style>
+        /* Thiết kế thông báo thành công đẹp */
+        .success-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            z-index: 99999;
+            transform: translateX(400px);
+            transition: all 0.4s ease;
+            max-width: 400px;
+        }
+
+        .success-toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-icon i {
+            font-size: 28px;
+        }
+
+        .toast-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255,255,255,0.4);
+            width: 100%;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .toast-progress::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            width: 0%;
+            background: white;
+            animation: progress 3s linear forwards;
+        }
+
+        @keyframes progress {
+            to { width: 100%; }
+        }
+    </style>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
@@ -236,5 +297,24 @@
             });
         });
     </script>
-</body>
+    <script>
+        // Xử lý gửi form liên hệ
+        document.querySelector('.contact-form form').addEventListener('submit', function (e) {
+            e.preventDefault(); // chặn reload
+
+            const toast = document.getElementById("successToast");
+
+            // Hiện thông báo
+            toast.classList.add("show");
+
+            // Ẩn sau 3 giây
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+    </body>
 </html>

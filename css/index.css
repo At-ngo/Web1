@@ -1104,7 +1104,7 @@ header .logo img {
 
 .introduce .content p {
     font-size: 16px;
-    color: rgb(70, 31, 31);
+    color: #000;
     max-width: 550px;
     margin: 0 auto;
     text-align: justify;

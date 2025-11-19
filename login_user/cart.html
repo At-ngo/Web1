@@ -148,66 +148,83 @@
             <div class="col-9 highlands__cart--orders">
                 <h2>Đơn chờ thanh toán</h2>
                 <div class="orders--items row">
-                    <!-- Sản phẩm 1 -->
+                    <!-- SẢN PHẨM 1: Casio -->
                     <div class="col-12 order-item mb-3 p-3 border rounded d-flex align-items-center justify-content-between position-relative">
                         <div class="d-flex align-items-center flex-grow-1">
                             <div class="product-image me-3">
-                                <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A" style="width:80px; height:80px; object-fit:cover; border-radius: 6px;">
+                                <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A" style="width:80px; height:80px; object-fit:cover; border-radius:6px;">
                             </div>
-                            <div class="product-details">
+                            <div class="product-details flex-grow-1">
                                 <div class="order-name"><b>Casio Edifice ECB-10AT-1A</b></div>
-                                <div class="order-type text-muted">Casio</div>
-                                <div class="order-quantity text-muted">Số lượng: 1</div>
-                                <div class="order-price fw-bold text-danger">Giá: 950.000 VNĐ</div>
+                                <div class="order-type text-muted d-flex align-items-center gap-3">
+                                    Casio
+                                    <div class="quantity-box">
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateQty(this)">–</button>
+                                        <input type="number" min="1" value="1" class="qty-input" readonly>
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateQty(this)">+</button>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="order-price fw-bold text-danger text-end">950.000 VNĐ</div>
                         </div>
-                        <!-- Icon thùng rác -->
                         <div class="delete-btn" title="Xóa sản phẩm">
                             <i class="fas fa-trash-alt text-danger"></i>
                         </div>
                     </div>
 
-                    <!-- Sản phẩm 2 -->
+                    <!-- SẢN PHẨM 2: Rolex -->
                     <div class="col-12 order-item mb-3 p-3 border rounded d-flex align-items-center justify-content-between position-relative">
                         <div class="d-flex align-items-center flex-grow-1">
                             <div class="product-image me-3">
-                                <img src="../image/Rolex/Day-Date 36.png" alt="Day-Date 36" style="width:80px; height:80px; object-fit:cover; border-radius: 6px;">
+                                <img src="../image/Rolex/Day-Date 36.png" alt="Day-Date 36" style="width:80px; height:80px; object-fit:cover; border-radius:6px;">
                             </div>
-                            <div class="product-details">
+                            <div class="product-details flex-grow-1">
                                 <div class="order-name"><b>Day-Date 36</b></div>
-                                <div class="order-type text-muted">Rolex</div>
-                                <div class="order-quantity text-muted">Số lượng: 1</div>
-                                <div class="order-price fw-bold text-danger">Giá: 345.000.000 VNĐ</div>
+                                <div class="order-type text-muted d-flex align-items-center gap-3">
+                                    Rolex
+                                    <div class="quantity-box">
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateQty(this)">–</button>
+                                        <input type="number" min="1" value="1" class="qty-input" readonly>
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateQty(this)">+</button>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="order-price fw-bold text-danger text-end">345.000.000 VNĐ</div>
                         </div>
                         <div class="delete-btn" title="Xóa sản phẩm">
                             <i class="fas fa-trash-alt text-danger"></i>
                         </div>
                     </div>
 
-                    <!-- Sản phẩm 3 -->
+                    <!-- SẢN PHẨM 3: Seiko -->
                     <div class="col-12 order-item mb-3 p-3 border rounded d-flex align-items-center justify-content-between position-relative">
                         <div class="d-flex align-items-center flex-grow-1">
                             <div class="product-image me-3">
-                                <img src="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg" alt="Seiko 40.5mm Nam SRPB41J1" style="width:80px; height:80px; object-fit:cover; border-radius: 6px;">
+                                <img src="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg" alt="Seiko 40.5mm Nam SRPB41J1" style="width:80px; height:80px; object-fit:cover; border-radius:6px;">
                             </div>
-                            <div class="product-details">
+                            <div class="product-details flex-grow-1">
                                 <div class="order-name"><b>Seiko 40.5mm Nam SRPB41J1</b></div>
-                                <div class="order-type text-muted">Seiko</div>
-                                <div class="order-quantity text-muted">Số lượng: 1</div>
-                                <div class="order-price fw-bold text-danger">Giá: 16.000.000 VNĐ</div>
+                                <div class="order-type text-muted d-flex align-items-center gap-3">
+                                    Seiko
+                                    <div class="quantity-box">
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateQty(this)">–</button>
+                                        <input type="number" min="1" value="1" class="qty-input" readonly>
+                                        <button type="button" class="qty-btn" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateQty(this)">+</button>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="order-price fw-bold text-danger text-end">16.000.000 VNĐ</div>
                         </div>
                         <div class="delete-btn" title="Xóa sản phẩm">
                             <i class="fas fa-trash-alt text-danger"></i>
                         </div>
                     </div>
-                </div>
 
+                </div>
                 <div class="hr"></div>
                 <div class="orders__submit row">
                     <div class="col-6"><i class="fas fa-angle-left"></i>
-                        <a style="color: black; text-decoration: none;" href="./menu/allmenu.html">Tiếp tục chọn món</a>
+                        <a style="color: black; text-decoration: none;" href="./menu/allmenu.html">Tiếp tục chọn hàng</a>
                     </div>
                 </div>
             </div>
@@ -231,7 +248,15 @@
             </div>
         </div>
     </section>
-
+    <div id="successToast" class="success-toast" style="display:none; position: fixed; top: 20px; right: 20px; z-index: 9999;">
+        <div class="toast-icon">
+            <i class="fa-solid fa-check-circle"></i>
+        </div>
+        <div class="toast-message">
+            <span id="toastText">Đã xóa sản phẩm khỏi giỏ hàng!</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
@@ -274,6 +299,87 @@
     <div id="scrollToTopBtn">
         <a href="#home"><i class="fa-solid fa-chevron-up"></i></a>
     </div>
+    <style>
+        .quantity-box {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 2px 4px;
+        font-size: 14px;
+    }
+
+    .qty-btn {
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: white;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .qty-btn:hover {
+        background: #e9ecef;
+    }
+
+    .qty-input {
+        width: 36px;
+        height: 24px;
+        text-align: center;
+        border: none;
+        background: transparent;
+        font-weight: bold;
+        font-size: 14px;
+        pointer-events: none;
+    }
+
+    /* Đảm bảo không bị xuống dòng khi màn hình nhỏ */
+    .order-item {
+        flex-wrap: wrap;
+    }
+
+    .order-item > div:not(.delete-btn) {
+        min-width: 0;
+    }
+    </style>
+
+    <style>
+    .toast-icon i {
+        font-size: 28px;
+    }
+    .toast-progress {
+        position: absolute;
+        bottom: 0; left: 0;
+        height: 4px;
+        background: rgba(255,255,255,0.4);
+        width: 100%;
+        border-radius: 0 0 12px 12px;
+    }
+    .toast-progress::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        width: 0%;
+        background: white;
+        animation: progress 3s linear forwards;
+    }
+    @keyframes progress { to { width: 100%; } }
+
+    /* CSS quantity-box bạn đã có rồi, giữ nguyên */
+    .quantity-box { display: flex; align-items: center; gap: 6px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; padding: 2px 4px; font-size: 14px; }
+    .qty-btn { width: 24px; height: 24px; border: none; background: white; color: #333; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: #e9ecef; }
+    .qty-input { width: 36px; height: 24px; text-align: center; border: none; background: transparent; font-weight: bold; font-size: 14px; pointer-events: none; }
+    </style>
     <script src="../js/nav.js"></script>
     <script src="../js/thongbao.js"></script>
     <script src="../js/chitietsp.js"></script>
@@ -382,6 +488,11 @@
         });
     });
     </script>
+    <script>
+    function updateQty(btn) {
+        const input = btn.parentNode.querySelector('input[type=number]');
+        if (input.value < 1) input.value = 1;
+    }
+    </script>
 </body>
-
 </html>

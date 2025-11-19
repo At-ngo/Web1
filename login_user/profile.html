@@ -231,24 +231,38 @@
                                 <option value="" disabled selected>Tỉnh/Thành phố</option>                                
                                     <option value="Hà Nội">Hà Nội</option>
                                     <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                                    <option value="Hà Nội">Hà Nội</option>
                                     <option value="Đà Nẵng">Đà Nẵng</option>
                                     <option value="Cần Thơ">Cần Thơ</option>
                                     <option value="Hải Phòng">Hải Phòng</option>
-                                    <option value="Nha Trang">Nha Trang</option>
-                                    <option value="Đà Lạt">Đà Lạt</option>
-                                    <option value="Vũng Tàu">Vũng Tàu</option>
-                                    <option value="Huế">Huế</option>
-                                    <option value="Buôn Ma Thuột">Buôn Ma Thuột</option>
-                                    <option value="Vinh">Vinh</option>
-                                    <option value="Quy Nhơn">Quy Nhơn</option>
-                                    <option value="Long Xuyên">Long Xuyên</option>
+                                    <option value="An Giang">An Giang</option>
+                                    <option value="Bắc Ninh">Bắc Ninh</option>
+                                    <option value="Cà Mau">Cà Mau</option>
+                                    <option value="Đắk Lắk">Đắk Lắk</option>
+                                    <option value="Đồng Nai">Đồng Nai</option>
+                                    <option value="Đồng Tháp">Đồng Tháp</option>
+                                    <option value="Gia Lai">Gia Lai</option>
+                                    <option value="Hưng Yên">Hưng Yên</option>
+                                    <option value="Khánh Hoà">Khánh Hoà</option>
+                                    <option value="Lào Cai">Lào Cai</option>
+                                    <option value="Lâm Đồng">Lâm Đồng</option>
+                                    <option value="Ninh Bình">Ninh Bình</option>
+                                    <option value="Phú Thọ">Phú Thọ</option>
+                                    <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                    <option value="Quảng Trị">Quảng Trị</option>
+                                    <option value="Tây Ninh">Tây Ninh</option>
                                     <option value="Thái Nguyên">Thái Nguyên</option>
-                                    <option value="Nam Định">Nam Định</option>
-                                    <option value="Rạch Giá">Rạch Giá</option>
-                                    <option value="Thái Bình">Thái Bình</option>
-                                    <option value="Thanh Hóa">Thanh Hóa</option>
-                                    <option value="Hạ Long">Hạ Long</option>
+                                    <option value="Tuyên Quang">Tuyên Quang</option>
+                                    <option value="Vĩnh Long">Vĩnh Long</option>
+                                    <option value="Huế">Huế</option>
+                                    <option value="Lai Châu">Lai Châu</option>
+                                    <option value="Điện Biên">Điện Biên</option>
+                                    <option value="Sơn La">Sơn La</option>
+                                    <option value="Lạng Sơn">Lạng Sơn</option>
+                                    <option value="Quảng Ninh">Quảng Ninh</option>
+                                    <option value="Thanh Hoá">Thanh Hoá</option>
+                                    <option value="Nghệ An">Nghệ An</option>
+                                    <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                    <option value="Cao Bằng">Cao Bằng</option>
                             </select>   
                             <select id="region">
                                 <option value="" disabled selected>Phường/Xã</option>                                
@@ -334,31 +348,33 @@
                 <div class="change-password-form">
                     <div class="form-group">
                         <label for="current-password">Mật khẩu hiện tại:</label>
-                        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required>
+                        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại">
                     </div>
                     <div class="form-group">
                         <label for="new-password">Mật khẩu mới:</label>
-                        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required>
+                        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
                     </div>
                     <div class="form-group">
                         <label for="confirm-password">Xác nhận mật khẩu mới:</label>
-                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
+                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới">
                     </div>
                     <div class="form-group">
-                        <button class="btn-save" onclick="changePassword()">Lưu thay đổi</button>
+                        <button type="button" class="btn-save" onclick="changePassword()">Lưu thay đổi</button>
                     </div>
                 </div>
             </div>
             <!-- Đơn mua -->
             <div class="profile-details" id="order-history-details" style="display: none;">
             <div class="order-container">
-                <div class="order-tabs">
-                    <button class="tab active">Tất cả</button>
-                    <button class="tab">Chờ thanh toán</button>
-                    <button class="tab">Vận chuyển</button>
-                    <button class="tab">Chờ giao hàng</button>
-                    <button class="tab">Hoàn thành</button>
-                    <button class="tab">Đã hủy</button>
+                <div class="order-filter-select">
+                    <select id="orderStatusFilter">
+                        <option value="all">Tất cả</option>
+                        <option value="waiting-payment">Chờ thanh toán</option>
+                        <option value="shipping">Vận chuyển</option>
+                        <option value="delivering">Chờ giao hàng</option>
+                        <option value="completed">Hoàn thành</option>
+                        <option value="cancelled">Đã hủy</option>
+                    </select>
                 </div>
 
                 <div class="order-details">
@@ -414,9 +430,15 @@
                         </div>
 
                         <div class="order-actions">
-                            <button class="reorder-btn">Mua lại</button>
-                            <button class="contact-seller-btn">Liên hệ</button>
-                            <button class="review-btn">Xem đánh giá</button>
+                            <!-- Nút Mua lại → chuyển đến cart.html -->
+                            <button class="reorder-btn" onclick="window.location.href='cart.html'">
+                                Mua lại
+                            </button>
+                            
+                            <!-- Nút Liên hệ → chuyển đến lienhe.html -->
+                            <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
+                                Liên hệ
+                            </button>
                         </div>
                         <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
                     </div>
@@ -459,9 +481,15 @@
                         </div>
 
                         <div class="order-actions">
-                            <button class="reorder-btn">Mua lại</button>
-                            <button class="contact-seller-btn">Liên hệ</button>
-                            <button class="review-btn">Xem đánh giá</button>
+                            <!-- Nút Mua lại → chuyển đến cart.html -->
+                            <button class="reorder-btn" onclick="window.location.href='cart.html'">
+                                Mua lại
+                            </button>
+                            
+                            <!-- Nút Liên hệ → chuyển đến lienhe.html -->
+                            <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
+                                Liên hệ
+                            </button>
                         </div>
                         <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
                     </div>
@@ -513,6 +541,191 @@
     <div id="scrollToTopBtn">
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
+    <!-- THÔNG BÁO THÀNH CÔNG ĐẸP (Toast Notification) -->
+    <div id="successToast" class="success-toast">
+        <div class="toast-icon">
+            <i class="fa-solid fa-check-circle"></i>
+        </div>
+        <div class="toast-message">
+            <span id="toastText">Lưu thành công!</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <style>
+    /* Thiết kế thông báo thành công đẹp */
+    .success-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        z-index: 99999;
+        transform: translateX(400px);
+        transition: all 0.4s ease;
+        max-width: 400px;
+    }
+
+    .success-toast.show {
+        transform: translateX(0);
+    }
+
+    .toast-icon i {
+        font-size: 28px;
+    }
+
+    .toast-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: rgba(255,255,255,0.4);
+        width: 100%;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .toast-progress::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        width: 0%;
+        background: white;
+        animation: progress 3s linear forwards;
+    }
+
+    @keyframes progress {
+        to { width: 100%; }
+    }
+    </style>
+    <style>
+    .order-actions button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;   /* chỉ đổi màu mượt thôi */
+    }
+
+    /* Nút Mua lại */
+    .reorder-btn {
+        background-color: #ff5722;   /* cam */
+        color: white;
+    }
+    .reorder-btn:hover,
+    .reorder-btn:active {
+        background-color: #e64a19;   /* cam đậm hơn khi bấm/hover */
+    }
+
+    /* Nút Liên hệ */
+    .contact-seller-btn {
+        background-color: #2196f3;   /* xanh dương */
+        color: white;
+    }
+    .contact-seller-btn:hover,
+    .contact-seller-btn:active {
+        background-color: #1976d2;   /* xanh đậm hơn khi bấm/hover */
+    }
+    </style>
+
+    <script>
+    // Hàm hiển thị thông báo thành công
+    function showSuccess(message = "Thao tác thành công!") {
+        const toast = document.getElementById('successToast');
+        const text = document.getElementById('toastText');
+        text.textContent = message;
+        
+        // Reset animation
+        toast.classList.remove('show');
+        void toast.offsetWidth; // Trigger reflow
+        
+        toast.classList.add('show');
+        
+        // Tự động ẩn sau 3 giây
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ==================== 1. NÚT "LƯU" TRONG HỒ SƠ ====================
+    document.querySelector('#profile-details .btn-save')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSuccess('Cập nhật hồ sơ thành công!');
+    });
+
+    // ==================== 2. CÁC NÚT TRONG PHẦN ĐỊA CHỈ ====================
+
+    // Nút "Thêm địa chỉ mới"
+    document.getElementById('updateBtn')?.addEventListener('click', function() {
+        document.getElementById('addressModalPopup').style.display = 'block';
+    });
+
+    // Nút "Hoàn thành" trong modal thêm/sửa địa chỉ
+    document.getElementById('saveBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('addressModalPopup').style.display = 'none';
+        showSuccess('Thêm địa chỉ thành công!');
+    });
+
+    // Nút "Trở lại"
+    document.getElementById('cancelBtn')?.addEventListener('click', function() {
+        document.getElementById('addressModalPopup').style.display = 'none';
+    });
+
+    // Nút "Cập nhật" trong danh sách địa chỉ
+    document.querySelectorAll('.address-item .btn-edit').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('addressModalPopup').style.display = 'block';
+            showSuccess('Đang chỉnh sửa địa chỉ...');
+        });
+    });
+
+    // Nút "Xóa" → hiện xác nhận → đồng ý thì thông báo thành công
+    document.querySelectorAll('.address-item .btn-delete').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('deleteConfirmationPopup').style.display = 'block';
+        });
+    });
+
+    document.getElementById('confirmDeleteAction')?.addEventListener('click', function() {
+        document.getElementById('deleteConfirmationPopup').style.display = 'none';
+        showSuccess('Xóa địa chỉ thành công!');
+    });
+
+    document.getElementById('cancelDeleteAction')?.addEventListener('click', function() {
+        document.getElementById('deleteConfirmationPopup').style.display = 'none';
+    });
+
+    // Nút "Thiết lập mặc định"
+    document.querySelectorAll('.btn-default-setting').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (!btn.style.cursor.includes('not-allowed')) {
+                showSuccess('Đã đặt làm địa chỉ mặc định!');
+            }
+        });
+    });
+
+    // ==================== 3. ĐỔI MẬT KHẨU ====================
+    function changePassword() {
+    // Không kiểm tra gì, chỉ thông báo lưu thành công
+    showSuccess('Đổi mật khẩu thành công!');
+    
+    // Reset form nếu muốn
+    const form = document.querySelector('#change-password-details form');
+    if (form) {
+        form.reset();
+    }
+}
+</script>
     <script src="../js/nav.js"></script>
     <script src="../js/profile.js"></script>
     <script>

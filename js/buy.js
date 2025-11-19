@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const renderProducts = [
   {
     "productCode": "CA01",
-    "image": "../../image/Casio/CASIO AMW-880-1A.png",
+    "image": "../image/Casio/CASIO AMW-880-1A.png",
     "category": "Casio",
     "name": "Casio AMW-880-1A",
     "price": "1.250.000 VNĐ",
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA02",
-    "image": "../../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
+    "image": "../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
     "category": "Casio",
     "name": "Casio Edifice ECB-10AT-1A",
     "price": "950.000 VNĐ",
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA03",
-    "image": "../../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg",
+    "image": "../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-C100D-1B",
     "price": "3.000.000 VNĐ",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA04",
-    "image": "../../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg",
+    "image": "../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg",
     "category": "Casio",
     "name": "Casio Edifice EQS-940BL-1A",
     "price": "4.200.000 VNĐ",
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA05",
-    "image": "../../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
+    "image": "../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
     "category": "Casio",
     "name": "Casio Gshock DW-1E",
     "price": "5.500.000 VNĐ",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA06",
-    "image": "../../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg",
+    "image": "../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg",
     "category": "Casio",
     "name": "Casio Gshock GA-2100KE-7A",
     "price": "1.450.000 VNĐ",
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA07",
-    "image": "../../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
+    "image": "../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
     "category": "Casio",
     "name": "Casio Gshock GM-2100G-1A9",
     "price": "2.800.000 VNĐ",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA08",
-    "image": "../../image/Casio/CASIO LTP-V005L-1A.jpg",
+    "image": "../image/Casio/CASIO LTP-V005L-1A.jpg",
     "category": "Casio",
     "name": "Casio LCP-V005L-1A",
     "price": "1.950.000 VNĐ",
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA09",
-    "image": "../../image/Casio/CASIO MTP-B185D-1A.png",
+    "image": "../image/Casio/CASIO MTP-B185D-1A.png",
     "category": "Casio",
     "name": "Casio MTP-B185B-1A",
     "price": "1.300.000 VNĐ",
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     "productCode": "CA10",
-    "image": "../../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg",
+    "image": "../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-620D-1A4",
     "price": "1.100.000 VNĐ",
@@ -94,56 +94,59 @@ document.addEventListener("DOMContentLoaded", () => {
   
     let pageSize = 4;
     let currentPage = 1;
-    let cartCount = 0; 
+    let cartCount = 0;
 
     const productContainer = document.querySelector(".product-grid");
     const paginationContainer = document.querySelector(".pagination");
-    const cartCountElement = document.getElementById('cart-count'); 
+    const cartCountElement = document.getElementById('cart-count');
 
-    const listCategory = productContainer.getAttribute('data-category');
-  
-    let filteredRenderProducts = renderProducts;
-    if (listCategory) {
-        filteredRenderProducts = filteredRenderProducts.filter(item => item.category == listCategory);
-    }
+    const listCategory = productContainer?.getAttribute('data-category');
+    let filteredProducts = listCategory 
+        ? renderProducts.filter(p => p.category === listCategory)
+        : renderProducts;
 
     const customOrderModal = document.getElementById('custom-order-modal');
     const customCloseOrderModal = document.getElementById('custom-close-order-modal');
     const customContinueShoppingBtn = document.getElementById('custom-continue-shopping-btn');
     const customGoToCartBtn = document.getElementById('custom-go-to-cart-btn');
-  
+
     function renderPage(page) {
         productContainer.innerHTML = "";
         const startIndex = (page - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
+        const pageProducts = filteredProducts.slice(startIndex, startIndex + pageSize);
 
-        const pageProducts = filteredRenderProducts.slice(startIndex, endIndex);
-
-        pageProducts.forEach((product) => {
-            const isOutOfStock = product.availability === false;
+        pageProducts.forEach(product => {
+            const isOutOfStock = !product.availability;
 
             const productItem = document.createElement("div");
             productItem.classList.add("mon");
             productItem.innerHTML = `
-                <a href="./product/mota.html?productCode=${product.productCode}">
-                    <img src="${product.image}" alt="${product.name}" class="product-img">
-                    <a href="#" class="product-category">${product.category}</a>
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="price">${product.price}</p>
-                </a>
-                <a class="btn btn-primary" id="order-btn" ${isOutOfStock ? 'style="background-color: #999; color: #fff; cursor: not-allowed;" disabled' : ''}>
+                <img src="${product.image}" alt="${product.name}" class="product-img">
+                <a href="#" class="product-category">${product.category}</a>
+                <h3 class="product-name">${product.name}</h3>
+                <p class="price">${product.price}</p>
+                <button class="btn btn-primary order-btn" ${isOutOfStock ? 'disabled style="background:#999;cursor:not-allowed;"' : ''}>
                     ${isOutOfStock ? "Hết hàng" : "Thêm vào giỏ"}
-                </a>
+                </button>
             `;
             productContainer.appendChild(productItem);
 
-            const orderBtn = productItem.querySelector('#order-btn');
-            if (orderBtn && !isOutOfStock) {
-                orderBtn.addEventListener('click', function() {
-                    customOrderModal.style.display = 'block';
+            // Click vào ảnh/tên sản phẩm
+            productItem.querySelectorAll(".product-img, .product-name").forEach(el => {
+                el.addEventListener("click", e => {
+                    e.preventDefault();
+                    localStorage.setItem("selectedProduct", JSON.stringify(product));
+                    window.location.href = `./product/mota.html?productCode=${product.productCode}`;
+                });
+            });
 
+            // Click thêm vào giỏ
+            const orderBtn = productItem.querySelector(".order-btn");
+            if (orderBtn && !isOutOfStock) {
+                orderBtn.addEventListener("click", () => {
+                    if (customOrderModal) customOrderModal.style.display = 'block';
                     cartCount++;
-                    cartCountElement.textContent = cartCount; 
+                    if (cartCountElement) cartCountElement.textContent = cartCount;
                 });
             }
         });
@@ -151,12 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderPagination() {
         paginationContainer.innerHTML = "";
+        const totalPages = Math.ceil(filteredProducts.length / pageSize);
 
-        const totalPages = Math.ceil(filteredRenderProducts.length / pageSize);
-
+        // Prev
         const prevItem = document.createElement("li");
-        prevItem.classList.add("page1");
         prevItem.innerHTML = `<i class="fa-solid fa-angles-left"></i>`;
+        prevItem.classList.add("page1");
         prevItem.addEventListener("click", () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -166,24 +169,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         paginationContainer.appendChild(prevItem);
 
+        // Page numbers
         for (let i = 1; i <= totalPages; i++) {
-            const pageItem = document.createElement("li");
-            pageItem.classList.add("page-item");
-            if (i === currentPage) {
-                pageItem.classList.add("active");
-            }
-            pageItem.textContent = i;
-            pageItem.addEventListener("click", () => {
+            const li = document.createElement("li");
+            li.textContent = i;
+            li.classList.add("page-item");
+            if (i === currentPage) li.classList.add("active");
+            li.addEventListener("click", () => {
                 currentPage = i;
                 renderPage(currentPage);
                 renderPagination();
             });
-            paginationContainer.appendChild(pageItem);
+            paginationContainer.appendChild(li);
         }
 
+        // Next
         const nextItem = document.createElement("li");
-        nextItem.classList.add("page2");
         nextItem.innerHTML = `<i class="fa-solid fa-angles-right"></i>`;
+        nextItem.classList.add("page2");
         nextItem.addEventListener("click", () => {
             if (currentPage < totalPages) {
                 currentPage++;
@@ -193,27 +196,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         paginationContainer.appendChild(nextItem);
 
-        paginationContainer.querySelectorAll("li")[0].classList.toggle("disabled", currentPage === 1);
-        paginationContainer.querySelectorAll("li")[paginationContainer.querySelectorAll("li").length - 1].classList.toggle("disabled", currentPage === totalPages);
+        prevItem.classList.toggle("disabled", currentPage === 1);
+        nextItem.classList.toggle("disabled", currentPage === totalPages);
     }
 
-    customCloseOrderModal.addEventListener('click', () => {
-        customOrderModal.style.display = 'none';
-    });
-
-    customContinueShoppingBtn.addEventListener('click', () => {
-        customOrderModal.style.display = 'none';
-    });
-
-    customGoToCartBtn.addEventListener('click', () => {
+    // Modal sự kiện
+    customCloseOrderModal?.addEventListener('click', () => customOrderModal.style.display = 'none');
+    customContinueShoppingBtn?.addEventListener('click', () => customOrderModal.style.display = 'none');
+    customGoToCartBtn?.addEventListener('click', () => {
         customOrderModal.style.display = 'none';
         window.location.href = './cart.html';
     });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === customOrderModal) {
-            customOrderModal.style.display = 'none';
-        }
+    window.addEventListener('click', e => {
+        if (e.target === customOrderModal) customOrderModal.style.display = 'none';
     });
 
     renderPage(currentPage);

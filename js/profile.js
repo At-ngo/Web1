@@ -28,6 +28,7 @@ function showChangePassword() {
     document.getElementById('order-history-details').style.display = 'none';
 }
 
+
 function showOrderHistory() {
     setActive('order-history'); 
     document.getElementById('profile-details').style.display = 'none';

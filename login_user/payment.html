@@ -169,28 +169,42 @@
                             <div class="mb-3">
                                 <label for="payment--adr"><i class="fas fa-map-marker-alt"></i> Địa chỉ:</label>
                                 <select id="region">
-                                <option value="" disabled selected>Tỉnh/Thành phố</option>                                
+                                    <option value="" disabled selected>Tỉnh/Thành phố</option>                                
                                     <option value="Hà Nội">Hà Nội</option>
                                     <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                                    <option value="Hà Nội">Hà Nội</option>
                                     <option value="Đà Nẵng">Đà Nẵng</option>
                                     <option value="Cần Thơ">Cần Thơ</option>
                                     <option value="Hải Phòng">Hải Phòng</option>
-                                    <option value="Nha Trang">Nha Trang</option>
-                                    <option value="Đà Lạt">Đà Lạt</option>
-                                    <option value="Vũng Tàu">Vũng Tàu</option>
-                                    <option value="Huế">Huế</option>
-                                    <option value="Buôn Ma Thuột">Buôn Ma Thuột</option>
-                                    <option value="Vinh">Vinh</option>
-                                    <option value="Quy Nhơn">Quy Nhơn</option>
-                                    <option value="Long Xuyên">Long Xuyên</option>
+                                    <option value="An Giang">An Giang</option>
+                                    <option value="Bắc Ninh">Bắc Ninh</option>
+                                    <option value="Cà Mau">Cà Mau</option>
+                                    <option value="Đắk Lắk">Đắk Lắk</option>
+                                    <option value="Đồng Nai">Đồng Nai</option>
+                                    <option value="Đồng Tháp">Đồng Tháp</option>
+                                    <option value="Gia Lai">Gia Lai</option>
+                                    <option value="Hưng Yên">Hưng Yên</option>
+                                    <option value="Khánh Hoà">Khánh Hoà</option>
+                                    <option value="Lào Cai">Lào Cai</option>
+                                    <option value="Lâm Đồng">Lâm Đồng</option>
+                                    <option value="Ninh Bình">Ninh Bình</option>
+                                    <option value="Phú Thọ">Phú Thọ</option>
+                                    <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                    <option value="Quảng Trị">Quảng Trị</option>
+                                    <option value="Tây Ninh">Tây Ninh</option>
                                     <option value="Thái Nguyên">Thái Nguyên</option>
-                                    <option value="Nam Định">Nam Định</option>
-                                    <option value="Rạch Giá">Rạch Giá</option>
-                                    <option value="Thái Bình">Thái Bình</option>
-                                    <option value="Thanh Hóa">Thanh Hóa</option>
-                                    <option value="Hạ Long">Hạ Long</option>
-                                </select>   
+                                    <option value="Tuyên Quang">Tuyên Quang</option>
+                                    <option value="Vĩnh Long">Vĩnh Long</option>
+                                    <option value="Huế">Huế</option>
+                                    <option value="Lai Châu">Lai Châu</option>
+                                    <option value="Điện Biên">Điện Biên</option>
+                                    <option value="Sơn La">Sơn La</option>
+                                    <option value="Lạng Sơn">Lạng Sơn</option>
+                                    <option value="Quảng Ninh">Quảng Ninh</option>
+                                    <option value="Thanh Hoá">Thanh Hoá</option>
+                                    <option value="Nghệ An">Nghệ An</option>
+                                    <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                    <option value="Cao Bằng">Cao Bằng</option>
+                                </select> 
                                 <select id="region">
                                 <option value="" disabled selected>Phường/Xã</option>                                
                                     <option value="Phường 1">Phường 1</option>
@@ -286,80 +300,58 @@
 
                 <hr>
                 <!-- Phương thức thanh toán -->
-                <div class="pay">
-                    <h3>Phương thức thanh toán</h3>
-                    <label for="payment__method">Chọn phương thức:</label>
+                <div class="col-8">
+                    <div class="card p-2">
+                        <div class="card-body">
+                            <div class="title d-flex pb-2">
+                                <h6>Chọn phương thức thanh toán</h6>
+                            </div>
 
-                    <div class="btn-group" id="payment__method" role="group"
-                        aria-label="Basic radio toggle button group">
-                        <!-- VISA -->
-                        <div class="payment-option">
-                            <input type="radio" name="paymentMethod" id="btnradioVisa" onclick="toggleCardForm()" />
-                            <label class="btn" for="btnradioVisa">
-                                <img src="../image/khac/Visa-Logo-Font.jpg"
-                                    alt="Thanh toán VISA" width="50">
-                            </label>
-                        </div>
-                        <!-- Napas -->
-                        <div class="payment-option">
-                            <input type="radio" name="paymentMethod" id="btnradioNapas" onclick="toggleCardForm()" />
-                            <label class="btn" for="btnradioNapas">
-                                <img src="../image/khac/logo-napas.png"
-                                    alt="Thanh toán Napas" width="50">
-                            </label>
-                        </div>
-                        <!-- Cash -->
-                        <div class="payment-option">
-                            <input type="radio" name="paymentMethod" id="btnradioCash" onclick="toggleCardForm()" />
-                            <label class="btn" for="btnradioCash">
-                                <img src="../image/khac/cart_payment_4.png"
-                                    alt="Thanh toán tiền mặt" width="50">
-                            </label>
+                            <!-- PHƯƠNG THỨC THANH TOÁN -->
+                            <div class="method">
+
+                                <!-- Vietcombank QR -->
+                                <div class="cust-radio">
+                                    <input type="radio" name="gateway" id="vcb" checked/>
+                                    <label for="vcb">Thanh toán bằng tài khoản ngân hàng</label>
+                                </div>
+
+                                <!-- Momo QR -->
+                                <div class="cust-radio">
+                                    <input type="radio" name="gateway" id="momo"/>
+                                    <label for="momo">Thanh toán bằng Momo</label>
+                                </div>
+
+                                <!-- Tiền mặt -->
+                                <div class="cust-radio">
+                                    <input type="radio" name="gateway" id="cod"/>
+                                    <label for="cod">Thanh toán khi nhận hàng</label>
+                                </div>
+                            </div>
+
+                            <!-- QR Vietcombank -->
+                            <div id="qr-vcb" class="qr-box mt-3">
+                                <p class="fw-bold">Quét mã QR để thanh toán</p>
+                                <img src="../image/khac/qr-vcb.jpg" style="width:220px;">
+                            </div>
+
+                            <!-- QR Momo -->
+                            <div id="qr-momo" class="qr-box mt-3" style="display:none;">
+                                <p class="fw-bold">Quét mã QR để thanh toán Momo</p>
+                                <img src="../image/khac/qr-momo.jpg" style="width:220px;">
+                            </div>
+
+                            <!-- Thông báo COD -->
+                            <div id="cod-box" class="qr-box mt-3" style="display:none;">
+                                <p class="fw-bold">Bạn sẽ thanh toán tiền mặt khi nhận hàng.</p>
+                                <p>Shipper sẽ liên hệ trước khi giao hàng.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Thông báo khi chọn tiền mặt -->
-                <div id="cashNotice" style="display: none; margin-top: 20px; font-size: 16px; color: #ff0000;">
-                    <i class="fas fa-exclamation-circle"></i> Vui lòng chuẩn bị tiền mặt để thanh toán cho nhân viên
-                    giao hàng!
-                </div>
-
-                <!-- Form thông tin thẻ -->
-                <div class="visaForm" id="visaForm" style="display: none;">
-                    <h4>Thông Tin Thẻ</h4>
-                    <form>
-                        <div class="form-group">
-                            <label for="bank">Tên ngân hàng:</label>
-                            <input type="text" id="bank" placeholder="Nhập tên ngân hàng" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cardNumber">Số thẻ:</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cardHolderName">Tên chủ thẻ:</label>
-                            <input type="text" id="cardHolderName" placeholder="HO VA TEN" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cardExpiry">Hạn thẻ:</label>
-                            <input type="month" id="cardExpiry" placeholder="MM/YY" required />
-                        </div>
-
-                        <div class="modal-actions">
-                            <button type="button" id="cancelBtn">Trở Lại</button>
-                            <button type="submit" id="saveBtn">Xác Nhận</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
@@ -402,6 +394,40 @@
     <div id="scrollToTopBtn">
         <a href="#home"><i class="fa-solid fa-chevron-up"></i></a>
     </div>
+    <style>
+        .col-8 {
+            margin-left: 100px;
+        }
+        .qr-box {
+        border: 1px solid #ddd;
+        padding: 16px;
+        border-radius: 10px;
+        text-align: center;
+        background: #fafafa;
+        }
+        .qr-box img {
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 8px;
+        background: white;
+        }
+        .method .cust-radio {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        }
+        .method .cust-radio input[type="radio"] {
+            margin: 0;
+            width: 18px;
+            height: 18px;
+        }
+        .method .cust-radio label {
+            margin: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
     <script src="../js/profile.js"></script>
     <script src="../js/payment.js"></script>
     <script>
@@ -505,43 +531,6 @@
 
     </script>
     <script>
-        function togglePaymentMethod() {
-            const visaForm = document.getElementById("visaForm");
-            const cashNotice = document.getElementById("cashNotice");
-
-            // Kiểm tra trạng thái của các radio button
-            const isVisaSelected = document.getElementById("btnradioVisa").checked;
-            const isNapasSelected = document.getElementById("btnradioNapas").checked;
-            const isCashSelected = document.getElementById("btnradioCash").checked;
-
-            if (isVisaSelected || isNapasSelected) {
-                // Hiển thị form thông tin thẻ
-                visaForm.style.display = "block";
-                cashNotice.style.display = "none"; 
-            } else if (isCashSelected) {
-                // Hiển thị thông báo tiền mặt
-                visaForm.style.display = "none";
-                cashNotice.style.display = "block";
-            } else {
-                // Ẩn tất cả khi không có gì được chọn
-                visaForm.style.display = "none";
-                cashNotice.style.display = "none";
-            }
-        }
-
-        function hideVisaForm() {
-            const visaForm = document.getElementById("visaForm");
-            const cashNotice = document.getElementById("cashNotice");
-            const cashOption = document.getElementById("btnradioCash");
-
-            // Chọn lại tiền mặt và hiển thị thông báo
-            cashOption.checked = true;
-            visaForm.style.display = "none";
-            cashNotice.style.display = "block";
-        }
-
-    </script>
-    <script>
         function toggleCardForm() {
             const visaForm = document.getElementById("visaForm");
             const isVisaSelected = document.getElementById("btnradioVisa").checked;
@@ -563,7 +552,28 @@
         });
 
     </script>
-    
-</body>
+    <script>
+        const qrVCB = document.getElementById("qr-vcb");
+        const qrMomo = document.getElementById("qr-momo");
+        const codBox = document.getElementById("cod-box");
 
+        document.getElementById("vcb").addEventListener("change", function () {
+            qrVCB.style.display = "block";
+            qrMomo.style.display = "none";
+            codBox.style.display = "none";
+        });
+
+        document.getElementById("momo").addEventListener("change", function () {
+            qrVCB.style.display = "none";
+            qrMomo.style.display = "block";
+            codBox.style.display = "none";
+        });
+
+        document.getElementById("cod").addEventListener("change", function () {
+            qrVCB.style.display = "none";
+            qrMomo.style.display = "none";
+            codBox.style.display = "block";
+        });
+    </script>
+</body>
 </html>

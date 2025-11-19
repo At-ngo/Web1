@@ -65,13 +65,14 @@ function fakeLoginSuccess() {
     const modalsuccess = document.querySelector('.modalSuccess');
     if (modalsuccess) {
         modalsuccess.classList.add('active');
-        // Tự động chuyển trang sau 1.5 giây
-        setTimeout(() => {
-            window.location.href = '/Web1/login_user/index_user.html'; // Hoặc trang chủ bạn muốn
-        }, 1500);
-    } else {
-        // Nếu không có modal → chuyển luôn
-        window.location.href = '/Web1/login_user/index_user.html';
+
+        // Lấy nút bấm chuyển trang trong modal
+        const goBtn = modalsuccess.querySelector('.go-to-home-btn');
+        if (goBtn) {
+            goBtn.addEventListener('click', () => {
+                window.location.href = '/Web1/login_user/index_user.html'; 
+            });
+        }
     }
 }
 

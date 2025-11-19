@@ -64,15 +64,6 @@ document.querySelectorAll('.nav-menu li a').forEach(item => {
     });
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const cartQuantityElement = document.getElementById("cartQuantity");
-
-//     const cartQuantity = localStorage.getItem("cart");
-//     const count = JSON.parse(cartQuantity).length;
-
-//     cartQuantityElement.textContent = count || 0;
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("defaultAddress").addEventListener("click", () => {
@@ -136,22 +127,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const visaRadio = document.getElementById("btnradioVisa");
-    const visaForm = document.getElementById("visaForm");
-    const paymentMethodRadios = document.getElementsByName("paymentMethod");
-
-    // Ẩn khung thông tin thẻ lúc ban đầu
-    visaForm.style.display = "none";
-
-    // Lắng nghe sự kiện thay đổi của các phương thức thanh toán
-    paymentMethodRadios.forEach(radio => {
-        radio.addEventListener("change", function () {
-            if (visaRadio.checked) {
-                visaForm.style.display = "block"; // Hiển thị khung thông tin thẻ
-            } else {
-                visaForm.style.display = "none"; // Ẩn khung thông tin thẻ
-            }
-        });
-    });
-});

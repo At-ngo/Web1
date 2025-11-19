@@ -205,6 +205,33 @@
         </div>
     </div>
     </main>
+    <!-- Nút Hủy Đơn Hàng -->
+    <div style="text-align: center; margin-top: 20px; margin-left: 1040px;">
+        <button type="button" 
+            class="btn btn-danger" 
+            data-bs-toggle="modal" 
+            data-bs-target="#cancelOrderModal"
+            style="padding: 3px 10px; font-size: 1.06rem;">
+            Hủy đơn hàng
+        </button>
+    </div>
+
+    <!-- Modal Hủy Đơn Hàng -->
+    <div class="modal fade" id="cancelOrderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content shadow-lg rounded-4">
+        <div class="modal-body text-center p-4">
+            <i class="fa-solid fa-triangle-exclamation fa-3x text-warning mb-3"></i>
+            <h5 class="mb-3">Xác nhận hủy đơn hàng</h5>
+            <p>Bạn có chắc chắn muốn hủy đơn hàng này không?</p>
+            <div class="d-flex justify-content-center mt-4 gap-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="confirmCancelOrder">Có, hủy đơn</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
@@ -247,6 +274,7 @@
     <div id="scrollToTopBtn">
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/nav.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -321,10 +349,11 @@
             const table = document.querySelector('.order-details-table');
             table.classList.add('show');
         });
-
-
     </script>
-
+    <script>
+    document.getElementById('confirmCancelOrder').addEventListener('click', function() {
+        window.location.href = "../login_user/cart.html";
+    });
+    </script>
 </body>
-
 </html>
