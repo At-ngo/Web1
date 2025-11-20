@@ -1423,3 +1423,87 @@ header .logo img {
     .hr {
         border-top: 1px solid #eee;
     }
+
+
+
+    /* --- CSS CHO POPUP XÁC NHẬN (MODAL) --- */
+.custom-modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Cao hơn header */
+}
+
+.custom-modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+.custom-modal-content h3 { color: #333; margin-bottom: 10px; }
+.custom-modal-content p { color: #666; margin-bottom: 20px; font-size: 15px; }
+
+.custom-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.custom-modal-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-cancel { background-color: #e9ecef; color: #333; }
+.btn-cancel:hover { background-color: #dbe2e8; }
+
+.btn-confirm { background-color: #dc3545; color: white; }
+.btn-confirm:hover { background-color: #bb2d3b; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- CSS CHO THÔNG BÁO THÀNH CÔNG (TOAST) --- */
+.success-toast {
+    position: fixed;
+    top: 90px; /* Cách top để không che header */
+    right: 20px;
+    background: #fff;
+    border-left: 5px solid #28a745;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    min-width: 300px;
+    animation: slideInRight 0.5s ease forwards;
+}
+
+.toast-icon i { color: #28a745; font-size: 24px; }
+.toast-message { color: #333; font-weight: 500; font-size: 15px; }
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Ẩn thông báo đi (Animation out) */
+.success-toast.hide {
+    animation: slideOutRight 0.5s ease forwards;
+}
+@keyframes slideOutRight {
+    to { opacity: 0; transform: translateX(100%); }
+}
