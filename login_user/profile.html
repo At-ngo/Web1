@@ -378,127 +378,132 @@
                 </div>
 
                 <div class="order-details">
-
-                    <!-- ==================== ĐƠN HÀNG 1 – CHỜ THANH TOÁN (HÓA ĐƠN CŨ) ==================== -->
-                    <div class="order-item" data-status="waiting-payment">
-                        <div class="order-header">
-                            <span class="order-status-wait">Chờ thanh toán </span>|
-                            <a href="#" class="status-link"> CHỜ THANH TOÁN</a>
-                        </div>
-
-                        <!-- Sản phẩm 1 -->
-                        <div class="order-product">
-                            <div class="product-image">
-                                <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-name">Casio Edifice ECB-10AT-1A</p>
-                                <p class="product-type">Casio</p>
-                                <p class="product-quantity">x1</p>
-                            </div>
-                            <p class="product-price">950.000 VNĐ</p>
-                        </div>
-
-                        <!-- Sản phẩm 2 -->
-                        <div class="order-product">
-                            <div class="product-image">
-                                <img src="../image/Rolex/Day-Date 36.png" alt="Day-Date 36">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-name">Day-Date 36</p>
-                                <p class="product-type">Rolex</p>
-                                <p class="product-quantity">x1</p>
-                            </div>
-                            <p class="product-price">345.000.000 VNĐ</p>
-                        </div>
-
-                        <!-- Sản phẩm 3 -->
-                        <div class="order-product">
-                            <div class="product-image">
-                                <img src="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg" alt="Seiko 40.5mm Nam SRPB41J1">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-name">Seiko 40.5mm Nam SRPB41J1</p>
-                                <p class="product-type">Seiko</p>
-                                <p class="product-quantity">x1</p>
-                            </div>
-                            <p class="product-price">16.000.000 VNĐ</p>
-                        </div>
-
-                        <div class="order-total">
-                            <p>Thành tiền: <strong>362.070.000 VNĐ</strong></p>
-                        </div>
-
-                        <div class="order-actions">
-                            <!-- Nút Mua lại → chuyển đến cart.html -->
-                            <button class="reorder-btn" onclick="window.location.href='cart.html'">
-                                Mua lại
-                            </button>
-                            
-                            <!-- Nút Liên hệ → chuyển đến lienhe.html -->
-                            <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
-                                Liên hệ
-                            </button>
-                        </div>
-                        <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
+                <!-- ==================== ĐƠN HÀNG 1 – ĐANG GIAO HÀNG (sẽ hiện nút HỦY ĐƠN) ==================== -->
+                <div class="order-item" data-status="shipping">
+                    <div class="order-header">
+                        <span class="order-status-wait">Đang giao hàng</span> |
+                        <a href="#" class="status-link">ĐANG GIAO HÀNG</a>
                     </div>
 
-                    <!-- ==================== ĐƠN HÀNG 2 – HOÀN THÀNH (NGẪU NHIÊN) ==================== -->
-                    <div class="order-item" data-status="completed">
-                        <div class="order-header">
-                            <span class="order-status-finish">Giao hàng thành công </span>|
-                            <a href="#" class="status-link"> HOÀN THÀNH</a>
+                    <!-- Sản phẩm 1 -->
+                    <div class="order-product">
+                        <div class="product-image">
+                            <img src="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png" alt="Casio Edifice ECB-10AT-1A">
                         </div>
-
-                        <!-- Sản phẩm ngẫu nhiên 1 -->
-                        <div class="order-product">
-                            <div class="product-image">
-                                <img src="../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg" alt="Casio Gshock GA-2100SKE-7A">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-name">Casio Gshock GA-2100SKE-7A</p>
-                                <p class="product-type">Casio</p>
-                                <p class="product-quantity">x1</p>
-                            </div>
-                            <p class="product-price">1.450.000 VNĐ</p>
+                        <div class="product-details">
+                            <p class="product-name">Casio Edifice ECB-10AT-1A</p>
+                            <p class="product-type">Casio</p>
+                            <p class="product-quantity">x1</p>
                         </div>
-
-                        <!-- Sản phẩm ngẫu nhiên 2 -->
-                        <div class="order-product">
-                            <div class="product-image">
-                                <img src="../image/Rolex/Land-Dweller 40.png" alt="Land-Dweller 40">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-name">Land-Dweller 40</p>
-                                <p class="product-type">Rolex</p>
-                                <p class="product-quantity">x1</p>
-                            </div>
-                            <p class="product-price">315.000.000 VNĐ</p>
-                        </div>
-
-                        <div class="order-total">
-                            <p>Thành tiền: <strong>316.480.000 VNĐ</strong></p>
-                        </div>
-
-                        <div class="order-actions">
-                            <!-- Nút Mua lại → chuyển đến cart.html -->
-                            <button class="reorder-btn" onclick="window.location.href='cart.html'">
-                                Mua lại
-                            </button>
-                            
-                            <!-- Nút Liên hệ → chuyển đến lienhe.html -->
-                            <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
-                                Liên hệ
-                            </button>
-                        </div>
-                        <!-- ĐÃ XÓA BẢNG HÓA ĐƠN -->
+                        <p class="product-price">950.000 VNĐ</p>
                     </div>
 
+                    <!-- Sản phẩm 2 -->
+                    <div class="order-product">
+                        <div class="product-image">
+                            <img src="../image/Rolex/Day-Date 36.png" alt="Day-Date 36">
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">Day-Date 36</p>
+                            <p class="product-type">Rolex</p>
+                            <p class="product-quantity">x1</p>
+                        </div>
+                        <p class="product-price">345.000.000 VNĐ</p>
+                    </div>
+
+                    <!-- Sản phẩm 3 -->
+                    <div class="order-product">
+                        <div class="product-image">
+                            <img src="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg" alt="Seiko 40.5mm Nam SRPB41J1">
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">Seiko 40.5mm Nam SRPB41J1</p>
+                            <p class="product-type">Seiko</p>
+                            <p class="product-quantity">x1</p>
+                        </div>
+                        <p class="product-price">16.000.000 VNĐ</p>
+                    </div>
+
+                    <div class="order-total">
+                        <p>Thành tiền: <strong>362.070.000 VNĐ</strong></p>
+                    </div>
+
+                    <div class="order-actions">
+                        <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
+                            Liên hệ
+                        </button>
+                    </div>
                 </div>
+
+                <!-- ==================== ĐƠN HÀNG 2 – ĐÃ HOÀN THÀNH (KHÔNG hiện nút HỦY ĐƠN) ==================== -->
+                <div class="order-item" data-status="completed">
+                    <div class="order-header">
+                        <span class="order-status-finish">Giao hàng thành công</span> |
+                        <a href="#" class="status-link">HOÀN THÀNH</a>
+                    </div>
+
+                    <!-- Sản phẩm 1 -->
+                    <div class="order-product">
+                        <div class="product-image">
+                            <img src="../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg" alt="Casio Gshock GA-2100SKE-7A">
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">Casio Gshock GA-2100SKE-7A</p>
+                            <p class="product-type">Casio</p>
+                            <p class="product-quantity">x1</p>
+                        </div>
+                        <p class="product-price">1.450.000 VNĐ</p>
+                    </div>
+
+                    <!-- Sản phẩm 2 -->
+                    <div class="order-product">
+                        <div class="product-image">
+                            <img src="../image/Rolex/Land-Dweller 40.png" alt="Land-Dweller 40">
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">Land-Dweller 40</p>
+                            <p class="product-type">Rolex</p>
+                            <p class="product-quantity">x1</p>
+                        </div>
+                        <p class="product-price">315.000.000 VNĐ</p>
+                    </div>
+
+                    <div class="order-total">
+                        <p>Thành tiền: <strong>316.480.000 VNĐ</strong></p>
+                    </div>
+
+                    <div class="order-actions">
+                        <button class="contact-seller-btn" onclick="window.location.href='contact.html'">
+                            Liên hệ
+                        </button>
+                        <button class="reorder-btn" onclick="window.location.href='cart.html'">
+                            Mua lại
+                        </button>
+                        
+                    </div>
+                </div>
+
+            </div>
             </div>
         </div>
     </div>
-    </main>    
+    </main> 
+    <!-- MODAL XÁC NHẬN HỦY ĐƠN (chỉ để hỏi) -->
+    <div id="cancelConfirmModal" class="custom-modal-container" style="display:none; justify-content:center; align-items:center;">
+        <div class="custom-modal-box" style="text-align:center; max-width:400px;">
+            <h2 style="color:#e74c3c; margin-bottom:15px; ">Xác nhận hủy đơn hàng</h2>
+            <p>Bạn có chắc chắn muốn <strong>hủy</strong> đơn hàng này không?</p>
+            <div style="margin-top:25px; display:flex; gap:15px; justify-content:center;">
+                <button id="confirmCancelYes" style="background:#e74c3c; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer;">Đồng ý</button>
+                <button id="confirmCancelNo" style="background:#95a5a6; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer;">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- THÔNG BÁO THÀNH CÔNG -->
+    <div id="cancelSuccessToast" style="position:fixed; top:20px; right:20px; margin-top: 50px ;background:#27ae60; color:white; padding:16px 32px; border-radius:8px; z-index:9999; display:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:16px; font-weight:500;">
+        Hủy đơn hàng thành công!
+    </div>  
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
@@ -620,10 +625,12 @@
     .reorder-btn {
         background-color: #ff5722;   /* cam */
         color: white;
+        margin-left: 10px;
     }
     .reorder-btn:hover,
     .reorder-btn:active {
         background-color: #e64a19;   /* cam đậm hơn khi bấm/hover */
+
     }
 
     /* Nút Liên hệ */
@@ -681,12 +688,44 @@
         document.getElementById('addressModalPopup').style.display = 'none';
     });
 
-    // Nút "Cập nhật" trong danh sách địa chỉ
+    // Nút "Thêm địa chỉ mới" → mở modal + giữ nguyên thông báo "Thêm"
+    document.getElementById('updateBtn')?.addEventListener('click', function() {
+    // Đánh dấu là đang THÊM MỚI (không phải sửa)
+    document.getElementById('addressModalPopup').dataset.mode = 'add';
+    document.getElementById('addressModalPopup').style.display = 'block';
+    });
+
+    // Nút "Cập nhật" trong mỗi địa chỉ → mở modal + ghi nhận là đang SỮA
     document.querySelectorAll('.address-item .btn-edit').forEach(btn => {
         btn.addEventListener('click', function() {
+            document.getElementById('addressModalPopup').dataset.mode = 'edit';
             document.getElementById('addressModalPopup').style.display = 'block';
-            showSuccess('Đang chỉnh sửa địa chỉ...');
         });
+    });
+
+    // Nút "Hoàn thành" trong modal
+    document.getElementById('saveBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const modal = document.getElementById('addressModalPopup');
+        const mode = modal.dataset.mode || 'add'; // mặc định là thêm
+
+        modal.style.display = 'none';
+
+        if (mode === 'edit') {
+            showSuccess('Cập nhật địa chỉ thành công!');
+        } else {
+            showSuccess('Thêm địa chỉ thành công!');
+        }
+
+        // Reset mode để lần sau thêm mới lại đúng
+        delete modal.dataset.mode;
+    });
+
+    // Nút "Trở lại"
+    document.getElementById('cancelBtn')?.addEventListener('click', function() {
+        document.getElementById('addressModalPopup').style.display = 'none';
+        delete document.getElementById('addressModalPopup').dataset.mode;
     });
 
     // Nút "Xóa" → hiện xác nhận → đồng ý thì thông báo thành công
@@ -786,6 +825,42 @@
         }
     });
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("cancelConfirmModal");
+        const toast  = document.getElementById("cancelSuccessToast");
 
+        // XÓA HẾT NÚT HỦY ĐƠN CŨ (nếu có)
+        document.querySelectorAll(".cancel-order-btn, .simple-cancel-btn, .cancel-btn-only-shipping").forEach(btn => btn.remove());
+
+        // CHỈ THÊM NÚT "HỦY ĐƠN" CHO ĐƠN ĐANG GIAO HÀNG
+        document.querySelectorAll('.order-item[data-status="shipping"], .order-item[data-status="delivering"]').forEach(order => {
+            const actionsDiv = order.querySelector(".order-actions");
+            if (actionsDiv && !order.querySelector(".final-cancel-btn")) {
+                const cancelBtn = document.createElement("button");
+                cancelBtn.textContent = "Hủy đơn";
+                cancelBtn.className = "final-cancel-btn";
+                cancelBtn.style.cssText = `
+                    background:#e74c3c; color:white; border:none; 
+                    padding:8px 18px; border-radius:6px; cursor:pointer; 
+                    margin-left:10px; font-size:14px; font-weight:500;
+                `;
+                cancelBtn.onclick = () => modal.style.display = "flex";
+                actionsDiv.appendChild(cancelBtn);
+            }
+        });
+
+        // Đóng modal
+        document.getElementById("confirmCancelNo").onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+        // Bấm "Đồng ý" → chỉ hiện thông báo thành công
+        document.getElementById("confirmCancelYes").onclick = () => {
+            modal.style.display = "none";
+            toast.style.display = "block";
+            setTimeout(() => toast.style.display = "none", 3000);
+        };
+    });
+    </script>
 </body>
 </html>
