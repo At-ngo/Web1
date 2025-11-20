@@ -220,3 +220,35 @@
     cursor: not-allowed;    /* Đổi con trỏ chuột */
     border-color: #ddd;
 }
+
+
+/* === Style cho nút In === */
+.print-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 10px;
+    background-color: #6c757d; /* Màu xám ghi để phân biệt */
+    display: inline-block; /* Đảm bảo hiển thị đúng hàng */
+}
+
+.print-btn:hover {
+    background-color: #5a6268;
+}
+
+/* === Logic hiển thị cho Popup In (Popup thứ 2) === */
+
+/* Khi checkbox In được chọn thì hiện overlay có id="print-overlay" */
+#print-popup-toggle:checked ~ #print-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hiệu ứng trượt xuống cho nội dung bên trong popup In */
+#print-popup-toggle:checked ~ #print-overlay .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}

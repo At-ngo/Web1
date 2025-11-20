@@ -261,6 +261,74 @@
                                 </a>
                             </td>
                         </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Citizen Eco-Drive</p>
+                            </td>
+                            <td>MP007</td>
+                            <td>SP007</td>
+                            <td>75</td>
+                            <td>200 Nguyễn Văn Linh, Phú Thạnh, TP.HCM</td>
+                            <td>23/11/2025</td>
+                            <td style="color:green">Hoàn Thành</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Orient Sun & Moon</p>
+                            </td>
+                            <td>MP008</td>
+                            <td>SP008</td>
+                            <td>40</td>
+                            <td>33 KCN Vĩnh Lộc, Tân Sơn Nhì, TP.HCM</td>
+                            <td>25/11/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Daniel Wellington</p>
+                            </td>
+                            <td>MP009</td>
+                            <td>SP009</td>
+                            <td>150</td>
+                            <td>88 Xa lộ Hà Nội, Phú Lợi,TP. Thủ Đức</td>
+                            <td>28/11/2025</td>
+                            <td style="color:green">Hoàn Thành</td>
+                            <td>
+                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="item-name-cell">
+                                <p>Casio Edifice</p>
+                            </td>
+                            <td>MP010</td>
+                            <td>SP010</td>
+                            <td>80</td>
+                            <td>19 KCN Tân Tạo, Chánh Hiệp, TP.HCM</td>
+                            <td>30/11/2025</td>
+                            <td style="color:gray">Đang Nhập</td>
+                            <td>
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -294,32 +362,49 @@
             <h2>Tạo phiếu nhập hàng mới</h2>
 
             <form action="#" method="POST" id="create-import-form">
-                <div class="form-group">
-                    <label for="product-name">Tên sản phẩm:</label>
-                    <input type="text" id="product-name" name="product-name" placeholder="Ví dụ: Casio MTP-V002"
-                        required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group-half">
-                        <label for="product-sku">Mã sản phẩm (SKU):</label>
-                        <input type="text" id="product-sku" name="product-sku" placeholder="Ví dụ: SP001" required>
+                <div class="form-section">
+                    <h3>Thông tin chung</h3>
+                    <div class="form-group">
+                        <label for="product-source">Địa chỉ nguồn hàng:</label>
+                        <input type="text" id="product-source" name="product-source"
+                            placeholder="Ví dụ: 120 Võ Văn Kiệt..." required>
                     </div>
-                    <div class="form-group-half">
-                        <label for="product-quantity">Số lượng:</label>
-                        <input type="number" id="product-quantity" name="product-quantity" placeholder="0" required>
+
+                    <div class="form-group">
+                        <label for="import-date">Ngày nhập:</label>
+                        <input type="date" id="import-date" name="import-date" required>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="product-source">Địa chỉ nguồn hàng:</label>
-                    <input type="text" id="product-source" name="product-source" placeholder="Ví dụ: 120 Võ Văn Kiệt..."
-                        required>
-                </div>
+                <div class="form-section">
+                    <h3>Danh sách sản phẩm</h3>
+                    <div class="product-list-header">
+                        <span style="flex: 3;">Sản phẩm</span>
+                        <span style="flex: 1;">Số lượng</span>
+                        <span style="width: 30px;"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label for="import-date">Ngày nhập:</label>
-                    <input type="date" id="import-date" name="import-date" required>
+                    <div id="product-list-container">
+                        <div class="product-item-row">
+                            <select name="product_id[]" class="product-select" required>
+                                <option value="">-- Chọn sản phẩm --</option>
+                                <option value="SP001">SP001 - Casio MTP-V002</option>
+                                <option value="SP002">SP002 - Rolex Submariner</option>
+                                <option value="SP003">SP003 - Casio MTP-1183A</option>
+                                <option value="SP005">SP005 - G-Shock GA-2100</option>
+                                <option value="SP006">SP006 - Tissot Le Locle</option>
+                                <option value="SP007">SP007 - Citizen Eco-Drive</option>
+                            </select>
+                            <input type="number" name="quantity[]" class="product-qty" placeholder="SL" min="1"
+                                required>
+                            <button type="button" class="remove-row-btn" onclick="removeRow(this)"><i
+                                    class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <button type="button" id="add-product-btn" class="btn-add-row">
+                        <i class="fas fa-plus"></i> Thêm sản phẩm
+                    </button>
                 </div>
 
                 <div class="form-actions">
@@ -348,12 +433,50 @@
     </div>
 
     <script>
-        // Tìm form và các checkbox điều khiển popup
+        // --- 1. SCRIPT THÊM/XÓA DÒNG SẢN PHẨM ---
+
+        // HTML mẫu cho một dòng sản phẩm mới (khi bấm Thêm sản phẩm)
+        const productRowTemplate = `
+            <div class="product-item-row">
+                <select name="product_id[]" class="product-select" required>
+                    <option value="">-- Chọn sản phẩm --</option>
+                    <option value="SP001">SP001 - Casio MTP-V002</option>
+                    <option value="SP002">SP002 - Rolex Submariner</option>
+                    <option value="SP003">SP003 - Casio MTP-1183A</option>
+                    <option value="SP005">SP005 - G-Shock GA-2100</option>
+                    <option value="SP006">SP006 - Tissot Le Locle</option>
+                    <option value="SP007">SP007 - Citizen Eco-Drive</option>
+                </select>
+                <input type="number" name="quantity[]" class="product-qty" placeholder="SL" min="1" required>
+                <button type="button" class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-times"></i></button>
+            </div>
+        `;
+
+        // Lắng nghe sự kiện click nút "Thêm sản phẩm"
+        document.getElementById('add-product-btn').addEventListener('click', function () {
+            const container = document.getElementById('product-list-container');
+            // Chèn dòng mới vào cuối container
+            container.insertAdjacentHTML('beforeend', productRowTemplate);
+        });
+
+        // Hàm xóa dòng (được gọi từ onclick trong HTML)
+        function removeRow(button) {
+            const row = button.closest('.product-item-row');
+            const container = document.getElementById('product-list-container');
+
+            // Chỉ cho phép xóa nếu còn nhiều hơn 1 dòng
+            if (container.querySelectorAll('.product-item-row').length > 1) {
+                row.remove();
+            } else {
+                alert("Phải có ít nhất một sản phẩm trong phiếu nhập.");
+            }
+        }
+
+        // --- 2. XỬ LÝ SUBMIT FORM & HIỆN THÔNG BÁO ---
         const createForm = document.getElementById('create-import-form');
         const createPopupCheckbox = document.getElementById('create-popup-toggle');
         const successPopupCheckbox = document.getElementById('success-popup-toggle');
 
-        // Lắng nghe sự kiện khi form được submit (nhấn nút "Lưu")
         createForm.addEventListener('submit', function (event) {
 
             // 1. Ngăn trang web tải lại
@@ -365,8 +488,15 @@
             // 3. Mở popup "Đã lưu thành công"
             successPopupCheckbox.checked = true;
 
-            // 4. Xóa nội dung form sau khi lưu
-            createForm.reset();
+            // 4. Reset form về trạng thái ban đầu sau một khoảng thời gian ngắn
+            setTimeout(() => {
+                createForm.reset();
+                const container = document.getElementById('product-list-container');
+                // Xóa hết các dòng thừa, chỉ giữ lại dòng đầu tiên
+                while (container.children.length > 1) {
+                    container.removeChild(container.lastChild);
+                }
+            }, 500);
         });
     </script>
 

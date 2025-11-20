@@ -1,5 +1,5 @@
 /* ================================================= */
-/* PHẦN LAYOUT CHÍNH (TỪ .box ĐẾN .boxcontent) */
+/* PHẦN LAYOUT CHÍNH */
 /* ================================================= */
 
 .box {
@@ -42,7 +42,7 @@
 }
 
 /* ================================================= */
-/* THANH LỌC VÀ TÌM KIẾM (.content-toolbar) */
+/* THANH LỌC VÀ TÌM KIẾM */
 /* ================================================= */
 
 .content-toolbar {
@@ -50,7 +50,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px; /* Thêm gap để responsive */
+    gap: 15px;
     margin-bottom: 0;
     padding: 1.5rem;
     background: #f8f9fa;
@@ -59,10 +59,9 @@
     box-shadow: none;
 }
 
-/* BỘ LỌC (BÊN TRÁI) */
 .content-toolbar .filters {
     display: flex;
-    flex-wrap: wrap; /* Cho phép rớt hàng trên di động */
+    flex-wrap: wrap;
     gap: 20px;
     align-items: center;
 }
@@ -95,15 +94,13 @@
     outline: none;
 }
 
-/* NÚT VÀ TÌM KIẾM (BÊN PHẢI) */
 .toolbar-actions-right {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Cho phép rớt hàng */
+    flex-wrap: wrap;
     gap: 15px; 
 }
 
-/* Nút "Tạo phiếu nhập" */
 .btn.btn-primary {
     background: linear-gradient(195deg, #21bcff, #21a6ff);
     color: white;
@@ -113,17 +110,15 @@
     border-radius: 6px;
     cursor: pointer;
     white-space: nowrap;
-    display: inline-flex; /* Thêm để icon và chữ căn giữa */
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-    /* Thêm border để giống các nút submit */
     border: none;
 }
 .btn.btn-primary:hover {
     background: linear-gradient(195deg, #21a6ff, #21bcff);
 }
 
-/* Thanh tìm kiếm */
 .content-toolbar .search-bar.page-search {
     display: flex;
     align-items: center;
@@ -140,7 +135,7 @@
     transition: all 0.2s;
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
-    width: 100%; /* Cho phép co giãn */
+    width: 100%;
     box-sizing: border-box;
 }
 .content-toolbar #page-search-input:focus {
@@ -202,56 +197,47 @@
     margin: 0 !important;
 }
 
-/* Pagination */
+/* ================================================= */
+/* PHÂN TRANG */
+/* ================================================= */
+.pagination {
+    display: inline-block;
+    margin: 0;
+}
 .pagination.bottom-pagination {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: flex-end;
     margin-top: 20px;
-    padding: 0 20px 0 0;
-    width: 100%;
-    background: transparent;
+    margin-left: 0;
 }
 .pagination a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  height: 36px;
-  padding: 0 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #e0e3e7;
-  background: #fff;
-  color: #344767;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all .15s ease;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 2px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 .pagination a:hover {
-  background-color: #f0f2f5;
-  border-color: #d2d6da;
+    background-color: #21a6ff;
+    color: #fff;
+    border-color: #21a6ff;
 }
 .pagination a.active {
-  background-color: #21a6ff;
-  color: #fff;
-  border-color: #21a6ff;
-  font-weight: 600;
+    background-color: #21a6ff;
+    color: white;
+    border-color: #21a6ff;
 }
 
 /* ================================================= */
-/* POPUP CHUNG (ĐÃ SỬA LỖI TRÙNG LẶP) */
+/* CÁC POPUP */
 /* ================================================= */
-        
-/* Ẩn các checkbox trigger */
 #popup-toggle,
 #create-popup-toggle,
 #success-popup-toggle {
     display: none;
 }
 
-/* Style chung cho TẤT CẢ overlay (nền mờ) */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -268,7 +254,6 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Style chung cho TẤT CẢ nội dung popup */
 .popup-content {
     background-color: white;
     padding: 40px;
@@ -281,7 +266,6 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Style chung cho nút đóng (Xác nhận, Đóng) */
 .close-popup {
     display: inline-block;
     margin-top: 10px;
@@ -298,62 +282,56 @@
     background-color: #0056b3;
 }
 
-/* === BỘ KÍCH HOẠT CỤ THỂ (FIX LỖI) === */
-
-/* 1. Kích hoạt POPUP CẢNH BÁO (dùng ID) */
-#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay {
-    opacity: 1;
-    visibility: visible;
-}
-#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay .popup-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* 2. Kích hoạt POPUP TẠO MỚI (dùng ID) */
-#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay {
-    opacity: 1;
-    visibility: visible;
-}
-#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay .popup-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* 3. Kích hoạt POPUP THÀNH CÔNG (dùng ID) */
+/* Kích hoạt popup */
+#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay,
+#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay,
 #success-popup-toggle:checked ~ .popup-overlay#success-popup-overlay {
     opacity: 1;
     visibility: visible;
 }
+#popup-toggle:checked ~ .popup-overlay#warning-popup-overlay .popup-content,
+#create-popup-toggle:checked ~ .popup-overlay#create-popup-overlay .popup-content,
 #success-popup-toggle:checked ~ .popup-overlay#success-popup-overlay .popup-content {
     transform: translateY(0);
     opacity: 1;
 }
 
 /* ================================================= */
-/* POPUP FORM (TẠO MỚI) */
+/* STYLE CHO FORM NHẬP NHIỀU SẢN PHẨM (MỚI) */
 /* ================================================= */
 
-/* Style cho Form Popup mới */
 .popup-content.popup-form {
-    width: 500px;
-    max-width: 90%;
+    width: 600px; /* Form rộng hơn */
+    max-width: 95%;
     text-align: left;
     padding: 25px 30px;
+    max-height: 90vh; /* Giới hạn chiều cao nếu nhiều SP */
+    overflow-y: auto; /* Cuộn nếu dài */
 }
+
 .popup-form h2 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #344767;
 }
 
-/* Style cho các trường nhập liệu trong form */
-.popup-form .form-group {
+.form-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.form-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #21a6ff;
+}
+
+.form-group {
     margin-bottom: 15px;
 }
-.popup-form .form-group label {
+.form-group label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
@@ -361,74 +339,96 @@
     color: #344767;
 }
 
-/* Tái sử dụng phong cách .form-control */
+/* Input styles trong form */
 .popup-form input[type="text"],
-.popup-form input[type="number"],
-.popup-form input[type="date"] {
+.popup-form input[type="date"],
+.popup-form select {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #d2d6da;
     border-radius: 0.5rem;
     font-size: 0.875rem;
-    transition: all 0.2s;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.popup-form input[type="text"]:focus,
-.popup-form input[type="number"]:focus,
-.popup-form input[type="date"]:focus {
-    border-color: #21a6ff;
-    box-shadow: 0 0 0 2px rgba(33, 166, 255, 0.25);
-    outline: none;
-}
 
-/* Style cho form 2 cột (Mã SP và Số lượng) */
-.popup-form .form-row {
+/* --- DANH SÁCH SẢN PHẨM DYNAMIC --- */
+.product-list-header {
     display: flex;
-    gap: 15px;
-}
-.popup-form .form-group-half {
-    flex: 1;
-    margin-bottom: 15px;
-}
-.popup-form .form-group-half label {
-    display: block;
-    margin-bottom: 6px;
+    gap: 10px;
     font-weight: 600;
-    font-size: 14px;
-    color: #344767;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+    padding: 0 5px;
 }
 
-/* Style cho các nút Hủy / Lưu */
-.popup-form .form-actions {
+.product-item-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+/* Select sản phẩm (chiếm phần lớn) */
+.product-item-row .product-select {
+    flex: 3;
+}
+
+/* Input số lượng (nhỏ hơn) */
+.product-item-row .product-qty {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Nút xóa dòng (X) */
+.remove-row-btn {
+    width: 30px;
+    height: 30px;
+    background: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.remove-row-btn:hover {
+    background: #d32f2f;
+    color: white;
+}
+
+/* Nút thêm dòng (+) */
+.btn-add-row {
+    background: none;
+    border: 1px dashed #21a6ff;
+    color: #21a6ff;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+.btn-add-row:hover {
+    background: #e3f2fd;
+}
+
+.form-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 25px;
-}
-/* Style riêng cho nút Hủy (là 1 label) */
-.popup-form .close-popup {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-    background: #6c757d; /* Màu .btn-secondary */
-}
-.popup-form .close-popup:hover {
-    background: #5a6268;
+    margin-top: 20px;
 }
 
-/* ================================================= */
-/* POPUP "ĐÃ LƯU THÀNH CÔNG" */
-/* ================================================= */
-
-/* Style cho icon dấu check (✓) màu xanh */
+/* ICON THÀNH CÔNG */
 .modal-icon {
     width: 60px;
     height: 60px;
@@ -438,7 +438,7 @@
     box-sizing: border-box;
 }
 .modal-icon.success {
-    background-color: #28a745; /* Màu xanh lá */
+    background-color: #28a745;
 }
 .modal-icon-line {
     height: 5px;
