@@ -349,3 +349,34 @@
 .status-badge.status-danger {
     background-color: #ef4444;
 }
+
+/* ======================== */
+/* NÚT NHẬP HÀNG TRONG BẢNG */
+/* ======================== */
+
+.btn-import-stock {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #007bff; /* Màu xanh dương nổi bật */
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-import-stock:hover {
+    background-color: #0056b3; /* Màu tối hơn khi di chuột */
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-import-stock i {
+    font-size: 12px;
+}
