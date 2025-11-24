@@ -18,10 +18,10 @@
         <a class="logo" href="../admin/admin_dashboard.html">
             <p class="demo" style="margin-left: 1vw;">WATCH STORE</p>
         </a>
-        <section class="search-bar">
+        <!-- <section class="search-bar">
             <input type="text" id="search" placeholder="Tìm kiếm đồng hồ...">
             <button type="button">Tìm Kiếm</button>
-        </section>
+        </section> -->
         <nav>
             <ul>
                 <li><a href="admin_gmail.html"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
@@ -118,7 +118,7 @@
 
         <div class="main-content-wrapper">
             <div class="box">
-                <i style="font-size: calc(0.8vw + 0.8vh);"></i>
+                <i class="fas fa-shopping-cart"></i>
                 <h3 style="margin: 0; font-size: 1.2rem;">Quản lý đơn đặt hàng</h3>
             </div>
 
@@ -179,10 +179,10 @@
                             <td>lamck123@gmail.com</td>
                             <td>120 Võ Văn Kiệt, Bình Tiên, TP.HCM</td>
                             <td>MD001</td>
-                            <td style="color:gray">Mới đặt</td>
+                            <td><span class="status status-new">Mới Đặt</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -196,10 +196,10 @@
                             <td>phdang147@gmail.com</td>
                             <td>45 Phạm văn Chí, Bình Phú, TP.HCM</td>
                             <td>MD002</td>
-                            <td style="color:orange">Đã xử lý</td>
+                            <td><span class="status status-pending">Đã Xử Lý</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -213,10 +213,10 @@
                             <td>vancuong999@gmail.com</td>
                             <td>25 Nguyễn Trãi, Chợ Quán TP.HCM</td>
                             <td>MD003</td>
-                            <td style="color:green">Đã giao</td>
+                            <td><span class="status status-active">Đã Giao</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -230,10 +230,10 @@
                             <td>caokhiem241@gmail.com</td>
                             <td>KCN Tân Bình, Tây Thạnh, TP.HCM</td>
                             <td>MD004</td>
-                            <td style="color:red">Đã hủy</td>
+                            <td><span class="status status-locked">Đã Hủy</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -247,10 +247,10 @@
                             <td>an.tran@gmail.com</td>
                             <td>15 Lê Lợi, Thủ Dầu Một, TP.HCM</td>
                             <td>MD005</td>
-                            <td style="color:orange">Đã xử lý</td>
+                            <td><span class="status status-pending">Đã Xử Lý</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -264,10 +264,10 @@
                             <td>bich.le@yahoo.com</td>
                             <td>32 Nguyễn Huệ, Phú Thọ Hòa, Đà Nẵng</td>
                             <td>MD006</td>
-                            <td style="color:green">Đã giao</td>
+                            <td><span class="status status-active">Đã Giao</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -281,10 +281,10 @@
                             <td>hung.do@outlook.com</td>
                             <td>77 Pasteur, Tân Sơn Nhất, TP.HCM</td>
                             <td>MD007</td>
-                            <td style="color:gray">Mới đặt</td>
+                            <td><span class="status status-new">Mới Đặt</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -298,10 +298,10 @@
                             <td>mai.hoang@gmail.com</td>
                             <td>22 Lý Tự Trọng, Hoàn Kiếm, Hà Nội</td>
                             <td>MD008</td>
-                            <td style="color:red">Đã hủy</td>
+                            <td><span class="status status-locked">Đã Hủy</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
@@ -315,10 +315,10 @@
                             <td>tuanvu@gmail.com</td>
                             <td>99 Hai Bà Trưng, Tây Thạnh, TP.HCM</td>
                             <td>MD009</td>
-                            <td style="color:gray">Mới đặt</td>
+                            <td><span class="status status-new">Mới Đặt</span></td>
                             <td>
-                                <a href="admin_edit_order.html" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
+                                <a href="admin_edit_order.html" class="action-edit">
+                                    <i class="fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>

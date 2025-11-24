@@ -310,9 +310,15 @@
                             <!-- PHƯƠNG THỨC THANH TOÁN -->
                             <div class="method">
 
+                                <!-- Tiền mặt -->
+                                <div class="cust-radio">
+                                    <input type="radio" name="gateway" id="cod"checked/>
+                                    <label for="cod">Thanh toán khi nhận hàng</label>
+                                </div>
+
                                 <!-- Vietcombank QR -->
                                 <div class="cust-radio">
-                                    <input type="radio" name="gateway" id="vcb" checked/>
+                                    <input type="radio" name="gateway" id="vcb"/>
                                     <label for="vcb">Thanh toán bằng tài khoản ngân hàng</label>
                                 </div>
 
@@ -322,15 +328,10 @@
                                     <label for="momo">Thanh toán bằng Momo</label>
                                 </div>
 
-                                <!-- Tiền mặt -->
-                                <div class="cust-radio">
-                                    <input type="radio" name="gateway" id="cod"/>
-                                    <label for="cod">Thanh toán khi nhận hàng</label>
-                                </div>
                             </div>
 
                             <!-- QR Vietcombank -->
-                            <div id="qr-vcb" class="qr-box mt-3">
+                            <div id="qr-vcb" class="qr-box mt-3" style="display:none;">
                                 <p class="fw-bold">Quét mã QR để thanh toán</p>
                                 <img src="../image/khac/qr-vcb.jpg" style="width:220px;">
                             </div>
@@ -342,7 +343,7 @@
                             </div>
 
                             <!-- Thông báo COD -->
-                            <div id="cod-box" class="qr-box mt-3" style="display:none;">
+                            <div id="cod-box" class="qr-box mt-3">
                                 <p class="fw-bold">Bạn sẽ thanh toán tiền mặt khi nhận hàng.</p>
                                 <p>Shipper sẽ liên hệ trước khi giao hàng.</p>
                             </div>
