@@ -24,10 +24,10 @@
 
         <nav>
             <ul>
-                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
-                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="admin_gmail.html"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="admin_notification.html"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
                 <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
-                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+                <li><a href="admin_info.html"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
             </ul>
         </nav>
     </header>
@@ -64,14 +64,14 @@
 
                     <!-- Tên sản phẩm -->
                     <div class="form-group">
-                        <label for="productName">Tên sản phẩm:</label>
+                        <label for="productName">Tên sản phẩm: <span style="color:red">*</span></label>
                         <input type="text" id="productName" name="productName" value="Casio Edifice ECB-10AT-1A"
                             required>
                     </div>
 
                     <!-- Nhãn hiệu -->
                     <div class="form-group">
-                        <label for="brandSelect">Mã nhãn hiệu:</label>
+                        <label for="brandSelect">Nhãn hiệu: <span style="color:red">*</span></label>
                         <div class="brand-container">
                             <select id="brandSelect" name="brandSelect">
                                 <option value="">Chọn nhãn hiệu</option>
@@ -104,7 +104,7 @@
 
                     <!-- Giá bán -->
                     <div class="form-group">
-                        <label for="price">Giá bán (VNĐ):</label>
+                        <label for="price">Giá bán (VNĐ): <span style="color:red">*</span></label>
                         <input type="text" id="price" name="price" value="950000" required>
                     </div>
 
@@ -130,7 +130,7 @@
 
                     <!-- Trạng thái -->
                     <div class="form-group">
-                        <label for="status">Trạng thái:</label>
+                        <label for="status">Trạng thái: <span style="color:red">*</span></label>
                         <select id="status" name="status">
                             <option selected>Đang bán</option>
                             <option>Ngừng bán</option>
@@ -139,7 +139,7 @@
 
                     <!-- Ảnh hiện tại -->
                     <div class="form-group">
-                        <label>Ảnh hiện tại:</label>
+                        <label>Ảnh hiện tại: <span style="color:red">*</span></label>
                         <img src="../img/Casio/Casio Edifice ECB-10AT-1A.png" width="120"
                             style="border-radius:8px; border:1px solid #ccc;">
                     </div>

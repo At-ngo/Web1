@@ -186,19 +186,112 @@
 
 
 /* Popups */
+/* =======================
+   POPUP OVERLAYS (ĐÃ SỬA)
+   ======================= */
+
 .popup-overlay {
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; visibility: hidden; z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-#popup-toggle:checked ~ .popup-overlay,
-#popup-toggle_1:checked ~ .popup-overlay,
-#popup-success-lock:checked ~ .popup-overlay,
-#popup-success-unlock:checked ~ .popup-overlay {
-  opacity: 1; visibility: visible;
+
+/* Popup xác nhận khóa */
+#popup-toggle:checked ~ .lock-popup {
+  opacity: 1;
+  visibility: visible;
 }
+
+/* Popup xác nhận mở khóa */
+#popup-toggle_1:checked ~ .unlock-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup THÀNH CÔNG khi khóa */
+#popup-success-lock:checked ~ .success-lock {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup THÀNH CÔNG khi mở khóa */
+#popup-success-unlock:checked ~ .success-unlock {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==== Popup container ==== */
+
+.popup-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  animation: popupShow 0.25s ease;
+}
+
+@keyframes popupShow {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.popup-buttons label,
+.popup-buttons button {
+  width: 48%;
+  padding: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+}
+
+/* nút hủy */
+.cancel-btn {
+  background: #e0e0e0;
+}
+
+/* nút xác nhận */
+.confirm-btn {
+  background: #007bff;
+  color: white;
+}
+
+/* nút đóng popup thành công */
+.close-success {
+  margin-top: 20px;
+  background: #28a745;
+  color: white;
+  width: 100%;
+}
+
+/* End popup sửa lỗi */
+
 .popup-content {
     background-color: #fff;
     padding: 24px 28px;

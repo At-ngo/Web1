@@ -24,10 +24,10 @@
 
         <nav>
             <ul>
-                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
-                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="admin_gmail.html"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="admin_notification.html"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
                 <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
-                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+                <li><a href="admin_info.html"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
             </ul>
         </nav>
     </header>
@@ -57,14 +57,14 @@
             <div class="edit-container">
                 <form class="edit-form" action="#" method="post" enctype="multipart/form-data">
                     <!-- Mã nhãn hiệu -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="brandId">Mã nhãn hiệu:</label>
                         <input type="text" id="brandId" name="brandId" placeholder="Ví dụ: BR004" required>
-                    </div>
+                    </div> -->
 
                     <!-- Tên nhãn hiệu -->
                     <div class="form-group">
-                        <label for="brandName">Tên nhãn hiệu:</label>
+                        <label for="brandName">Tên nhãn hiệu: <span style="color:red">*</span></label>
                         <input type="text" id="brandName" name="brandName" placeholder="Nhập tên nhãn hiệu..." required>
                     </div>
 
@@ -76,7 +76,7 @@
 
                     <!-- Logo -->
                     <div class="form-group image-group">
-                        <label class="form-label">Hình ảnh sản phẩm</label>
+                        <label class="form-label">Hình ảnh sản phẩm <span style="color:red">*</span></label>
 
                         <div class="image-container">
                             <div class="image-preview" id="imagePreview">

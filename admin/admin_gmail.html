@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cssadmin/admin.css">
+    <link rel="stylesheet" href="../cssadmin/gmail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <title>Hộp thư - Cửa Hàng Đồng Hồ</title>
+</head>
+
+<body>
+    <!-- Phần đầu trang -->
+    <header class="header">
+        <a class="logo" href="../admin/admin_dashboard.html">
+            <p class="demo" style="margin-left: 1vw"> WATCH STORE </p>
+        </a>
+
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm trong thư...">
+            <button type="button">Tìm Kiếm</button>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="../admin/admin_gmail.html" title="Gmail"><img src="../img/email.png" width="40" height="30"></a></li>
+                <li><a href="../admin/admin_notification.html" title="Thông báo"><img src="../img/bell.png" width="30" height="30"></a></li>
+                <li><a href="#" title="Tin nhắn"><img src="../img/messenger.png" width="35" height="30"></a></li>
+                <li><a href="../admin/admin_info.html"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Phần thân trang -->
+    <main class="main" style="display: flex;">
+        <!-- Sidebar (Giữ nguyên từ trang dashboard) -->
+        <nav class="sidebar">
+            <div class="task-menu">
+                <ul>
+                    <p style="font-size: calc(0.7vw + 0.7vh); margin-left: 1vw; opacity: 0.7;">Trang Chủ</p>
+                    <li><a href="../admin/admin_dashboard.html" target="_self"> <i class="fas fa-home"></i> Dashboard</a></li>
+
+                    <input type="checkbox" id="toggle-menu-1" hidden>
+                    <li><label for="toggle-menu-1" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);"><i
+                                class="fa-solid fa-bars"></i> Quản lí danh mục <span
+                                style="font-size: 12px; margin-left: 5px;">&#9660;</span></label></li>
+                    <div class="divider"></div>
+
+                    <ul class="menu-content">
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_users.html">
+                                <p><i class="fas fa-users"></i> Người dùng</p>
+                            </a>
+                        </li>
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_import.html">
+                                <p><i class="fas fa-file-import"></i> Phiếu nhập hàng</p>
+                            </a>
+                        </li>
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_product_brands.html">
+                                <p><i class="fas fa-tags"></i> Loại sản phẩm</p>
+                            </a>
+                        </li>
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_product.html">
+                                <p><i class="fas fa-box"></i> Sản phẩm</p>
+                            </a>
+                        </li>
+                        <li style="margin-left: 10px;"><a href="../admin/admin_order.html">
+                                <p><i class="fas fa-shopping-cart"></i> Đơn đặt hàng</p>
+                            </a></li>
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_price.html">
+                                <p><i class="fas fa-dollar-sign"></i> Giá bán</p>
+                            </a>
+                        </li>
+                        <li style="margin-left: 10px;">
+                            <a href="../admin/admin_inventory.html">
+                                <p><i class="fas fa-warehouse"></i> Tồn kho</p>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- <div class="task-bar" style="margin-top: 30px;">
+                <input type="checkbox" id="toggle-menu-2" hidden>
+                <label for="toggle-menu-2" class="toggle-btn" style="font-size: calc(0.8vw + 0.9vh);"><i
+                        class="fas fa-shopping-cart"></i> Quản lý giỏ hàng <span
+                        style="font-size: 12px; margin-left: 5px;">&#9660;</span></label>
+                <ul class="menu-content-2">
+                    <li style="margin-left: 10px; margin-top: 10px;"><a href="#task5"><p><strong>&gt;</strong> Đơn hàng</p></a></li>
+                    <li style="margin-left: 10px;"><a href="#task6"><p><strong>&gt;</strong> Báo cáo</p></a></li>
+                </ul>
+            </div>
+
+            <hr class="menu-divider"> -->
+
+            <div class="task-bar logout-bar" style="margin-top: 30px;">
+                <a href="../admin_login.html" class="toggle-btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </a>
+            </div>
+        </nav>
+
+        <!-- Nội dung chính - Giao diện Hộp thư -->
+        <div class="gmail-container">
+            <!-- Khung bên trái: Danh sách thư -->
+            <div class="inbox-panel">
+                <div class="inbox-header">
+                    <h2>Hộp thư đến (3)</h2>
+                </div>
+                <div class="message-list">
+                    <!-- Tin nhắn 1 (Đang được chọn) -->
+                    <div class="message-item active">
+                        <div class="message-sender">Lê Minh Anh</div>
+                        <div class="message-subject">Thắc mắc về chính sách bảo hành</div>
+                        <div class="message-time">10:45 AM</div>
+                    </div>
+                    <!-- Tin nhắn 2 -->
+                    <div class="message-item">
+                        <div class="message-sender">Trần Hùng</div>
+                        <div class="message-subject">Góp ý về giao diện website</div>
+                        <div class="message-time">Hôm qua</div>
+                    </div>
+                    <!-- Tin nhắn 3 -->
+                    <div class="message-item">
+                        <div class="message-sender">Nguyễn Thị Mai</div>
+                        <div class="message-subject">Hỏi về tình trạng đơn hàng #DH5678</div>
+                        <div class="message-time">18/11/2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khung bên phải: Nội dung chi tiết thư -->
+            <div class="message-view-panel">
+                <div class="message-view-header">
+                    <h3>Thắc mắc về chính sách bảo hành</h3>
+                    <div class="message-actions">
+                        <button title="Trả lời"><i class="fas fa-reply"></i></button>
+                        <button title="Xóa"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="message-details">
+                    <div class="message-sender-info">
+                        <strong>Từ:</strong> Lê Minh Anh &lt;minhanh.le@example.com&gt;
+                    </div>
+                    <div class="message-recipient-info">
+                        <strong>Tới:</strong> WATCH STORE &lt;contact@watchstore.com&gt;
+                    </div>
+                    <div class="message-timestamp">
+                        <strong>Ngày:</strong> 20 tháng 11, 2025, 10:45 AM
+                    </div>
+                </div>
+                <div class="message-body">
+                    <p>Chào cửa hàng,</p>
+                    <p>Tôi có mua một chiếc đồng hồ Orient Sun and Moon bên mình vào tháng trước. Hiện tại đồng hồ của tôi chạy hơi chậm so với bình thường. Tôi muốn hỏi về chính sách bảo hành cho trường hợp này và thủ tục cần thiết để được hỗ trợ.</p>
+                    <p>Cảm ơn cửa hàng.</p>
+                    <p>Trân trọng,<br>Lê Minh Anh</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

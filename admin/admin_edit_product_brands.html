@@ -24,10 +24,10 @@
 
         <nav>
             <ul>
-                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
-                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
+                <li><a href="admin_gmail.html"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
+                <li><a href="admin_notification.html"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
                 <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
-                <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
+                <li><a href="admin_info.html"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
             </ul>
         </nav>
     </header>
@@ -58,13 +58,13 @@
                 <form class="edit-form" action="#" method="post" enctype="multipart/form-data">
                     <!-- Mã nhãn hiệu -->
                     <div class="form-group">
-                        <label for="brandId">Mã nhãn hiệu:</label>
+                        <label for="brandId">Mã nhãn hiệu: </label>
                         <input type="text" id="brandId" name="brandId" value="BR002" readonly>
                     </div>
 
                     <!-- Tên nhãn hiệu -->
                     <div class="form-group">
-                        <label for="brandName">Tên nhãn hiệu:</label>
+                        <label for="brandName">Tên nhãn hiệu: <span style="color:red">*</span></label>
                         <input type="text" id="brandName" name="brandName" value="Rolex" required>
                     </div>
 
@@ -76,7 +76,7 @@
 
                     <!-- Logo hiện tại -->
                     <div class="form-group">
-                        <label>Logo hiện tại:</label>
+                        <label>Logo hiện tại: <span style="color:red">*</span></label>
                         <img src="../img/rolex.png" width="120" style="border-radius:8px; border:1px solid #ccc;">
                     </div>
 

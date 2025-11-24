@@ -303,7 +303,6 @@
     font-weight: 600;
 }
 
-
 /* ================== */
 /*        POPUP       */
 /* ================== */
@@ -320,14 +319,16 @@
     transition: opacity .3s ease, visibility .3s ease;
 }
 
-#popup-toggle:checked ~ .popup-overlay,
-#popup-success-delete-product:checked ~ .popup-overlay {
+/* Chỉ hiện popup xác nhận khi checkbox #popup-toggle được check */
+#popup-toggle:checked + .popup-overlay {
     opacity: 1;
     visibility: visible;
 }
-#popup-success-delete-product:checked ~ .popup-overlay:not(.success-popup) {
-    opacity: 0;
-    visibility: hidden;
+
+/* Chỉ hiện popup thành công khi checkbox #popup-success-delete-product được check */
+#popup-success-delete-product:checked + .popup-overlay.success-popup {
+    opacity: 1;
+    visibility: visible;
 }
 
 .popup-content {
