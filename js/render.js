@@ -1,7 +1,7 @@
 const renderProducts = [
   {
     "productCode": "CA01",
-    "image": "../image/Casio/CASIO AMW-880-1A.png",
+    "image": "../../image/Casio/CASIO AMW-880-1A.png",
     "category": "Casio",
     "name": "Casio AMW-880-1A",
     "price": "1.250.000 VNĐ",
@@ -10,7 +10,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA02",
-    "image": "../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
+    "image": "../../image/Casio/CASIO EDIFICE ECB-10AT-1A.png",
     "category": "Casio",
     "name": "Casio Edifice ECB-10AT-1A",
     "price": "950.000 VNĐ",
@@ -19,7 +19,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA03",
-    "image": "../image/Casio/CASIO EDIFICE EFV-C100D-1B.png",
+    "image": "../../image/Casio/CASIO EDIFICE EFV-C100D-1B.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-C100D-1B",
     "price": "3.000.000 VNĐ",
@@ -28,7 +28,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA04",
-    "image": "../image/Casio/CASIO EDIFICE EQS-940BL-1A.png",
+    "image": "../../image/Casio/CASIO EDIFICE EQS-940BL-1A.jpg",
     "category": "Casio",
     "name": "Casio Edifice EQS-940BL-1A",
     "price": "4.200.000 VNĐ",
@@ -37,7 +37,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA05",
-    "image": "../image/Casio/CASIO GSHOCK DW-5600BBN-1E.png",
+    "image": "../../image/Casio/CASIO GSHOCK DW-5600BBN-1E.jpeg",
     "category": "Casio",
     "name": "Casio Gshock DW-1E",
     "price": "5.500.000 VNĐ",
@@ -46,7 +46,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA06",
-    "image": "../image/Casio/CASIO GSHOCK GA-2100SKE-7A.png",
+    "image": "../../image/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg",
     "category": "Casio",
     "name": "Casio Gshock GA-2100KE-7A",
     "price": "1.450.000 VNĐ",
@@ -55,7 +55,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA07",
-    "image": "../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
+    "image": "../../image/Casio/CASIO GSHOCK GM-2100G-1A9.png",
     "category": "Casio",
     "name": "Casio Gshock GM-2100G-1A9",
     "price": "2.800.000 VNĐ",
@@ -64,7 +64,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA08",
-    "image": "../image/Casio/CASIO LTP-V005L-1A.png",
+    "image": "../../image/Casio/CASIO LTP-V005L-1A.jpg",
     "category": "Casio",
     "name": "Casio LCP-V005L-1A",
     "price": "1.950.000 VNĐ",
@@ -73,7 +73,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA09",
-    "image": "../image/Casio/CASIO MTP-B185D-1A.png",
+    "image": "../../image/Casio/CASIO MTP-B185D-1A.png",
     "category": "Casio",
     "name": "Casio MTP-B185B-1A",
     "price": "1.300.000 VNĐ",
@@ -82,7 +82,7 @@ const renderProducts = [
   },
   {
     "productCode": "CA10",
-    "image": "../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.png",
+    "image": "../../image/Casio/CASIO-EDIFICE-EFV-620D-1A4.jpg",
     "category": "Casio",
     "name": "Casio Edifice EFV-620D-1A4",
     "price": "1.100.000 VNĐ",
@@ -91,7 +91,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO01",
-    "image": "../image/Rolex/Cosmograph Daytona.png",
+    "image": "../../image/Rolex/Cosmograph Daytona.png",
     "category": "Rolex",
     "name": "Cosmograph Daytona",
     "price": "185.000.000 VNĐ",
@@ -100,7 +100,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO02",
-    "image": "../image/Rolex/Datejust 31.png",
+    "image": "../../image/Rolex/Datejust 31.png",
     "category": "Rolex",
     "name": "Datejust 31",
     "price": "290.000.000 VNĐ",
@@ -109,7 +109,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO03",
-    "image": "../image/Rolex/Day-Date 36.png",
+    "image": "../../image/Rolex/Day-Date 36.png",
     "category": "Rolex",
     "name": "Day-Date 36",
     "price": "345.000.000 VNĐ",
@@ -118,7 +118,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO04",
-    "image": "../image/Rolex/Day-Date 40.png",
+    "image": "../../image/Rolex/Day-Date 40.png",
     "category": "Rolex",
     "name": "Day-Date 40",
     "price": "430.000.000 VNĐ",
@@ -127,7 +127,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO05",
-    "image": "../image/Rolex/Lady-Datejust.png",
+    "image": "../../image/Rolex/Lady-Datejust.png",
     "category": "Rolex",
     "name": "Lady-Datejust",
     "price": "520.000.000 VNĐ",
@@ -136,7 +136,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO06",
-    "image": "../image/Rolex/Land-Dweller 36.png",
+    "image": "../../image/Rolex/Land-Dweller 36.png",
     "category": "Rolex",
     "name": "Land-Dweller 36",
     "price": "460.000.000 VNĐ",
@@ -145,7 +145,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO07",
-    "image": "../image/Rolex/Land-Dweller 40.png",
+    "image": "../../image/Rolex/Land-Dweller 40.png",
     "category": "Rolex",
     "name": "Land-Dweller 40",
     "price": "315.000.000 VNĐ",
@@ -154,7 +154,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO08",
-    "image": "../image/Rolex/Oyster Perpetual 31.png",
+    "image": "../../image/Rolex/Oyster Perpetual 31.png",
     "category": "Rolex",
     "name": "Oyster Perpetual 31",
     "price": "680.000.000 VNĐ",
@@ -163,7 +163,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO09",
-    "image": "../image/Rolex/Sky-Dweller.png",
+    "image": "../../image/Rolex/Sky-Dweller.png",
     "category": "Rolex",
     "name": "Sky-Dweller",
     "price": "375.000.000 VNĐ",
@@ -172,7 +172,7 @@ const renderProducts = [
   },
   {
     "productCode": "RO10",
-    "image": "../image/Rolex/Submariner Date.png",
+    "image": "../../image/Rolex/Submariner Date.png",
     "category": "Rolex",
     "name": "Submariner Date",
     "price": "850.000.000 VNĐ",
@@ -181,7 +181,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE01",
-    "image": "../image/Seiko/Seiko 37mm Nam SNK357K1.jpg",
+    "image": "../../image/Seiko/Seiko 37mm Nam SNK357K1.jpg",
     "category": "Seiko",
     "name": "Seiko 37mm Nam SNK357K1",
     "price": "6.500.000 VNĐ",
@@ -190,7 +190,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE02",
-    "image": "../image/Seiko/Seiko 37mm Nam SNK807K2.jpg",
+    "image": "../../image/Seiko/Seiko 37mm Nam SNK807K2.jpg",
     "category": "Seiko",
     "name": "Seiko 37mm Nam SNK807K2",
     "price": "12.000.000 VNĐ",
@@ -199,7 +199,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE03",
-    "image": "../image/Seiko/Seiko 38mm Nam SNKD99K1.jpg",
+    "image": "../../image/Seiko/Seiko 38mm Nam SNKD99K1.jpg",
     "category": "Seiko",
     "name": "Seiko 38mm Nam SNKD99K1",
     "price": "15.500.000 VNĐ",
@@ -208,7 +208,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE04",
-    "image": "../image/Seiko/Seiko 38mm Nam SNKK11K1.jpg",
+    "image": "../../image/Seiko/Seiko 38mm Nam SNKK11K1.jpg",
     "category": "Seiko",
     "name": "Seiko 38mm Nam SNKK11K1",
     "price": "8.800.000 VNĐ",
@@ -217,7 +217,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE05",
-    "image": "../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg",
+    "image": "../../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg",
     "category": "Seiko",
     "name": "Seiko 40.5mm Nam SRPB41J1",
     "price": "16.000.000 VNĐ",
@@ -226,7 +226,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE06",
-    "image": "../image/Seiko/Seiko 42.5mm Nam SRPD53K1.jpg",
+    "image": "../../image/Seiko/Seiko 42.5mm Nam SRPD53K1.jpg",
     "category": "Seiko",
     "name": "Seiko 42.5mm Nam SRPD53K1",
     "price": "9.200.000 VNĐ",
@@ -235,7 +235,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE07",
-    "image": "../image/Seiko/Seiko 42mm Nam SCVE051.jpg",
+    "image": "../../image/Seiko/Seiko 42mm Nam SCVE051.jpg",
     "category": "Seiko",
     "name": "Seiko 42mm Nam SCVE051",
     "price": "10.500.000 VNĐ",
@@ -244,7 +244,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE08",
-    "image": "../image/Seiko/Seiko 42mm Nam SNKP17J1.jpg",
+    "image": "../../image/Seiko/Seiko 42mm Nam SNKP17J1.jpg",
     "category": "Seiko",
     "name": "Seiko 42mm Nam SNKP17J1",
     "price": "7.300.000 VNĐ",
@@ -253,7 +253,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE09",
-    "image": "../image/Seiko/Seiko 42mm Nam SNKP23K1.jpg",
+    "image": "../../image/Seiko/Seiko 42mm Nam SNKP23K1.jpg",
     "category": "Seiko",
     "name": "Seiko 42mm Nam SNKP23K1",
     "price": "11.800.000 VNĐ",
@@ -262,7 +262,7 @@ const renderProducts = [
   },
   {
     "productCode": "SE10",
-    "image": "../image/Seiko/Seiko 42mm Nam SNZG09K1.jpg",
+    "image": "../../image/Seiko/Seiko 42mm Nam SNZG09K1.jpg",
     "category": "Seiko",
     "name": "Seiko 42mm Nam SNZG09K1",
     "price": "22.000.000 VNĐ",
