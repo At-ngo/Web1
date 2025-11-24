@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mô tả sản phẩm</title>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="../../css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../css/fontawesome-free-6.6.0-web/css/all.min.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/index.css"/>
+    <link rel="stylesheet" href="../../css/product-detail.css"/>
+</head>
+<body>
+    <header>
+        <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="../index_user.html" class="logo">
+            <img src="../../image/logo.png">
+        </a>
+        <nav class="nav-menu" id="home">
+            <ul>
+                <li style="line-height: 1.7;"><a href="../../login_user/index_user.html"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
+                <li style="line-height: 1.7;" class="dropdown active">
+                    <a href="../menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
+                    <ul class="sub-menu" >
+                        <li><a href="../menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="../menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="../menu/seiko.html"><span>Seiko</span></a></li>
+                    </ul>
+                </li>
+                <li style="line-height: 1.7;"><a href="../news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li style="line-height: 1.7;"><a href="../introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
+                <li style="line-height: 1.7;"><a href="../contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+            </ul>
+        </nav>
+        <!-- SEARCH -->
+        <div class="icon">
+            <div class="searchToggle">
+                <i class="fa-solid fa-x cancel"></i>
+                <i class="fa-solid fa-magnifying-glass search"></i>
+            </div>
+            <div class="searchBox">
+                <form class="search-form" action="./user/search.html" method="get">
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="./user/search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="icon-item">
+                <a href="../cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>             
+            <div class="icon-item">
+                <a href="javascript:void(0);">
+                    <img src="../../image/khac/user.png">
+                    <ul class="dropdown-user1">
+                        <li><a href="../profile.html">Thông tin cá nhân</a></li>
+                        <li><a href="/WEB1/login_user/profile.html?openHistory=true">Đơn đã mua</a></li>
+                        <li><a href="../index.html">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- PRODUCT -->
+    <main style="margin-top: 80px;" class="product">
+        <section class="product_details my-3 container">
+            <div class="product_details_content row">
+                <div class="col-6 product-gallery">
+                    <div id="galleryCarousel" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../../image/Casio/CASIO AMW-880-1A.png" class="d-block w-100" alt="Phin Sữa Đá">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thumbnails d-flex justify-content-center mt-3">
+                        <img src="../../image/Casio/CASIO AMW-880-1A.png" class="thumbnail-img" alt="Thumbnail 1">
+                        <img src="../../image/Casio/CASIO AMW-880-1A.png" class="thumbnail-img" alt="Thumbnail 2">
+                    </div>
+                </div>                            
+                <div class="col-6 product_details_info">
+                <h3><b>Casio AMW-880-1A</b></h3>
+                <p class="availability">Tình trạng: <b>Còn hàng</b></p>
+                <span class="price">1.250.000 VNĐ</span>
+                <div class="product-options">
+                <label>Số lượng:</label>
+                <div class="quantity">
+                    <button type="button" class="quantity-btn1" id="decrease">-</button>
+                    <input type="number" id="quantity-value" value="1" min="1" max="100" />
+                    <button type="button" class="quantity-btn2" id="increase">+</button>
+                </div>
+                </div>
+                <div class="btn-oders">
+                <button class="btn-add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- BREADCRUMB -->
+        <section class="breadcrumb_section container">
+            <nav aria-label="breadcrumb">
+            <hr />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../../index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../menu/allmenu.html">Thương hiệu</a></li>
+                <li class="breadcrumb-item" id="breadcum-category">
+                <a href="../menu/casio-menu.html">Casio</a>
+                </li>
+                <li
+                class="breadcrumb-item active"
+                id="breadcum-product"
+                aria-current="page"
+                >
+                Casio AMW-880-1A
+                </li>
+            </ol>
+            </nav>
+            <div class="product_tag" id="readmore">
+            <h4>Thông tin chi tiết</h4>
+            <div class="product_tag-read">
+                <p>
+                Thể thao mà vẫn tinh xảo – Casio AMW-880-1AVDF chắc chắn sẽ là bạn đồng
+                hành lý tưởng bất kể bạn đi đâu trong ngày. Hy vọng bài viết này đã đem
+                đến cho bạn cái nhìn trực quan hơn về sản phẩm. Để sở hữu một sản phẩm
+                đồng hồ Casio AMW-880-1AVDF chính hãng các bạn có thể ghé ngay hệ thống
+                đồng hồ chính hãng casio-hcm.vn để trải nghiệm trực tiếp mẫu đồng hồ
+                Casio này. Chúng mình tin rằng đây sẽ là một lựa chọn phụ kiện tuyệt vời
+                giúp bạn có thể làm mới bản thân với diện mạo mới!
+                </p>
+            </div>
+            </div>
+        </section>
+    </main>   
+    <!-- ĐỀ XUẤT -->
+    <section class="propose">
+        <div class="container">
+            <div class="tilte">Các sản phẩm khác</div>
+            <div class="product-grid">
+                
+            </div>
+        </div>
+        <ul class="pagination">
+            <li class="page1"><i class="fa-solid fa-angles-left"></i></li>
+            <li class="active">1</li>
+            <li>2</li>
+            <li class="page2"><i class="fa-solid fa-angles-right"></i></li>
+        </ul> 
+        <!-- Modal Thông báo Đặt mua -->
+        <div class="custom-modal" id="custom-order-modal">
+            <div class="custom-modal-content">
+                <span class="custom-close-btn" id="custom-close-order-modal">&times;</span>
+                <h3><b>Thông báo</b></h3>
+                <p>Đã thêm sản phẩm vào giỏ hàng!</p>
+                <div class="custom-modal-actions">
+                    <button class="custom-modal-btn" id="custom-continue-shopping-btn">Tiếp tục lựa chọn</button>
+                    <button class="custom-modal-btn" id="custom-go-to-cart-btn">Đi đến giỏ hàng</button>
+                </div>
+            </div>
+        </div>   
+    </section> 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="../index_user.html">Trang chủ</a></li>
+                    <li><a href="../menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="../news.html">Tin tức</a></li>
+                    <li><a href="../introduce.html">Giới thiệu</a></li>
+                    <li><a href="../contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Kết nối với chúng tôi</h2>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="footer-section members">
+                <h2>Thành viên</h2>
+                <ul>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
+                    <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
+                    <li><a href="#">Trần Thị Xuân Thanh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
+        </div>
+    </footer>
+    <!-- TOP -->
+    <div id="scrollToTopBtn">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div> 
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/tbmota.js"></script>
+    <script src="../../js/dlcart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const filterBtn = document.getElementById('openFilterModal');
+        const modal = document.getElementById('advancedSearchModal');
+        const closeBtn = modal?.querySelector('.close-modal');
+        const resetBtn = modal?.querySelector('.btn-reset');
+
+        if (!filterBtn || !modal) return;
+
+        // MỞ MODAL
+        filterBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            setTimeout(() => modal.querySelector('input[name="keyword"]')?.focus(), 100);
+        });
+
+        // ĐÓNG MODAL
+        closeBtn?.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Click ngoài
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+
+        // ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+            }
+        });
+
+        // Reset form
+            resetBtn?.addEventListener('click', () => {
+                document.getElementById('advancedSearchForm').reset();
+            });
+        });
+    </script>
+    <script>
+        function syncCartQuantity() {
+            const cartQuantityElement = document.getElementById("cartQuantity");
+            if (!cartQuantityElement) return;
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartQuantityElement.textContent = count || 0;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            syncCartQuantity();
+        });
+    </script>
+    
+    <!-- BOOSTRAP JS  -->
+    <script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const addToCartButton = document.querySelector(".btn-add-to-cart");
+    const cartQuantityElement = document.getElementById("cartQuantity");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    cart = normalizeCart(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+
+
+    // Hàm cập nhật số lượng trên biểu tượng giỏ hàng
+    function updateCartQuantity() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+        if (cartQuantityElement) {
+            cartQuantityElement.textContent = totalQuantity;
+        }
+    }
+  });
+
+    </script>
+</body>
+</html>

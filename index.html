@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Watch Store</title>
+</head>
+<body>
+    <header>
+        <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="./index.html" class="logo">
+            <img src="./image/logo.png">
+        </a>
+        <nav class="nav-menu" id="home">
+            <ul>
+                <li class="active"><a href="#"><i class="fa-solid fa-house-chimney"></i>Trang chủ</a></li>
+                <li class="dropdown">
+                    <a href="./user/menu/allmenu.html" id="menu-toggle"><i class="fa-solid fa-caret-down"></i>Thương hiệu</a>
+                    <ul class="sub-menu">
+                        <li><a href="./user/menu/casio.html"><span>Casio</span></a></li>
+                        <li><a href="./user/menu/rolex.html"><span>Rolex</span></a></li>
+                        <li><a href="./user/menu/seiko.html"><span>Seiko</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="./user/news.html"><i class="fa-solid fa-newspaper"></i>Tin tức</a></li>
+                <li><a href="./user/introduce.html"><i class="fa-solid fa-users-line"></i>Giới thiệu</a></li>
+                <li><a href="./user/contact.html"><i class="fa-solid fa-phone"></i>Liên hệ</a></li>
+            </ul>
+        </nav>
+        <!-- SEARCH -->
+        <div class="icon">
+            <div class="searchToggle">
+                <i class="fa-solid fa-x cancel"></i>
+                <i class="fa-solid fa-magnifying-glass search"></i>
+            </div>
+            <div class="searchBox">
+                <form class="search-form" action="./user/search.html" method="get">
+                    <ul class="search-bar">
+                        <li class="search-box">
+                            <input type="text" id="search-input" name="q" placeholder="Tìm kiếm..." required/>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- NÚT LỌC -->
+                            <button type="button" class="filter-toggle" id="openFilterModal">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- MODAL TÌM KIẾM NÂNG CAO -->
+            <div id="advancedSearchModal" class="advanced-search-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Tìm kiếm nâng cao</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="advancedSearchForm" action="./user/search.html" method="get">
+                            <div class="form-group">
+                                <label>Từ khóa:</label>
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select name="category">
+                                    <option value="">Tất cả</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="casio">Casio</option>
+                                    <option value="seiko">Seiko</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Khoảng giá:</label>
+                                <div class="price-range">
+                                    <input type="text" name="minPrice" placeholder="Từ (VNĐ)">
+                                    <span>-</span>
+                                    <input type="text" name="maxPrice" placeholder="Đến (VNĐ)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sắp xếp theo:</label>
+                                <select name="sort">
+                                    <option value="">Mặc định</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                                <button type="button" class="btn-reset">Đặt lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+             <!-- Giỏ hàng -->
+            <div class="icon-item">
+                <a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="modal" id="login-modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-modal">&times;</span>
+                    <h3><b>Bạn chưa đăng nhập</b></h3>
+                    <h5>Vui lòng đăng nhập hoặc đăng ký để xem giỏ hàng.</h5>
+                    <div class="modal-actions">
+                        <button class="modal-btn" id="login-btn" style="color: #fff;">Đăng nhập</button>
+                        <button class="modal-btn" id="register-btn" style="color: #fff;">Đăng ký</button>
+                    </div>
+                </div>
+            </div>  
+            <div class="icon-item">
+                <a href="javascript:void(0);"><i class="fa-solid fa-user"></i>
+                    <ul class="dropdown-user">
+                        <li><a href="./user/login_user.html">Đăng nhập</a></li>
+                        <li><a href="./user/signup_user.html">Đăng ký</a></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- SLIDER -->
+    <section class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="./image/poster/banner3.jpg">
+            </div>
+            <div class="item">
+                <img src="./image/poster/banner1.jpg">
+            </div>
+            <div class="item">
+                <img src="./image/poster/banner2.jpg">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
+            <button id="next"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <!-- ADVERTISE -->
+    <section class="section_container container" id="home">
+        <div class="content">
+            <div class="img1">
+                <img src="./image/khac/giatri.jpg">
+            </div>
+            <p>
+                Đồng hồ không chỉ là công cụ để xem thời gian, mà còn là biểu tượng của phong cách, đẳng cấp và câu chuyện cá nhân. Mỗi chiếc đồng hồ là một kiệt tác của sự tỉ mỉ và nghệ thuật chế tác, nơi từng chi tiết nhỏ đều thể hiện sự tinh tế và giá trị vượt thời gian. Hãy để chiếc đồng hồ trên tay bạn không chỉ ghi dấu từng khoảnh khắc, mà còn kể nên câu chuyện riêng của chính bạn!
+            </p>
+            <div class="div_btn">
+                <button class="btn"><a href="./user/menu/allmenu.html">Thử ngay</a></button>
+            </div>
+        </div>
+        <div class="img2">
+            <img src="./image/khac/dh.jpg">
+        </div>
+    </section>
+    <!-- BESTSELLER -->
+    <section class="heading">
+        <h2>SẢN PHẨM BÁN CHẠY</h2>
+        <div class="row">
+            <div class="divider"></div>
+            <hr>
+        </div>
+    </section>
+    <section class="bestseller">
+        <ul class="col-3 product-item" id="productList">
+            <!-- Sản phẩm -->
+        </ul>  
+        <ul class=" pagination" style="margin-left: 41%">
+            <li class="page1"><i class="fa-solid fa-angles-left"></i></li>
+            <li class="active">1</li>
+            <li>2</li>
+            <li class="page2"><i class="fa-solid fa-angles-right"></i></li>
+        </ul>     
+    </section>   
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi cung cấp các loại đồng hồ chất lượng, phục vụ với sự tận tâm và chuyên nghiệp.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./user/menu/allmenu.html">Thương hiệu</a></li>
+                    <li><a href="./user/news.html">Tin tức</a></li>
+                    <li><a href="./user/introduce.html">Giới thiệu</a></li>
+                    <li><a href="./user/contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Kết nối với chúng tôi</h2>
+                <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="footer-section members">
+                <h2>Thành viên</h2>
+                <ul>
+                    <li><a href="#">Ngô Đông Ất</a></li>
+                    <li><a href="#">Võ Quốc Bảo</a></li>
+                    <li><a href="#">Nguyễn Thị Ngọc Tú</a></li>
+                    <li><a href="#">Trần Thị Xuân Thanh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            &copy; Watch Store | Thiết kế bởi Nhóm 10
+        </div>
+    </footer>
+    <!-- TOP -->
+    <div id="scrollToTopBtn">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div> 
+    <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartQuantityElement = document.getElementById("cartQuantity");
+
+            const cartQuantity = localStorage.getItem("cart");
+            const count =  JSON.parse(cartQuantity).length;
+            
+            cartQuantityElement.textContent = count || 0;
+        });
+    </script>
+    <script>
+    // === 1. Mở modal khi cần (bạn có thể gọi hàm này từ nút "Đặt mua" nếu chưa đăng nhập)
+    function openLoginModal() {
+        document.getElementById('login-modal').style.display = 'block';
+    }
+
+    // === 2. Đóng modal
+    function closeLoginModal() {
+        document.getElementById('login-modal').style.display = 'none';
+    }
+
+    // === 3. Xử lý sự kiện khi DOM đã load
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('login-modal');
+        const closeBtn = document.getElementById('close-modal');
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+
+        // Đóng modal khi bấm nút ×
+        closeBtn.onclick = function () {
+            closeLoginModal();
+        };
+
+        // Đóng modal khi bấm ra ngoài nội dung
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                closeLoginModal();
+            }
+        };
+
+        // Chuyển đến trang đăng nhập
+        loginBtn.onclick = function () {
+            window.location.href = './user/login_user.html';
+        };
+
+        // Chuyển đến trang đăng ký
+        registerBtn.onclick = function () {
+            window.location.href = './user/signup_user.html';
+        };
+
+        // === 4. Dropdown menu người dùng (icon user)
+        const userIcon = document.querySelector('.icon-item > a');
+        const dropdown = document.querySelector('.dropdown-user');
+
+        userIcon.addEventListener('click', function (e) {
+            e.preventDefault(); // Ngăn hành vi mặc định của <a>
+            dropdown.classList.toggle('show');
+        });
+
+        // Đóng dropdown khi click ra ngoài
+        document.addEventListener('click', function (e) {
+            if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    });
+</script>
+</body>
+</html>
