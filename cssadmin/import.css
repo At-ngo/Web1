@@ -297,35 +297,43 @@
 }
 
 /* ================================================= */
-/* STYLE CHO FORM NHẬP NHIỀU SẢN PHẨM (MỚI) */
+/* STYLE CHO FORM NHẬP NHIỀU SẢN PHẨM (CẢI TIẾN) */
 /* ================================================= */
 
 .popup-content.popup-form {
-    width: 600px; /* Form rộng hơn */
+    width: 900px; /* Form rộng hơn chút để thoải mái */
     max-width: 95%;
     text-align: left;
-    padding: 25px 30px;
-    max-height: 90vh; /* Giới hạn chiều cao nếu nhiều SP */
-    overflow-y: auto; /* Cuộn nếu dài */
+    padding: 30px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 12px; /* Bo góc mềm mại hơn */
 }
 
 .popup-form h2 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 22px;
+    margin-bottom: 25px;
+    font-size: 24px;
     color: #344767;
+    font-weight: 700;
 }
 
+/* Group các phần thông tin */
 .form-section {
+    background: #fff;
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
 }
+
 .form-section h3 {
     font-size: 16px;
     margin-bottom: 15px;
     color: #21a6ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-left: 4px solid #21a6ff;
+    padding-left: 10px;
 }
 
 .form-group {
@@ -333,23 +341,159 @@
 }
 .form-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: 600;
     font-size: 14px;
     color: #344767;
 }
 
-/* Input styles trong form */
+/* Input styles chung */
 .popup-form input[type="text"],
 .popup-form input[type="date"],
+.popup-form input[type="number"],
 .popup-form select {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d2d6da;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
+    height: 42px; /* Cố định chiều cao để thẳng hàng */
+    padding: 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    transition: all 0.2s;
+    color: #333;
+}
+
+.popup-form input:focus, 
+.popup-form select:focus {
+    border-color: #21a6ff;
+    box-shadow: 0 0 0 3px rgba(33, 166, 255, 0.15);
+    outline: none;
+}
+
+/* --- DANH SÁCH SẢN PHẨM (TABLE LAYOUT) --- */
+
+/* Header của bảng sản phẩm */
+.product-list-header {
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+/* Dòng sản phẩm */
+.product-item-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    align-items: center;
+    background: #f8f9fa; /* Nền nhẹ cho từng dòng để dễ nhìn */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.product-item-row:hover {
+    border-color: #e0e0e0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Tỷ lệ các cột */
+.col-product { flex: 4; } /* Tên SP chiếm nhiều nhất */
+.col-qty { flex: 1; }     /* Số lượng */
+.col-price { flex: 2; }   /* Giá */
+.col-total { flex: 2; }   /* Thành tiền */
+.col-action { width: 40px; display: flex; justify-content: center; }
+
+/* Căn chỉnh text bên trong input */
+.product-item-row input[type="number"].product-qty { text-align: center; }
+.product-item-row input[type="number"].product-price { text-align: right; } /* Tiền căn phải */
+.product-item-row input.product-total { 
+    text-align: right; 
+    background-color: #e9ecef; /* Màu nền xám cho ô readonly */
+    color: #2d3748;
+    font-weight: 600;
+    border: none;
+}
+
+/* Nút xóa dòng (Thùng rác) */
+.remove-row-btn {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    color: #ff4d4f;
+    border: 1px solid #ffccc7;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.remove-row-btn:hover {
+    background: #ff4d4f;
+    color: white;
+    border-color: #ff4d4f;
+}
+
+/* Nút thêm dòng (+ Thêm sản phẩm) */
+.btn-add-row {
+    background: #fff;
+    border: 1px dashed #21a6ff;
+    color: #21a6ff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.btn-add-row:hover {
+    background: #f0f9ff;
+    border-style: solid;
+}
+
+/* Phần tổng tiền cuối cùng */
+.grand-total-section {
+    margin-top: 25px;
+    text-align: right;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.grand-total-label {
+    font-size: 15px;
+    color: #666;
+}
+
+#grand-total-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: #21a6ff;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 }
 
 /* --- DANH SÁCH SẢN PHẨM DYNAMIC --- */

@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa phiếu nhập</title>
+    <title>Chi tiết phiếu nhập</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="../cssadmin/admin.css">
     <link rel="stylesheet" href="../cssadmin/edit_import.css">
 
@@ -24,9 +22,9 @@
         </section>
         <nav>
             <ul>
-                <li><a href="#"><img src="../img/email.png" width="40" height="30" title="Gmail"></a></li>
-                <li><a href="#"><img src="../img/bell.png" width="30" height="30" title="Thông báo"></a></li>
-                <li><a href="#"><img src="../img/messenger.png" width="35" height="30" title="Tin nhắn"></a></li>
+                <li><a href="#"><img src="../img/email.png" width="40" height="30"></a></li>
+                <li><a href="#"><img src="../img/bell.png" width="30" height="30"></a></li>
+                <li><a href="#"><img src="../img/messenger.png" width="35" height="30"></a></li>
                 <li><a href="#"><img src="../img/user.png" width="35" height="30">ADMIN</a></li>
             </ul>
         </nav>
@@ -47,8 +45,8 @@
         <div class="content">
             <div class="box">
                 <div style="display: flex; align-items: center;">
-                    <i class="fas fa-edit" style="font-size: 20px; margin-right: 10px;"></i>
-                    <span style="font-size: 18px; font-weight: bold;">Chỉnh sửa phiếu nhập</span>
+                    <i class="fas fa-eye" style="font-size: 20px; margin-right: 10px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Chi tiết phiếu nhập (Chỉ xem)</span>
                 </div>
                 <button class="exit-btn">
                     <a href="admin_import.html"><i class="fas fa-arrow-left"></i> Quay lại</a>
@@ -73,9 +71,8 @@
                 <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 15px;">
                     <div class="form-group" style="flex: 1;">
                         <label>Trạng Thái:</label>
-                        <select name="status">
-                            <option value="pending" selected>Đang nhập</option>
-                            <option value="completed">Hoàn thành</option>
+                        <select disabled style="background-color: #f8f9fa; color: #28a745; font-weight: bold;">
+                            <option selected>Hoàn thành</option>
                         </select>
                     </div>
                 </div>
@@ -125,29 +122,12 @@
                 </div>
 
                 <div class="form-buttons">
-                    <label for="popup-toggle" class="delete-btn">
-                        <i class="fas fa-trash-alt"></i> Xóa phiếu
-                    </label>
                     <label for="print-popup-toggle" class="print-btn">
                         <i class="fas fa-print"></i> In phiếu
-                    </label>
-                    <label for="popup-toggle" class="save-btn">
-                        <i class="fas fa-save"></i> Lưu thay đổi
                     </label>
                 </div>
                 </form>
             </div>
-        </div>
-    </div>
-
-    <input type="checkbox" id="popup-toggle" />
-    <div class="popup-overlay" id="popup-overlay-save">
-        <div class="popup-content">
-            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
-            <p style="white-space: nowrap; margin-top: 3vh;"><b>ĐÃ LƯU THAY ĐỔI</b></p>
-            <label for="popup-toggle" class="close-popup">
-                <a href="admin_import.html" style="color: white; text-decoration: none;">Xác nhận</a>
-            </label>
         </div>
     </div>
 
@@ -159,46 +139,6 @@
             <label for="print-popup-toggle" class="close-popup">Đóng</label>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script>
-        function formatProduct(state) {
-            if (!state.id) return state.text;
-            var imgUrl = $(state.element).data('image');
-            if (!imgUrl) return state.text;
-            return $('<span style="display:flex; align-items:center;"><img src="' + imgUrl + '" style="width:30px; height:30px; margin-right:10px; border-radius:4px;" /><span>' + state.text + '</span></span>');
-        }
-        function initSelect2(el) {
-            $(el).select2({ width: '100%', templateResult: formatProduct, templateSelection: formatProduct });
-        }
-        $(document).ready(function () { initSelect2('.product-select'); calculateTotals(); });
-        function calculateTotals() {
-            let grandTotal = 0;
-            $('.product-row').each(function () {
-                let qty = parseFloat($(this).find('.qty-input').val()) || 0;
-                let price = parseFloat($(this).find('.price-input').val()) || 0;
-                let total = qty * price;
-                $(this).find('.total-input').val(total.toLocaleString('vi-VN'));
-                grandTotal += total;
-            });
-            $('#grand-total').text(grandTotal.toLocaleString('vi-VN') + ' ₫');
-        }
-        $('#add-row-btn').click(function () {
-            let newRow = `<tr class="product-row"><td><select class="product-select" name="products[]"><option value="">-- Chọn sản phẩm --</option><option value="SP001" data-image="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png">SP001 - Casio MTP-V002</option><option value="SP002" data-image="../image/Rolex/Day-Date 36.png">SP002 - Rolex Submariner</option></select></td><td><input type="number" class="qty-input" value="1" min="1" style="text-align: center;" oninput="calculateTotals()"></td><td><input type="number" class="price-input" value="0" min="0" style="text-align: right;" oninput="calculateTotals()"></td><td><input type="text" class="total-input" value="0" readonly style="text-align: right; background: #f8f9fa; border: none;"></td><td><button type="button" class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-times"></i></button></td></tr>`;
-            $('#product-list-body').append(newRow);
-            initSelect2($('#product-list-body tr:last .product-select'));
-        });
-        function removeRow(btn) {
-            if ($('.product-row').length > 1) {
-                $(btn).closest('tr').find('.product-select').select2('destroy');
-                $(btn).closest('tr').remove();
-                calculateTotals();
-            } else {
-                alert('Phải có ít nhất một dòng sản phẩm!');
-            }
-        }
-    </script>
 </body>
 
 </html>
