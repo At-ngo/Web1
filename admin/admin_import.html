@@ -5,11 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sen:wght@700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="../cssadmin/admin.css">
     <link rel="stylesheet" href="../cssadmin/import.css">
     <title>Quản trị Admin - Cửa hàng đồng hồ</title>
+
+    <style>
+        /* Chỉnh chiều cao và viền cho khớp với input thường */
+        .select2-container .select2-selection--single {
+            height: 42px !important;
+            border: 1px solid #e0e0e0 !important;
+            border-radius: 6px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        /* Chỉnh mũi tên bên phải */
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 40px !important;
+            top: 1px !important;
+        }
+
+        /* Chỉnh font chữ bên trong */
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: normal !important;
+            color: #333 !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 14px !important;
+            padding-left: 12px !important;
+        }
+
+        /* Màu viền khi bấm vào */
+        .select2-container--default.select2-container--focus .select2-selection--single {
+            border-color: #21a6ff !important;
+            box-shadow: 0 0 0 3px rgba(33, 166, 255, 0.15);
+        }
+
+        /* Đưa danh sách xổ xuống lên trên cùng (Z-index cao hơn popup) */
+        .select2-container--open {
+            z-index: 10000 !important;
+        }
+
+        /* Chỉnh giao diện dropdown menu */
+        .select2-dropdown {
+            border: 1px solid #e0e0e0 !important;
+            border-radius: 6px !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -164,7 +211,6 @@
                             <th>Mã Phiếu</th>
                             <th>Mã Sản Phẩm</th>
                             <th>Số Lượng</th>
-                            <th>Địa Chỉ Nguồn Hàng</th>
                             <th>Ngày Nhập</th>
                             <th>Trạng thái</th>
                             <th>Tác vụ</th>
@@ -179,15 +225,16 @@
                             <td>MP001</td>
                             <td>SP001</td>
                             <td>120</td>
-                            <td>120 Võ Văn Kiệt, Bình Tiên, TP.HCM</td>
                             <td>19/10/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -196,15 +243,16 @@
                             <td>MP002</td>
                             <td>SP002</td>
                             <td>30</td>
-                            <td>45 Phạm văn Chí, Bình Phú, TP.HCM</td>
                             <td>25/07/2025</td>
                             <td style="color:green">Hoàn Thành</td>
                             <td>
-                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
-                                </label>
+                                <a href="admin_view_import.html"
+                                    style="cursor: pointer; font-size: 18px; color:#007bff;" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -213,15 +261,16 @@
                             <td>MP003</td>
                             <td>SP003</td>
                             <td>100</td>
-                            <td>25 Nguyễn Trãi, Chợ Quán TP.HCM</td>
                             <td>17/04/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -230,15 +279,16 @@
                             <td>MP005</td>
                             <td>SP005</td>
                             <td>200</td>
-                            <td>KCN Tân Bình, Tây Thạnh, TP.HCM</td>
                             <td>01/11/2025</td>
                             <td style="color:green">Hoàn Thành</td>
                             <td>
-                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
-                                </label>
+                                <a href="admin_view_import.html"
+                                    style="cursor: pointer; font-size: 18px; color:#007bff;" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -247,15 +297,16 @@
                             <td>MP006</td>
                             <td>SP006</td>
                             <td>25</td>
-                            <td>70 Đồng Khởi, Bến Nghé, TP.HCM</td>
                             <td>06/11/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -264,15 +315,16 @@
                             <td>MP006</td>
                             <td>SP006</td>
                             <td>50</td>
-                            <td>15 KCN Sóng Thần, Đông Thạnh, TP.HCM</td>
                             <td>22/11/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -281,15 +333,16 @@
                             <td>MP007</td>
                             <td>SP007</td>
                             <td>75</td>
-                            <td>200 Nguyễn Văn Linh, Phú Thạnh, TP.HCM</td>
                             <td>23/11/2025</td>
                             <td style="color:green">Hoàn Thành</td>
                             <td>
-                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
-                                </label>
+                                <a href="admin_view_import.html"
+                                    style="cursor: pointer; font-size: 18px; color:#007bff;" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -298,15 +351,16 @@
                             <td>MP008</td>
                             <td>SP008</td>
                             <td>40</td>
-                            <td>33 KCN Vĩnh Lộc, Tân Sơn Nhì, TP.HCM</td>
                             <td>25/11/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -315,15 +369,16 @@
                             <td>MP009</td>
                             <td>SP009</td>
                             <td>150</td>
-                            <td>88 Xa lộ Hà Nội, Phú Lợi,TP. Thủ Đức</td>
                             <td>28/11/2025</td>
                             <td style="color:green">Hoàn Thành</td>
                             <td>
-                                <label for="popup-toggle" style="cursor: pointer; font-size: 18px; color:red;">
-                                    <i class="fas fa-edit"></i>
-                                </label>
+                                <a href="admin_view_import.html"
+                                    style="cursor: pointer; font-size: 18px; color:#007bff;" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                             </td>
                         </tr>
+
                         <tr>
                             <td><input type="checkbox"></td>
                             <td class="item-name-cell">
@@ -332,11 +387,11 @@
                             <td>MP010</td>
                             <td>SP010</td>
                             <td>80</td>
-                            <td>19 KCN Tân Tạo, Chánh Hiệp, TP.HCM</td>
                             <td>30/11/2025</td>
                             <td style="color:gray">Đang Nhập</td>
                             <td>
-                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;">
+                                <a href="admin_edit_import.html" style="cursor: pointer; font-size: 18px; color:red;"
+                                    title="Chỉnh sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
@@ -355,19 +410,6 @@
         </div>
     </div>
 
-    <input type="checkbox" id="popup-toggle" />
-    <div class="popup-overlay" id="warning-popup-overlay">
-        <div class="popup-content">
-            <h2><i class="fa-solid fa-circle-exclamation" style="color: red"></i> Thông báo</h2>
-            <p style="white-space: nowrap; margin-top: 3vh;"><b>PHIẾU HÀNG ĐÃ HOÀN THÀNH</b></p>
-            <p style="white-space: nowrap; margin-top: 1vh;"><b>KHÔNG THỂ CHỈNH SỬA</b></p>
-            <label for="popup-toggle" class="close-popup" style="margin-left: 1vw;">
-                <a href="admin_import.html" target="_self" style="text-decoration: none; color: white;"><b>Xác
-                        nhận</b></a>
-            </label>
-        </div>
-    </div>
-
     <input type="checkbox" id="create-popup-toggle" />
     <div class="popup-overlay" id="create-popup-overlay">
         <div class="popup-content popup-form">
@@ -377,50 +419,79 @@
                 <div class="form-section">
                     <h3>Thông tin chung</h3>
                     <div class="form-group">
-                        <label for="product-source">Địa chỉ nguồn hàng<b style="color:red">*</b></label>
+                        <label for="product-source">Địa chỉ nguồn hàng <span style="color:red">*</span></label>
                         <input type="text" id="product-source" name="product-source"
                             placeholder="Ví dụ: 120 Võ Văn Kiệt..." required>
                     </div>
 
                     <div class="form-group">
-                        <label for="import-date">Ngày nhập<b style="color:red">*</b></label>
+                        <label for="import-date">Ngày nhập <span style="color:red">*</span></label>
                         <input type="date" id="import-date" name="import-date" required>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h3>Danh sách sản phẩm</h3>
+                    <h3>Chi tiết đơn hàng</h3>
+
                     <div class="product-list-header">
-                        <span style="flex: 3;">Sản phẩm<b style="color:red">*</b></span>
-                        <span style="flex: 1;">Số lượng<b style="color:red">*</b></span>
-                        <span style="width: 30px;"></span>
+                        <div class="col-product">Sản phẩm</div>
+                        <div class="col-qty" style="text-align: center;">SL</div>
+                        <div class="col-price" style="text-align: right;">Giá nhập (VNĐ)</div>
+                        <div class="col-total" style="text-align: right;">Thành tiền</div>
+                        <div class="col-action"></div>
                     </div>
 
                     <div id="product-list-container">
                         <div class="product-item-row">
-                            <select name="product_id[]" class="product-select" required>
-                                <option value="">-- Chọn sản phẩm --</option>
-                                <option value="SP001">SP001 - Casio MTP-V002</option>
-                                <option value="SP002">SP002 - Rolex Submariner</option>
-                                <option value="SP003">SP003 - Casio MTP-1183A</option>
-                                <option value="SP005">SP005 - G-Shock GA-2100</option>
-                                <option value="SP006">SP006 - Tissot Le Locle</option>
-                                <option value="SP007">SP007 - Citizen Eco-Drive</option>
-                            </select>
-                            <input type="number" name="quantity[]" class="product-qty" placeholder="SL" min="1"
-                                required>
-                            <button type="button" class="remove-row-btn" onclick="removeRow(this)"><i
-                                    class="fas fa-times"></i></button>
+                            <div class="col-product">
+                                <select name="product_id[]" class="product-select" required>
+                                    <option value="">-- Chọn sản phẩm --</option>
+                                    <option value="SP001" data-image="../img/Casio/CASIO EDIFICE ECB-10AT-1A.png">
+                                        SP001 - Casio MTP-V002</option>
+                                    <option value="SP002" data-image="../img/Rolex/Day-Date 36.png">SP002 - Rolex
+                                        Submariner</option>
+                                    <option value="SP003" data-image="../img/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg">
+                                        SP003 - Casio MTP-1183A</option>
+                                    <option value="SP005" data-image="../img/Casio/CASIO GSHOCK GA-2100SKE-7A.jpg">SP005
+                                        -
+                                        G-Shock GA-2100</option>
+                                    <option value="SP006" data-image="../img/Rolex/Datejust 31.png">
+                                        SP006 - Tissot Le Locle</option>
+                                    <option value="SP007" data-image="../img/Rolex/Day-Date 40.png">SP007 -
+                                        Citizen Eco-Drive</option>
+                                </select>
+                            </div>
+                            <div class="col-qty">
+                                <input type="number" name="quantity[]" class="product-qty" placeholder="0" min="1"
+                                    required oninput="calculateTotals()">
+                            </div>
+                            <div class="col-price">
+                                <input type="number" name="price[]" class="product-price" placeholder="0" min="0"
+                                    oninput="calculateTotals()">
+                            </div>
+                            <div class="col-total">
+                                <input type="text" class="product-total" placeholder="0" readonly>
+                            </div>
+                            <div class="col-action">
+                                <button type="button" class="remove-row-btn" onclick="removeRow(this)" title="Xóa dòng">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <button type="button" id="add-product-btn" class="btn-add-row">
-                        <i class="fas fa-plus"></i> Thêm sản phẩm
+                        <i class="fas fa-plus-circle"></i> Thêm dòng sản phẩm
                     </button>
+
+                    <div class="grand-total-section">
+                        <span class="grand-total-label">Tổng giá trị phiếu nhập:</span>
+                        <span id="grand-total-display">0 ₫</span>
+                    </div>
                 </div>
 
                 <div class="form-actions">
-                    <label for="create-popup-toggle" class="btn btn-secondary close-popup">Hủy</label>
+                    <label for="create-popup-toggle" class="btn btn-secondary close-popup">Hủy bỏ</label>
                     <button type="submit" class="btn btn-primary">Lưu phiếu nhập</button>
                 </div>
             </form>
@@ -444,70 +515,156 @@
         </div>
     </div>
 
-    <script>
-        // --- 1. SCRIPT THÊM/XÓA DÒNG SẢN PHẨM ---
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-        // HTML mẫu cho một dòng sản phẩm mới (khi bấm Thêm sản phẩm)
+    <script>
+        // --- 1. HÀM TẠO GIAO DIỆN CÓ ẢNH CHO SELECT2 ---
+        function formatProduct(state) {
+            if (!state.id) {
+                return state.text; // Trả về text thường nếu là placeholder
+            }
+
+            // Lấy đường dẫn ảnh từ thuộc tính data-image
+            var imgUrl = $(state.element).data('image');
+
+            // Nếu không có ảnh thì trả về text thường
+            if (!imgUrl) {
+                return state.text;
+            }
+
+            // Tạo HTML hiển thị: [Ảnh] [Tên]
+            var $state = $(
+                '<span style="display:flex; align-items:center;">' +
+                '<img src="' + imgUrl + '" class="img-flag" style="width:30px; height:30px; object-fit:cover; margin-right:10px; border-radius:4px;" /> ' +
+                '<span>' + state.text + '</span>' +
+                '</span>'
+            );
+            return $state;
+        }
+
+        // --- 2. KHỞI TẠO SELECT2 ---
+        function initSelect2(element) {
+            $(element).select2({
+                width: '100%',
+                placeholder: "-- Tìm kiếm sản phẩm --",
+                dropdownParent: $('#create-popup-overlay'),
+                templateResult: formatProduct, // Sử dụng hàm format để hiện ảnh trong danh sách
+                templateSelection: formatProduct // Sử dụng hàm format để hiện ảnh khi đã chọn
+            });
+        }
+
+        // Khởi tạo lần đầu khi trang tải xong
+        $(document).ready(function () {
+            initSelect2('.product-select');
+        });
+
+        // --- HÀM FORMAT TIỀN TỆ ---
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        // --- HÀM TÍNH TOÁN TỔNG ---
+        function calculateTotals() {
+            const rows = document.querySelectorAll('.product-item-row');
+            let grandTotal = 0;
+
+            rows.forEach(row => {
+                const qtyInput = row.querySelector('.product-qty');
+                const priceInput = row.querySelector('.product-price');
+                const totalInput = row.querySelector('.product-total');
+
+                const qty = parseFloat(qtyInput.value) || 0;
+                const price = parseFloat(priceInput.value) || 0;
+                const total = qty * price;
+
+                // Format số tiền hiển thị trong input
+                totalInput.value = total > 0 ? total.toLocaleString('vi-VN') : '0';
+
+                grandTotal += total;
+            });
+
+            // Cập nhật tổng giá trị phiếu
+            document.getElementById('grand-total-display').innerText = formatCurrency(grandTotal);
+        }
+
+        // --- HTML MẪU CHO DÒNG MỚI ---
         const productRowTemplate = `
             <div class="product-item-row">
-                <select name="product_id[]" class="product-select" required>
-                    <option value="">-- Chọn sản phẩm --</option>
-                    <option value="SP001">SP001 - Casio MTP-V002</option>
-                    <option value="SP002">SP002 - Rolex Submariner</option>
-                    <option value="SP003">SP003 - Casio MTP-1183A</option>
-                    <option value="SP005">SP005 - G-Shock GA-2100</option>
-                    <option value="SP006">SP006 - Tissot Le Locle</option>
-                    <option value="SP007">SP007 - Citizen Eco-Drive</option>
-                </select>
-                <input type="number" name="quantity[]" class="product-qty" placeholder="SL" min="1" required>
-                <button type="button" class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-times"></i></button>
+                <div class="col-product">
+                    <select name="product_id[]" class="product-select" required>
+                        <option value="">-- Chọn sản phẩm --</option>
+                        <option value="SP001" data-image="../image/Casio/CASIO EDIFICE ECB-10AT-1A.png">SP001 - Casio MTP-V002</option>
+                        <option value="SP002" data-image="../image/Rolex/Day-Date 36.png">SP002 - Rolex Submariner</option>
+                        <option value="SP003" data-image="../image/Seiko/Seiko 40.5mm Nam SRPB41J1.jpg">SP003 - Casio MTP-1183A</option>
+                        <option value="SP005" data-image="../image/Casio/G-SHOCK GA-2100-1A1.png">SP005 - G-Shock GA-2100</option>
+                        <option value="SP006" data-image="../image/khac/Tissot Le Locle Powermatic 80.png">SP006 - Tissot Le Locle</option>
+                        <option value="SP007" data-image="../image/khac/Citizen Eco-Drive.png">SP007 - Citizen Eco-Drive</option>
+                    </select>
+                </div>
+                <div class="col-qty">
+                    <input type="number" name="quantity[]" class="product-qty" placeholder="0" min="1" required oninput="calculateTotals()">
+                </div>
+                <div class="col-price">
+                    <input type="number" name="price[]" class="product-price" placeholder="0" min="0" oninput="calculateTotals()">
+                </div>
+                <div class="col-total">
+                    <input type="text" class="product-total" placeholder="0" readonly>
+                </div>
+                <div class="col-action">
+                    <button type="button" class="remove-row-btn" onclick="removeRow(this)" title="Xóa dòng">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
             </div>
         `;
 
-        // Lắng nghe sự kiện click nút "Thêm sản phẩm"
+        // Lắng nghe sự kiện thêm dòng
         document.getElementById('add-product-btn').addEventListener('click', function () {
             const container = document.getElementById('product-list-container');
-            // Chèn dòng mới vào cuối container
+
+            // Thêm HTML dòng mới
             container.insertAdjacentHTML('beforeend', productRowTemplate);
+
+            // Tìm ô select vừa thêm và khởi tạo Select2 cho nó
+            const newRow = container.lastElementChild;
+            const newSelect = $(newRow).find('.product-select');
+            initSelect2(newSelect);
         });
 
-        // Hàm xóa dòng (được gọi từ onclick trong HTML)
+        // Hàm xóa dòng
         function removeRow(button) {
             const row = button.closest('.product-item-row');
             const container = document.getElementById('product-list-container');
-
-            // Chỉ cho phép xóa nếu còn nhiều hơn 1 dòng
             if (container.querySelectorAll('.product-item-row').length > 1) {
+                // Quan trọng: Destroy select2 trước khi xóa DOM
+                $(row).find('.product-select').select2('destroy');
                 row.remove();
+                calculateTotals();
             } else {
-                alert("Phải có ít nhất một sản phẩm trong phiếu nhập.");
+                alert("Phải có ít nhất một dòng sản phẩm.");
             }
         }
 
-        // --- 2. XỬ LÝ SUBMIT FORM & HIỆN THÔNG BÁO ---
+        // Xử lý submit form
         const createForm = document.getElementById('create-import-form');
         const createPopupCheckbox = document.getElementById('create-popup-toggle');
         const successPopupCheckbox = document.getElementById('success-popup-toggle');
 
         createForm.addEventListener('submit', function (event) {
-
-            // 1. Ngăn trang web tải lại
             event.preventDefault();
-
-            // 2. Đóng popup "Tạo phiếu nhập"
             createPopupCheckbox.checked = false;
-
-            // 3. Mở popup "Đã lưu thành công"
             successPopupCheckbox.checked = true;
-
-            // 4. Reset form về trạng thái ban đầu sau một khoảng thời gian ngắn
             setTimeout(() => {
                 createForm.reset();
+                // Reset giá trị Select2
+                $('.product-select').val(null).trigger('change');
+
                 const container = document.getElementById('product-list-container');
-                // Xóa hết các dòng thừa, chỉ giữ lại dòng đầu tiên
                 while (container.children.length > 1) {
                     container.removeChild(container.lastChild);
                 }
+                document.getElementById('grand-total-display').innerText = "0 ₫";
             }, 500);
         });
     </script>
