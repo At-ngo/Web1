@@ -197,38 +197,43 @@
     margin: 0 !important;
 }
 
-/* ================================================= */
-/* PHÂN TRANG */
-/* ================================================= */
+/* ================== */
+/*     PHÂN TRANG     */
+/* ================== */
 .pagination {
-    display: inline-block;
-    margin: 0;
-}
-.pagination.bottom-pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
     margin-top: 20px;
-    margin-left: 0;
+    padding-right: 20px;
 }
 .pagination a {
-    text-decoration: none;
-    color: #333;
-    padding: 8px 12px;
-    margin: 0 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
     font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+    border: 1px solid #e0e3e7;
+    background: #fff;
+    color: #344767;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .15s ease;
 }
 .pagination a:hover {
-    background-color: #21a6ff;
-    color: #fff;
-    border-color: #21a6ff;
+    background-color: #f0f2f5;
+    border-color: #d2d6da;
 }
 .pagination a.active {
     background-color: #21a6ff;
-    color: white;
+    color: #fff;
     border-color: #21a6ff;
+    font-weight: 600;
 }
-
 /* ================================================= */
 /* CÁC POPUP */
 /* ================================================= */
